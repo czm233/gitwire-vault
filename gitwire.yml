@@ -1,5 +1,10 @@
-repos:
-- shibing624/agentica
-- czm233/VoiceTutor
+publish_mode: direct
 recipes:
 - docs-sync
+repos:
+- name: shibing624/agentica
+  recipes:
+  - docs-sync
+  - feature-tripwire
+  - bug-watch
+  - cve-scan
