@@ -1,0 +1,21 @@
+issues:
+  '1573':
+    title: railtracks add --force before <tool>:<skill> fails, despite usage text
+      showing that order
+    state: open
+    state_reason: null
+    labels_seen:
+    - area:core
+    comments_seen: 0
+    checked_at: '2026-09-25T02:40:56+08:00'
+  '1577':
+    title: 'docs: web search tool page doesn''t document installing the `websearch`
+      extra'
+    state: open
+    state_reason: null
+    labels_seen:
+    - area:docs
+    - good first issue
+    - help wanted
+    comments_seen: 0
+    checked_at: '2026-09-25T02:40:56+08:00'
