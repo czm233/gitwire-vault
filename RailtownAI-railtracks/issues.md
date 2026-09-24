@@ -1,6 +1,6 @@
 # Issue 雷达 · RailtownAI/railtracks
 
-> 全景扫描：2026-09-25 · 开放 issue 92 个 · 机会 48 · 被占 25 · 困难 19
+> 全景扫描：2026-09-25 · 开放 issue 93 个 · 机会 49 · 被占 25 · 困难 19
 
 ## 机会榜（按值得做排序，top 10）
 
@@ -16,9 +16,6 @@
 | [#1381](https://github.com/RailtownAI/railtracks/issues/1381) | 简单 | good first issue+help wanted | Add llms.txt / llms-full.txt —— 添加 llms.txt / llms-full.txt，范围明确的文档任务 |
 | [#1573](https://github.com/RailtownAI/railtracks/issues/1573) | 简单 | 较新 | railtracks add --force before <tool>:<skill> fails, despite  —— `railtracks add --force` 前置位置解析顺序 bug，定位明确的 CLI 修复 |
 | [#1534](https://github.com/RailtownAI/railtracks/issues/1534) | 简单 | — | Delete legacy install detection —— 删除 legacy 安装检测代码，前置条件已满足，范围清晰的清理任务 |
-
-## 池内动态
-- #1538 已关闭（PR#1541）
 
 ## 已被占（不必再看）
 - #1562 Tool.from_function silently degrades unmapped parameter types to "object" (bypasses #1552's strict validation) —— 被 assignee rajathpatel23 占
@@ -51,6 +48,12 @@
 - #1538 Type hints collapse when you use a list of pre-built middlewares —— PR#1541（2026-09-24）
 
 ## 分析详情（最新分析在前）
+### #1588 [中等|🟢机会] viz: match middleware failures by exception id, not message
+- 将 viz 中间件失败匹配从异常消息改为异常 id，避免误匹配
+- 问题：viz 中间件表用异常 message 判断是阻断还是仅被打断，消息相同会导致误判。大概率在 `cli/viz_api/queries/middleware.py` 的 `raised_here` 判定逻辑，需追踪 `callee_failures` 数据结构是否已携带异常 id/类型信息（未核实），可能需上游记录点配合。
+- 方案：在异常记录处附带异常标识（类型名或唯一 id）并持久化到 session 数据，查询时按 id 匹配替代 message 匹配；若数据层无此字段则需小范围跨层改动。工作量小时级；风险：数据结构变更影响历史 session 兼容性与 #1569 修复逻辑回归。（工作量级：小时级）
+- 分析于 2026-09-25
+
 ### #1584 [中等|🟢机会] Aggregate cost SUMs (sessions/nodes) silently drop unresolved-cost calls, unlike the fixed row-level endpoint
 - 聚合SUM掩盖未定价调用的null成本，与已修的单行端点行为不一致，站点明确
 - 问题：裸 `SUM(total_cost)` 跳过 NULL 行，混合定价/未定价的 session/node 成本被静默低估，与 #1553/#1568 修复的行级端点不一致；站点已明确列出 sessions.py/nodes.py 等（第三处被截断，需核实完整清单）。
@@ -165,12 +168,6 @@
 - 方案：提取 CommonHyperparameters dataclass、拆分 stream 逻辑到独立文件、精简 mixin，靠现有 1000+ 行测试保障回归（工作量级：天级）。风险：重构期间与并行开发冲突，测试本身也需同步拆分。
 - 分析于 2026-09-25
 
-### #1462 [简单|🟢机会] Logger: RuntimeError on  unretrieved-task
-- publisher 关闭后任务仍发布导致 RuntimeError，需条件保护
-- 问题：委托任务在 publisher 关闭后才完成，execution_strategy 的 finally 无条件 publish 触发 "Publisher is not currently running."。定位精确，根因已知。
-- 方案：publish 前检查 publisher 运行状态或捕获该异常，考虑是否需要丢弃日志（工作量级：小时级）。风险：低；需确认真实场景下是否应等待而非丢弃。
-- 分析于 2026-09-25
-
 ## 全量总表
 
 <details><summary>展开全部开放 issue</summary>
@@ -269,5 +266,6 @@
 | #1581 | 中等 | 🟢机会 | Union处理错误放宽required，修复明确且影响函数调用正确性 |
 | #1582 | 中等 | 🟢机会 | 异构元组需改用prefixItems按位约束，修法明确但涉及schema版本兼容 |
 | #1584 | 中等 | 🟢机会 | 聚合SUM掩盖未定价调用的null成本，与已修的单行端点行为不一致，站点明确 |
+| #1588 | 中等 | 🟢机会 | 将 viz 中间件失败匹配从异常消息改为异常 id，避免误匹配 |
 
 </details>

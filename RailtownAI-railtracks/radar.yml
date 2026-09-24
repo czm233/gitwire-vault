@@ -1,4 +1,4 @@
-last_sweep: '2026-09-25T01:56:36+08:00'
+last_sweep: '2026-09-25T02:05:40+08:00'
 issues:
   '486':
     difficulty: 困难
@@ -10,6 +10,7 @@ issues:
     title: '[Feature] Documentation App'
     labels_seen: []
     comments_seen: 0
+    created_at: '2025-08-08T18:59:55Z'
   '853':
     difficulty: 困难
     summary: MCP 协议补全缺失能力，量大且涉及协议设计
@@ -22,6 +23,7 @@ issues:
     title: '[Feature] Support for all of MCP features'
     labels_seen: []
     comments_seen: 0
+    created_at: '2025-11-27T18:16:19Z'
   '873':
     difficulty: 简单
     summary: Context 用法文档前置，纯文档改动，适合入门
@@ -35,6 +37,7 @@ issues:
     - good first issue
     - help wanted
     comments_seen: 1
+    created_at: '2025-12-10T00:37:31Z'
   '881':
     difficulty: 中等
     summary: docstring 多格式解析，范围明确需改解析逻辑
@@ -49,6 +52,7 @@ issues:
     - good first issue
     - help wanted
     comments_seen: 0
+    created_at: '2026-01-05T17:30:55Z'
   '940':
     difficulty: 简单
     summary: BYFA/RYFA 教程叙事重构，纯文档改写
@@ -62,6 +66,7 @@ issues:
     - good first issue
     - help wanted
     comments_seen: 1
+    created_at: '2026-02-05T21:24:08Z'
   '947':
     difficulty: 中等
     summary: LLM 子模块独立 logger 配置，单模块日志改造
@@ -75,6 +80,7 @@ issues:
     - area:llm
     - tech debt
     comments_seen: 1
+    created_at: '2026-02-05T23:58:49Z'
   '1004':
     difficulty: 困难
     summary: 多种 Agent 架构文档父票，范围未定信息不足
@@ -88,6 +94,7 @@ issues:
     - good first issue
     - help wanted
     comments_seen: 3
+    created_at: '2026-03-12T22:22:12Z'
   '1014':
     difficulty: 中等
     summary: 评估指标增加 shots/examples 支持，DX 设计待定
@@ -101,6 +108,7 @@ issues:
     - area:evaluations
     - help wanted
     comments_seen: 1
+    created_at: '2026-03-17T16:52:56Z'
   '1053':
     difficulty: 简单
     summary: 长度护栏 Guardrail，接口已定范围明确
@@ -112,6 +120,7 @@ issues:
     labels_seen:
     - help wanted
     comments_seen: 0
+    created_at: '2026-04-02T21:46:04Z'
   '1065':
     difficulty: 中等
     summary: 被拦截护栏的重试机制，需设计决策
@@ -123,6 +132,7 @@ issues:
     labels_seen:
     - area:add-on
     comments_seen: 0
+    created_at: '2026-04-14T01:41:33Z'
   '1114':
     difficulty: 简单
     summary: 文档语法内容修缺父票，长期跟踪，零散小改
@@ -136,6 +146,7 @@ issues:
     - kind:tracking
     - tech debt
     comments_seen: 13
+    created_at: '2026-05-21T21:16:36Z'
   '1131':
     difficulty: 困难
     summary: RetrievalRuntime 替换 RAGConfig，架构级重设计
@@ -150,6 +161,7 @@ issues:
     - area:retrieval
     - status:stale
     comments_seen: 1
+    created_at: '2026-05-28T18:46:31Z'
   '1142':
     difficulty: 困难
     summary: LLM 层缓存式上下文压缩，跨模块且依赖未完成项
@@ -162,6 +174,7 @@ issues:
     - area:add-on
     - area:core
     comments_seen: 0
+    created_at: '2026-06-01T23:00:33Z'
   '1145':
     difficulty: 困难
     summary: 默认插件批量父票，范围未拆分信息不足
@@ -173,6 +186,7 @@ issues:
     labels_seen:
     - kind:tracking
     comments_seen: 1
+    created_at: '2026-06-01T23:14:12Z'
   '1150':
     difficulty: 简单
     summary: 存储层批量写入 EmbeddedChunk，接口扩展明确
@@ -185,6 +199,7 @@ issues:
     - area:retrieval
     - help wanted
     comments_seen: 0
+    created_at: '2026-06-01T23:32:31Z'
   '1156':
     difficulty: 困难
     summary: 用 system message 自动生成 agent manifest，自动化程度需设计决策
@@ -199,6 +214,7 @@ issues:
     - area:core
     - status:blocked
     comments_seen: 4
+    created_at: '2026-06-02T17:45:38Z'
   '1160':
     difficulty: 中等
     summary: 把 pdoc API 参考嵌入主文档站，提升一致性
@@ -210,6 +226,7 @@ issues:
     labels_seen:
     - area:docs
     comments_seen: 0
+    created_at: '2026-06-02T20:28:49Z'
   '1167':
     difficulty: 简单
     summary: HF 数据集所有行 id 相同，破坏 upsert 语义
@@ -223,6 +240,7 @@ issues:
     - good first issue
     - help wanted
     comments_seen: 0
+    created_at: '2026-06-04T19:11:01Z'
   '1172':
     difficulty: 中等
     summary: 将 _Session 等内部类标记为 internal，防误用
@@ -234,6 +252,7 @@ issues:
     labels_seen:
     - area:core
     comments_seen: 1
+    created_at: '2026-06-05T23:49:17Z'
   '1173':
     difficulty: 中等
     summary: 新增 Turbovec 向量后端集成
@@ -248,6 +267,7 @@ issues:
     - area:retrieval
     - help wanted
     comments_seen: 0
+    created_at: '2026-06-08T16:34:15Z'
   '1179':
     difficulty: 简单
     summary: 为文档核心术语定义 glossary 并互链
@@ -263,6 +283,7 @@ issues:
     - good first issue
     - help wanted
     comments_seen: 0
+    created_at: '2026-06-09T17:56:43Z'
   '1184':
     difficulty: 中等
     summary: ingest 逐 chunk 单次写库，需增加批量写接口
@@ -276,6 +297,7 @@ issues:
     labels_seen:
     - tech debt
     comments_seen: 0
+    created_at: '2026-06-09T23:53:19Z'
   '1185':
     difficulty: 中等
     summary: 用户 metadata 可覆盖保留 payload 键导致数据损坏
@@ -289,6 +311,7 @@ issues:
     labels_seen:
     - area:retrieval
     comments_seen: 0
+    created_at: '2026-06-09T23:53:37Z'
   '1186':
     difficulty: 中等
     summary: Chroma 后端 chunk 内容双份存储，浪费成本
@@ -301,6 +324,7 @@ issues:
     labels_seen:
     - tech debt
     comments_seen: 0
+    created_at: '2026-06-09T23:53:51Z'
   '1187':
     difficulty: 困难
     summary: 部分失败的重新 ingest 会删掉旧好版本
@@ -313,6 +337,7 @@ issues:
     labels_seen:
     - area:retrieval
     comments_seen: 1
+    created_at: '2026-06-09T23:54:40Z'
   '1193':
     difficulty: 困难
     summary: 用户 context 是无锁普通 dict，并发不安全
@@ -325,6 +350,7 @@ issues:
     labels_seen:
     - area:core
     comments_seen: 0
+    created_at: '2026-06-11T18:55:08Z'
   '1203':
     difficulty: 中等
     summary: 新增 Thoughts 工具：脑洞/键值/向量三种暂存草稿
@@ -338,6 +364,7 @@ issues:
     - area:add-on
     - help wanted
     comments_seen: 0
+    created_at: '2026-06-16T18:08:54Z'
   '1204':
     difficulty: 困难
     summary: 文件系统工具：受控文件/shell 操作，设计问题未决
@@ -350,6 +377,7 @@ issues:
     - area:add-on
     - help wanted
     comments_seen: 0
+    created_at: '2026-06-16T18:18:57Z'
   '1209':
     difficulty: 中等
     summary: pgvector 后端把所有 metadata 塞单 payload 列
@@ -362,6 +390,7 @@ issues:
     labels_seen:
     - tech debt
     comments_seen: 0
+    created_at: '2026-06-18T21:26:55Z'
   '1216':
     difficulty: 困难
     summary: 键值存储后端支持（tracking issue，无具体范围）
@@ -373,6 +402,7 @@ issues:
     labels_seen:
     - kind:tracking
     comments_seen: 0
+    created_at: '2026-06-23T19:02:30Z'
   '1217':
     difficulty: 困难
     summary: 全链路思考块支持，跨流式/解析/序列化架构级改造
@@ -388,6 +418,7 @@ issues:
     - area:llm
     - kind:tracking
     comments_seen: 1
+    created_at: '2026-06-23T19:34:13Z'
   '1223':
     difficulty: 简单
     summary: 给预构建工具打标签以便可视化器区分展示
@@ -399,6 +430,7 @@ issues:
     labels_seen:
     - area:visualizer
     comments_seen: 1
+    created_at: '2026-06-26T23:52:56Z'
   '1228':
     difficulty: 简单
     summary: JSON 存储改 UTF-16 以下提升人类/代理可读性
@@ -411,6 +443,7 @@ issues:
     labels_seen:
     - area:core
     comments_seen: 2
+    created_at: '2026-07-05T07:43:18Z'
   '1233':
     difficulty: 困难
     summary: 预构建工具集（内存/文件/TODO/搜索），tracking 票范围大
@@ -422,6 +455,7 @@ issues:
     labels_seen:
     - kind:tracking
     comments_seen: 4
+    created_at: '2026-07-09T18:16:19Z'
   '1239':
     difficulty: 困难
     summary: 可观测性重构为事件流，架构级替换现有状态导出
@@ -433,6 +467,7 @@ issues:
     labels_seen:
     - kind:tracking
     comments_seen: 0
+    created_at: '2026-07-10T18:15:57Z'
   '1248':
     difficulty: 中等
     summary: 引入 ModelRequest 类型统一模型调用入参
@@ -446,6 +481,7 @@ issues:
     - area:core
     - area:llm
     comments_seen: 2
+    created_at: '2026-07-13T19:39:09Z'
   '1251':
     difficulty: 中等
     summary: viz 命令 --dir 标志形式化并修复子目录感知 bug
@@ -458,6 +494,7 @@ issues:
     labels_seen:
     - area:visualizer
     comments_seen: 2
+    created_at: '2026-07-14T17:30:42Z'
   '1265':
     difficulty: 困难
     summary: HIL 人机协同作为节点中间件，父票含设计决策
@@ -471,6 +508,7 @@ issues:
     - area:add-on
     - kind:tracking
     comments_seen: 0
+    created_at: '2026-07-17T18:26:42Z'
   '1266':
     difficulty: 中等
     summary: 通用验证器中间件：callable 校验节点输入并抛异常
@@ -482,6 +520,7 @@ issues:
     labels_seen:
     - kind:tracking
     comments_seen: 0
+    created_at: '2026-07-17T18:31:59Z'
   '1306':
     difficulty: 中等
     summary: ScopeGuard 护栏拦截超出范围的提问
@@ -495,6 +534,7 @@ issues:
     - '[Maintainer] task'
     - help wanted
     comments_seen: 0
+    created_at: '2026-07-28T19:07:51Z'
   '1316':
     difficulty: 简单
     summary: 改进自定义函数作为工具的文档说明
@@ -506,6 +546,7 @@ issues:
     labels_seen:
     - area:docs
     comments_seen: 0
+    created_at: '2026-07-30T19:50:57Z'
   '1320':
     difficulty: 中等
     summary: 附件在消息中的位置交错，媒体块位置信息丢失
@@ -517,6 +558,7 @@ issues:
     labels_seen:
     - '[Maintainer] task'
     comments_seen: 0
+    created_at: '2026-07-30T20:52:51Z'
   '1321':
     difficulty: 困难
     summary: 大附件走文件 API 自动上传，跨层功能
@@ -529,6 +571,7 @@ issues:
     - area:core
     - area:llm
     comments_seen: 0
+    created_at: '2026-07-30T20:54:54Z'
   '1343':
     difficulty: 困难
     summary: 编码助手支持全面评估与改进，研究+实现混合票
@@ -541,6 +584,7 @@ issues:
     - area:integrations
     - kind:tracking
     comments_seen: 2
+    created_at: '2026-08-05T18:39:15Z'
   '1347':
     difficulty: 困难
     summary: 富媒体支持 Epic，多方向大范围架构工作
@@ -553,6 +597,7 @@ issues:
     - area:add-on
     - kind:tracking
     comments_seen: 0
+    created_at: '2026-08-05T21:21:49Z'
   '1348':
     difficulty: 困难
     summary: 让工具原生返回富内容，需重构类型与调用链，架构级改动
@@ -565,6 +610,7 @@ issues:
     labels_seen:
     - '[Maintainer] task'
     comments_seen: 0
+    created_at: '2026-08-05T21:23:52Z'
   '1349':
     difficulty: 中等
     summary: Attachment 支持音频/视频/文件模态，单模块功能扩展
@@ -578,6 +624,7 @@ issues:
     - area:core
     - area:llm
     comments_seen: 0
+    created_at: '2026-08-05T21:26:16Z'
   '1353':
     difficulty: 中等
     summary: OpenAI 格式无损导入导出 API，范围明确
@@ -590,6 +637,7 @@ issues:
     labels_seen:
     - '[Maintainer] task'
     comments_seen: 0
+    created_at: '2026-08-05T21:51:42Z'
   '1354':
     difficulty: 中等
     summary: 通用 token 估算器，范围清晰但需选型设计
@@ -601,6 +649,7 @@ issues:
     labels_seen:
     - '[Maintainer] task'
     comments_seen: 0
+    created_at: '2026-08-05T21:57:15Z'
   '1355':
     difficulty: 困难
     summary: 清除 539 个 Pyright 错误，量大且需逐一定位
@@ -612,6 +661,7 @@ issues:
     labels_seen:
     - '[Maintainer] task'
     comments_seen: 0
+    created_at: '2026-08-05T22:00:56Z'
   '1356':
     difficulty: 中等
     summary: 统一 LLM 子类初始化接口与 from_string 工厂
@@ -623,6 +673,7 @@ issues:
     labels_seen:
     - '[Maintainer] task'
     comments_seen: 0
+    created_at: '2026-08-05T22:08:58Z'
   '1357':
     difficulty: 中等
     summary: 让 Agent 响应暴露工具调用信息，需接口设计决策
@@ -635,6 +686,7 @@ issues:
     - area:core
     - area:llm
     comments_seen: 1
+    created_at: '2026-08-05T22:21:25Z'
   '1362':
     difficulty: 困难
     summary: 重实现结构化工具调用 LLM，此前被移除、信息不足
@@ -646,6 +698,7 @@ issues:
     labels_seen:
     - '[Maintainer] task'
     comments_seen: 0
+    created_at: '2026-08-06T16:59:23Z'
   '1375':
     difficulty: 中等
     summary: 清理文档页重复与命名冲突，量大但机械
@@ -658,6 +711,7 @@ issues:
     - '[Maintainer] task'
     - area:docs
     comments_seen: 1
+    created_at: '2026-08-11T19:08:06Z'
   '1381':
     difficulty: 简单
     summary: 添加 llms.txt / llms-full.txt，范围明确的文档任务
@@ -671,6 +725,7 @@ issues:
     - good first issue
     - help wanted
     comments_seen: 0
+    created_at: '2026-08-12T00:23:16Z'
   '1393':
     difficulty: 简单
     summary: 坏 schema 报错不友好，已在手的明确小修
@@ -683,6 +738,7 @@ issues:
     - bug
     - good first issue
     comments_seen: 1
+    created_at: '2026-08-13T17:51:42Z'
   '1395':
     difficulty: 中等
     summary: 为 agent-as-tool 类场景增加 Custom Tools 抽象
@@ -694,6 +750,7 @@ issues:
     labels_seen:
     - '[Maintainer] task'
     comments_seen: 0
+    created_at: '2026-08-13T18:38:17Z'
   '1398':
     difficulty: 中等
     summary: post-init 赋值守卫，涉及大量字段迁移、规范类任务
@@ -705,6 +762,7 @@ issues:
     labels_seen:
     - '[Maintainer] task'
     comments_seen: 0
+    created_at: '2026-08-13T21:01:02Z'
   '1409':
     difficulty: 中等
     summary: 成本限额中间件，设计已有雏形的功能
@@ -716,6 +774,7 @@ issues:
     labels_seen:
     - '[Maintainer] task'
     comments_seen: 1
+    created_at: '2026-08-17T22:07:39Z'
   '1413':
     difficulty: 中等
     summary: 彩色日志迁移到事件驱动方案，需设计验证
@@ -727,6 +786,7 @@ issues:
     labels_seen:
     - '[Maintainer] task'
     comments_seen: 0
+    created_at: '2026-08-17T22:42:32Z'
   '1414':
     difficulty: 困难
     summary: 节点创建事件需补充工具模型信息，设计导向、范围未定
@@ -738,6 +798,7 @@ issues:
     labels_seen:
     - '[Maintainer] feature'
     comments_seen: 0
+    created_at: '2026-08-17T22:46:47Z'
   '1415':
     difficulty: 中等
     summary: 为 ctrl+c 中断注册信号处理器，发送终止事件并刷新
@@ -751,6 +812,7 @@ issues:
     labels_seen:
     - area:core
     comments_seen: 1
+    created_at: '2026-08-17T23:05:58Z'
   '1425':
     difficulty: 中等
     summary: 把 verifier 决策结构化为可观测性事件而非日志
@@ -765,6 +827,7 @@ issues:
     - area:add-on
     - area:visualizer
     comments_seen: 1
+    created_at: '2026-08-18T18:18:31Z'
   '1430':
     difficulty: 中等
     summary: LLM finish_reason 被丢弃，max token 截断时返回空串
@@ -778,6 +841,7 @@ issues:
     labels_seen:
     - area:llm
     comments_seen: 1
+    created_at: '2026-08-18T20:32:04Z'
   '1431':
     difficulty: 中等
     summary: 在 LLM 响应/历史对象中透出 thinking tokens
@@ -791,6 +855,7 @@ issues:
     labels_seen:
     - area:llm
     comments_seen: 0
+    created_at: '2026-08-18T20:40:01Z'
   '1433':
     difficulty: 简单
     summary: 成本计算纳入 cache hit 折扣 token，显著提升准确度
@@ -806,6 +871,7 @@ issues:
     - '[Maintainer] task'
     - good first issue
     comments_seen: 1
+    created_at: '2026-08-18T20:46:21Z'
   '1435':
     difficulty: 中等
     summary: railtracks 导入时全局修改 litellm 参数，应局部化
@@ -819,6 +885,7 @@ issues:
     labels_seen:
     - '[Maintainer] task'
     comments_seen: 0
+    created_at: '2026-08-18T21:05:40Z'
   '1446':
     difficulty: 中等
     summary: 新增 context 创建/读写/完成四类可观测事件
@@ -831,6 +898,7 @@ issues:
     labels_seen:
     - area:core
     comments_seen: 0
+    created_at: '2026-08-19T16:41:28Z'
   '1451':
     difficulty: 中等
     summary: skill 安装从单文件改为目录，元数据从磁盘 SKILL.md 派生
@@ -843,6 +911,7 @@ issues:
     labels_seen:
     - kind:tracking
     comments_seen: 0
+    created_at: '2026-08-20T02:01:11Z'
   '1454':
     difficulty: 困难
     summary: 节点创建时发布静态边检测事件，作为可视化结构图
@@ -854,6 +923,7 @@ issues:
     labels_seen:
     - '[Maintainer] task'
     comments_seen: 0
+    created_at: '2026-08-20T17:56:55Z'
   '1456':
     difficulty: 困难
     summary: 重试时切换/降级 LLM 模型的 router 式接口，需设计审批
@@ -864,6 +934,7 @@ issues:
     title: LLM swap and config adjustment on retry
     labels_seen: []
     comments_seen: 4
+    created_at: '2026-08-20T18:01:29Z'
   '1458':
     difficulty: 中等
     summary: from __future__ import annotations 下工具参数 schema 静默退化为 object
@@ -877,6 +948,7 @@ issues:
     labels_seen:
     - area:core
     comments_seen: 0
+    created_at: '2026-08-20T18:09:32Z'
   '1462':
     difficulty: 简单
     summary: publisher 关闭后任务仍发布导致 RuntimeError，需条件保护
@@ -889,6 +961,7 @@ issues:
     labels_seen:
     - area:core
     comments_seen: 2
+    created_at: '2026-08-20T18:49:53Z'
   '1463':
     difficulty: 中等
     summary: 重构超长文件 _litellm_wrapper.py 及测试，抽公共逻辑
@@ -901,6 +974,7 @@ issues:
     labels_seen:
     - '[Maintainer] task'
     comments_seen: 0
+    created_at: '2026-08-20T18:54:12Z'
   '1468':
     difficulty: 中等
     summary: MessageHistory/消息对象支持 JSON 序列化与反序列化加载
@@ -914,6 +988,7 @@ issues:
     labels_seen:
     - '[Maintainer] task'
     comments_seen: 0
+    created_at: '2026-08-20T19:52:06Z'
   '1471':
     difficulty: 困难
     summary: 优化框架导入时间，需重构大量动态导入，收益明确但工程量大
@@ -928,6 +1003,7 @@ issues:
     labels_seen:
     - tech debt
     comments_seen: 1
+    created_at: '2026-08-20T22:55:45Z'
   '1474':
     difficulty: 中等
     summary: 为 ticket/PR 设置最长停留时长并自动延期机制，属流程规范类
@@ -941,6 +1017,7 @@ issues:
     labels_seen:
     - tech debt
     comments_seen: 0
+    created_at: '2026-08-20T23:29:50Z'
   '1488':
     difficulty: 困难
     summary: 提供开箱即用的终端 Assistant 模块，是较大新功能设计
@@ -953,6 +1030,7 @@ issues:
     title: Command Line Assistant Module
     labels_seen: []
     comments_seen: 0
+    created_at: '2026-08-25T18:30:54Z'
   '1496':
     difficulty: 中等
     summary: 给 InputGuard 加 once 开关避免每次工具循环重复触发，方案已明确
@@ -968,6 +1046,7 @@ issues:
     labels_seen:
     - '[Maintainer] task'
     comments_seen: 0
+    created_at: '2026-08-26T00:34:03Z'
   '1503':
     difficulty: 中等
     summary: visualizer 增加 AI 输入/输出的 markdown raw/preview 切换，范围明确的前端增强
@@ -981,6 +1060,7 @@ issues:
     labels_seen:
     - '[Maintainer] task'
     comments_seen: 1
+    created_at: '2026-08-27T18:33:17Z'
   '1509':
     difficulty: 中等
     summary: 统一错误类的 reason/message 术语并上提 notes+reason 到 RTError，需设计决策
@@ -994,6 +1074,7 @@ issues:
     labels_seen:
     - '[Maintainer] task'
     comments_seen: 0
+    created_at: '2026-08-27T21:38:18Z'
   '1534':
     difficulty: 简单
     summary: 删除 legacy 安装检测代码，前置条件已满足，范围清晰的清理任务
@@ -1008,6 +1089,7 @@ issues:
     labels_seen:
     - area:docs
     comments_seen: 1
+    created_at: '2026-09-03T00:30:47Z'
   '1538':
     difficulty: 中等
     summary: 预置中间件未参数化泛型导致 mypy 类型坍缩，根因已定位
@@ -1042,6 +1124,7 @@ issues:
     - good first issue
     - help wanted
     comments_seen: 0
+    created_at: '2026-09-08T18:44:39Z'
   '1562':
     difficulty: 中等
     summary: 'Tool.from_function 把未映射类型静默降级为 object，绕过 #1552 严格校验'
@@ -1060,6 +1143,7 @@ issues:
     - good first issue
     - help wanted
     comments_seen: 2
+    created_at: '2026-09-10T22:21:37Z'
   '1572':
     difficulty: 困难
     summary: 通过环境上下文暴露当前节点/flow 元数据，需架构设计的新能力
@@ -1075,6 +1159,7 @@ issues:
       context (rt.context.get_current_node())'
     labels_seen: []
     comments_seen: 0
+    created_at: '2026-09-15T22:51:07Z'
   '1573':
     difficulty: 简单
     summary: '`railtracks add --force` 前置位置解析顺序 bug，定位明确的 CLI 修复'
@@ -1088,6 +1173,7 @@ issues:
     labels_seen:
     - area:core
     comments_seen: 0
+    created_at: '2026-09-15T23:43:30Z'
   '1574':
     difficulty: 中等
     summary: 内部调用路径的 Session 触发 flow_name 警告，误扰正常用户
@@ -1102,6 +1188,7 @@ issues:
     labels_seen:
     - area:core
     comments_seen: 0
+    created_at: '2026-09-18T00:02:56Z'
   '1576':
     difficulty: 困难
     summary: OpenAI Responses-API reasoning_items 支持，前置依赖未就绪
@@ -1115,6 +1202,7 @@ issues:
     labels_seen:
     - area:llm
     comments_seen: 0
+    created_at: '2026-09-18T21:20:59Z'
   '1577':
     difficulty: 简单
     summary: websearch 文档页缺 optional extra 安装说明，纯文档补全
@@ -1131,6 +1219,7 @@ issues:
     - good first issue
     - help wanted
     comments_seen: 0
+    created_at: '2026-09-18T21:50:14Z'
   '1581':
     difficulty: 中等
     summary: Union处理错误放宽required，修复明确且影响函数调用正确性
@@ -1143,6 +1232,7 @@ issues:
     title: Optional[X] with no default is reported as not required
     labels_seen: []
     comments_seen: 0
+    created_at: '2026-09-22T20:10:14Z'
   '1582':
     difficulty: 中等
     summary: 异构元组需改用prefixItems按位约束，修法明确但涉及schema版本兼容
@@ -1155,6 +1245,7 @@ issues:
     title: Heterogeneous tuples do not constrain element position
     labels_seen: []
     comments_seen: 0
+    created_at: '2026-09-22T20:10:26Z'
   '1584':
     difficulty: 中等
     summary: 聚合SUM掩盖未定价调用的null成本，与已修的单行端点行为不一致，站点明确
@@ -1167,5 +1258,23 @@ issues:
     title: Aggregate cost SUMs (sessions/nodes) silently drop unresolved-cost calls,
       unlike the fixed row-level endpoint
     labels_seen:
+    - area:visualizer
+    comments_seen: 0
+    created_at: '2026-09-22T21:08:43Z'
+  '1588':
+    difficulty: 中等
+    summary: 将 viz 中间件失败匹配从异常消息改为异常 id，避免误匹配
+    problem: viz 中间件表用异常 message 判断是阻断还是仅被打断，消息相同会导致误判。大概率在 `cli/viz_api/queries/middleware.py`
+      的 `raised_here` 判定逻辑，需追踪 `callee_failures` 数据结构是否已携带异常 id/类型信息（未核实），可能需上游记录点配合。
+    plan: '在异常记录处附带异常标识（类型名或唯一 id）并持久化到 session 数据，查询时按 id 匹配替代 message 匹配；若数据层无此字段则需小范围跨层改动。工作量小时级；风险：数据结构变更影响历史
+      session 兼容性与 #1569 修复逻辑回归。（工作量级：小时级）'
+    analyzed_at: '2026-09-25'
+    title: 'viz: match middleware failures by exception id, not message'
+    created_at: '2026-09-24T18:03:04Z'
+    last_status: open
+    status_changed_at: '2026-09-25T02:05:40+08:00'
+    labels_seen:
+    - area:add-on
+    - area:core
     - area:visualizer
     comments_seen: 0
