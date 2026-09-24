@@ -1,9 +1,8 @@
 repo: RailtownAI/railtracks
 last_synced: b28115bdb80a558aec3b1bbedd3e9145e41e6d4a
-last_mode: init
-summary: 首次建档：railtracks 为纯 Python 组装式 agent 框架（Node/Flow/双层中间件/MCP/retrieval/evaluations），基线
-  b28115b，无历史 diff，重点盯防 MaxCalls 槽位与 shell 非沙箱风险。
-updated_at: '2026-09-25T00:35:27+08:00'
+last_mode: incremental
+summary: 雷达：机会 48（新 0）· 被占 26 · 困难 19 · 池内动态 14
+updated_at: '2026-09-25T01:12:06+08:00'
 last_release_tag: v1.5.4
 last_issue_number: 1584
 last_pr_number: 1583

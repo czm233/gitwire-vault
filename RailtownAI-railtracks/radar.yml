@@ -1,4 +1,4 @@
-last_sweep: '2026-09-25T00:35:27+08:00'
+last_sweep: '2026-09-25T01:12:01+08:00'
 issues:
   '486':
     difficulty: 困难
@@ -7,6 +7,9 @@ issues:
     plan: 先做后端索引（docs+代码库），再用现有 MCP 能力暴露问答/检索工具，最后部署。周级。风险：范围过大、检索质量难以评估、需求未收敛。
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: '[Feature] Documentation App'
+    labels_seen: []
+    comments_seen: 0
   '853':
     difficulty: 困难
     summary: MCP 协议补全缺失能力，量大且涉及协议设计
@@ -16,6 +19,9 @@ issues:
       客户端。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Feature] Support for all of MCP features'
+    labels_seen: []
+    comments_seen: 0
   '873':
     difficulty: 简单
     summary: Context 用法文档前置，纯文档改动，适合入门
@@ -23,6 +29,12 @@ issues:
     plan: '在核心文档显眼处新增/改写 Context 使用章节，补充示例。小时级。风险：低，仅需与 #933 相关变更保持一致（未核实）。'
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Docs] Unclear Usage of Context'
+    labels_seen:
+    - area:docs
+    - good first issue
+    - help wanted
+    comments_seen: 1
   '881':
     difficulty: 中等
     summary: docstring 多格式解析，范围明确需改解析逻辑
@@ -30,6 +42,13 @@ issues:
     plan: 引入 docstring 解析库（如 docstring_parser）或自写多格式解析器，替换现有硬编码。天级。风险：解析歧义、需补全测试覆盖。
     analyzed_at: '2026-09-25'
     last_status: taken-pr
+    title: '[Feature] Add Support for non-google docstring formats'
+    pr_claims:
+    - 1452
+    labels_seen:
+    - good first issue
+    - help wanted
+    comments_seen: 0
   '940':
     difficulty: 简单
     summary: BYFA/RYFA 教程叙事重构，纯文档改写
@@ -37,6 +56,12 @@ issues:
     plan: '重新组织章节层级与引导路径，统一与 #933 的新结构。小时到天级。风险：低。'
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Docs] Update BYFA/RYFA to be a bit better in terms of narrative structure'
+    labels_seen:
+    - area:docs
+    - good first issue
+    - help wanted
+    comments_seen: 1
   '947':
     difficulty: 中等
     summary: LLM 子模块独立 logger 配置，单模块日志改造
@@ -44,6 +69,12 @@ issues:
     plan: 在 LLM 封装层统一替换为 RT 子 logger，配置 handler/formatter，检查现有日志调用点。天级。风险：低，注意日志格式变更对下游解析的影响。
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: '[Tech Debt] LLM submodule needs its own loggers'
+    labels_seen:
+    - area:core
+    - area:llm
+    - tech debt
+    comments_seen: 1
   '1004':
     difficulty: 困难
     summary: 多种 Agent 架构文档父票，范围未定信息不足
@@ -51,6 +82,12 @@ issues:
     plan: 等子任务拆分后逐项处理；父票本身可先建目录骨架。周级（整体）。风险：范围蔓延、依赖框架能力尚未实现。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Docs] Implement Various Agent Architectures'
+    labels_seen:
+    - area:docs
+    - good first issue
+    - help wanted
+    comments_seen: 3
   '1014':
     difficulty: 中等
     summary: 评估指标增加 shots/examples 支持，DX 设计待定
@@ -59,6 +96,11 @@ issues:
     plan: 扩展 Categorical 等指标类增加 shots 字段并注入提示词，正文方案截断、DX 待定稿。天级。风险：提示词设计影响评分稳定性，需实验。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Feature] Evaluation Shots/Examples/Rubric'
+    labels_seen:
+    - area:evaluations
+    - help wanted
+    comments_seen: 1
   '1053':
     difficulty: 简单
     summary: 长度护栏 Guardrail，接口已定范围明确
@@ -66,6 +108,10 @@ issues:
     plan: 实现 InputLengthGuard（首版按字符数截断/拒绝），补测试与文档。天级。风险：低；长度单位（字符/词/token）后续需迭代。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Feature] Add Length Requirement Guardrail'
+    labels_seen:
+    - help wanted
+    comments_seen: 0
   '1065':
     difficulty: 中等
     summary: 被拦截护栏的重试机制，需设计决策
@@ -73,6 +119,10 @@ issues:
     plan: 增加重试策略参数（次数/回退动作），在流程层捕获 blocked 错误后按策略重试。天级。风险：与错误语义兼容、避免死循环。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Feature] `retry` mechanism for blocked guardrail decisions'
+    labels_seen:
+    - area:add-on
+    comments_seen: 0
   '1114':
     difficulty: 简单
     summary: 文档语法内容修缺父票，长期跟踪，零散小改
@@ -80,6 +130,12 @@ issues:
     plan: 按评论中反馈逐项小修，大项另开票，引用本票为参考。小时级/项。风险：低；注意父票按约定不关闭。
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: '[Docs][Feature] Minor Doc Grammar and content fixes'
+    labels_seen:
+    - area:docs
+    - kind:tracking
+    - tech debt
+    comments_seen: 13
   '1131':
     difficulty: 困难
     summary: RetrievalRuntime 替换 RAGConfig，架构级重设计
@@ -88,6 +144,12 @@ issues:
     plan: 需先出运行时接口设计（检索/存储时机由 agent 或开发者控制），再迁移替换。周级。风险：API 破坏性变更、与现有 RAG 用户不兼容。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Feature] [Retrieval] Integration of `RetrievalRuntime` inside `railtracks`'
+    labels_seen:
+    - area:add-on
+    - area:retrieval
+    - status:stale
+    comments_seen: 1
   '1142':
     difficulty: 困难
     summary: LLM 层缓存式上下文压缩，跨模块且依赖未完成项
@@ -95,6 +157,11 @@ issues:
     plan: 在 LLM wrapper 层加压缩中间件，按缓存键（消息前缀哈希）复用摘要结果。周级。风险：依赖未落地、缓存失效策略、摘要成本与一致性。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Feature] Implement cached memory compression at the LLM level'
+    labels_seen:
+    - area:add-on
+    - area:core
+    comments_seen: 0
   '1145':
     difficulty: 困难
     summary: 默认插件批量父票，范围未拆分信息不足
@@ -102,6 +169,10 @@ issues:
     plan: 按表格逐类拆子票后逐项实现；单项多为天级。周级（整体）。风险：清单不完整、各插件接口依赖 add-on 框架成熟度。
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: '[Feature] General Issue for Supported Add Ons'
+    labels_seen:
+    - kind:tracking
+    comments_seen: 1
   '1150':
     difficulty: 简单
     summary: 存储层批量写入 EmbeddedChunk，接口扩展明确
@@ -109,6 +180,11 @@ issues:
     plan: 在存储接口增加 batch write 方法并逐后端实现（可先串行批量），补测试。天级。风险：低，注意事务/部分失败语义。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Feature] [Retrieval] Batch write for stores'
+    labels_seen:
+    - area:retrieval
+    - help wanted
+    comments_seen: 0
   '1156':
     difficulty: 困难
     summary: 用 system message 自动生成 agent manifest，自动化程度需设计决策
@@ -118,6 +194,11 @@ issues:
       行为。（工作量级：周级，风险：推断质量与向后兼容）
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: '[Feature]  Auto populate agent manifest by ingesting system message.'
+    labels_seen:
+    - area:core
+    - status:blocked
+    comments_seen: 4
   '1160':
     difficulty: 中等
     summary: 把 pdoc API 参考嵌入主文档站，提升一致性
@@ -125,6 +206,10 @@ issues:
     plan: 将 pdoc 生成的 HTML 以 iframe/子页面方式挂载，保留外链入口；涉及文档构建流程。（工作量级：天级，风险：样式与路由兼容）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Docs] Prefer if api_reference lives under main doc site'
+    labels_seen:
+    - area:docs
+    comments_seen: 0
   '1167':
     difficulty: 简单
     summary: HF 数据集所有行 id 相同，破坏 upsert 语义
@@ -132,6 +217,12 @@ issues:
     plan: id 生成中拼接行索引或数据集行 hash；改动局限在单个 loader。（工作量级：小时级，风险：低）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Bug] [Retrieval] same `id` for all rows in `HuggingFaceDatasetLoader`'
+    labels_seen:
+    - area:retrieval
+    - good first issue
+    - help wanted
+    comments_seen: 0
   '1172':
     difficulty: 中等
     summary: 将 _Session 等内部类标记为 internal，防误用
@@ -139,6 +230,10 @@ issues:
     plan: 用模块前移/`__all__` 收紧导出、类型别名或运行时警告/私有协议封装；需平衡兼容性。（工作量级：天级，风险：破坏依赖这些类的下游路径）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Feature]  Define certain class as internal'
+    labels_seen:
+    - area:core
+    comments_seen: 1
   '1173':
     difficulty: 中等
     summary: 新增 Turbovec 向量后端集成
@@ -147,6 +242,12 @@ issues:
       项目成熟度未知）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Feature] [Retrieval] Add `Turbovec` to our stores Integration'
+    labels_seen:
+    - area:integrations
+    - area:retrieval
+    - help wanted
+    comments_seen: 0
   '1179':
     difficulty: 简单
     summary: 为文档核心术语定义 glossary 并互链
@@ -154,6 +255,14 @@ issues:
     plan: 新增术语表页，全文给关键术语加链接；纯文档工作。（工作量级：小时级~天级，风险：低）
     analyzed_at: '2026-09-25'
     last_status: taken-pr
+    title: '[Docs] Define of keywords'
+    pr_claims:
+    - 1566
+    labels_seen:
+    - area:docs
+    - good first issue
+    - help wanted
+    comments_seen: 0
   '1184':
     difficulty: 中等
     summary: ingest 逐 chunk 单次写库，需增加批量写接口
@@ -162,6 +271,11 @@ issues:
       runtime；跨多文件但接口清晰。（工作量级：天级，风险：失败批次的原子性/重试语义）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Perf] [Retrieval] Ingest issues one store round-trip per chunk — add
+      bulk writes'
+    labels_seen:
+    - tech debt
+    comments_seen: 0
   '1185':
     difficulty: 中等
     summary: 用户 metadata 可覆盖保留 payload 键导致数据损坏
@@ -170,6 +284,11 @@ issues:
     plan: 保留键保护（前缀化或 update 顺序反转+冲突拒绝/警告）；逻辑集中在 base.py。（工作量级：小时级~天级，风险：需处理存量数据兼容）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Bug] [Retrieval] User chunk metadata can overwrite reserved payload keys
+      (content, document_id, ...)'
+    labels_seen:
+    - area:retrieval
+    comments_seen: 0
   '1186':
     difficulty: 中等
     summary: Chroma 后端 chunk 内容双份存储，浪费成本
@@ -177,6 +296,11 @@ issues:
     plan: 二选一：payload 去 content 改由 documents 读回，或去掉 documents；需同步改动 chroma.py 读写两侧。（工作量级：天级，风险：迁移期旧数据双格式兼容）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Perf] [Retrieval] Chroma backend stores chunk content twice (documents
+      + metadata payload)'
+    labels_seen:
+    - tech debt
+    comments_seen: 0
   '1187':
     difficulty: 困难
     summary: 部分失败的重新 ingest 会删掉旧好版本
@@ -184,6 +308,11 @@ issues:
     plan: 先写临时/影子条目，全部成功后原子切换删除旧版；涉及写入协议与陈旧性判断联动。（工作量级：周级，风险：无跨文档事务能力下实现原子切换困难）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Bug] [Retrieval] Partially-failed re-ingest deletes the prior good version
+      of a document'
+    labels_seen:
+    - area:retrieval
+    comments_seen: 1
   '1193':
     difficulty: 困难
     summary: 用户 context 是无锁普通 dict，并发不安全
@@ -192,6 +321,10 @@ issues:
     plan: 替换为锁保护的映射或 copy-on-write 语义；涉及核心 context 模块与性能取舍。（工作量级：周级，风险：性能影响与语义兼容）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Bug] Context variable dict is not concurrency safe'
+    labels_seen:
+    - area:core
+    comments_seen: 0
   '1203':
     difficulty: 中等
     summary: 新增 Thoughts 工具：脑洞/键值/向量三种暂存草稿
@@ -200,6 +333,11 @@ issues:
       memory 概念边界模糊）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Feature] Thoughts Tool'
+    labels_seen:
+    - area:add-on
+    - help wanted
+    comments_seen: 0
   '1204':
     difficulty: 困难
     summary: 文件系统工具：受控文件/shell 操作，设计问题未决
@@ -207,6 +345,11 @@ issues:
     plan: 需先做安全模型设计（允许路径/命令白名单、沙箱），再实现受控端点。（工作量级：周级，风险：任意 shell 执行的安全风险高）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Feature] File System Tool'
+    labels_seen:
+    - area:add-on
+    - help wanted
+    comments_seen: 0
   '1209':
     difficulty: 中等
     summary: pgvector 后端把所有 metadata 塞单 payload 列
@@ -214,6 +357,11 @@ issues:
     plan: schema 增加保留列并拆分写读路径，或引入生成列/视图；涉及迁移（未核实现有建表代码位置）。（工作量级：天级，风险：存量数据迁移与查询兼容）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Tech Debt] Current Pgvector Backend throws all metadata to a single payload
+      dict'
+    labels_seen:
+    - tech debt
+    comments_seen: 0
   '1216':
     difficulty: 困难
     summary: 键值存储后端支持（tracking issue，无具体范围）
@@ -221,6 +369,10 @@ issues:
     plan: 需先明确支持哪些 KV（Redis 等）及接口映射，再按 VectorBackend 模式实现。（工作量级：周级，风险：范围不清，接口设计未定）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Feature] Store Backends for Key-Value Stores'
+    labels_seen:
+    - kind:tracking
+    comments_seen: 0
   '1217':
     difficulty: 困难
     summary: 全链路思考块支持，跨流式/解析/序列化架构级改造
@@ -230,6 +382,12 @@ issues:
       provider 差异与向后兼容。'
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: '[Feature] [Middleware] Thinking model support — streaming, storage, and
+      round-tripping of reasoning blocks'
+    labels_seen:
+    - area:llm
+    - kind:tracking
+    comments_seen: 1
   '1223':
     difficulty: 简单
     summary: 给预构建工具打标签以便可视化器区分展示
@@ -237,6 +395,10 @@ issues:
     plan: 在工具定义处添加 tag 字段并序列化到 json，visualizer 侧映射图标；范围小（小时级），风险仅在与 visualizer 团队约定的字段格式。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Feature] Prebuilt Tool Tags'
+    labels_seen:
+    - area:visualizer
+    comments_seen: 1
   '1228':
     difficulty: 简单
     summary: JSON 存储改 UTF-16 以下提升人类/代理可读性
@@ -245,6 +407,10 @@ issues:
     plan: 序列化处改 ensure_ascii=False 并统一编码声明（小时级）；风险极低，仅需确认 visualizer 解码兼容。
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: '[Feature] Json should store in UTF-16 instead of ASC-II'
+    labels_seen:
+    - area:core
+    comments_seen: 2
   '1233':
     difficulty: 困难
     summary: 预构建工具集（内存/文件/TODO/搜索），tracking 票范围大
@@ -252,6 +418,10 @@ issues:
     plan: 按各工具集拆分子 issue 逐个实现（周级）；风险为 API 设计决策与跨仓协调，需先拆解再评估。
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: Prebuilt Tools
+    labels_seen:
+    - kind:tracking
+    comments_seen: 4
   '1239':
     difficulty: 困难
     summary: 可观测性重构为事件流，架构级替换现有状态导出
@@ -259,6 +429,10 @@ issues:
     plan: 先设计事件 schema 与发布/消费接口，再渐进迁移并保持向后兼容（周级）；风险是破坏现有 visualizer 数据读取。
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: Rethinking observability into an events stream
+    labels_seen:
+    - kind:tracking
+    comments_seen: 0
   '1248':
     difficulty: 中等
     summary: 引入 ModelRequest 类型统一模型调用入参
@@ -267,6 +441,11 @@ issues:
     plan: 定义类型、改 ModelInvoker 签名并迁移调用点，注意向后兼容（天级）；风险在现有 wrapper（@after 等）适配。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Create a ModelRequest type
+    labels_seen:
+    - area:core
+    - area:llm
+    comments_seen: 2
   '1251':
     difficulty: 中等
     summary: viz 命令 --dir 标志形式化并修复子目录感知 bug
@@ -274,6 +453,11 @@ issues:
     plan: CLI 层改 flag + 修 get_data_dir 的 subdir 逻辑 + 递归 glob（小时级）；风险低，注意向后兼容旧位置参数。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: 'viz command: formalize --dir flag and add subdirectory awareness for custom
+      data paths'
+    labels_seen:
+    - area:visualizer
+    comments_seen: 2
   '1265':
     difficulty: 困难
     summary: HIL 人机协同作为节点中间件，父票含设计决策
@@ -282,6 +466,11 @@ issues:
     plan: 先实现通用 verifier 中间件，再派生 HIL 特化模块（周级）；风险在异常/反馈语义（接受/拒绝+评论）设计。
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: Implement Naive Human in the loop
+    labels_seen:
+    - area:add-on
+    - kind:tracking
+    comments_seen: 0
   '1266':
     difficulty: 中等
     summary: 通用验证器中间件：callable 校验节点输入并抛异常
@@ -289,6 +478,10 @@ issues:
     plan: 在现有中间件体系注册 verifier 类型，定义异常类型（天级）；风险为四态返回（接受/拒绝±评论）会扩大异常契约，建议先做 bool 版。
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: General Verifier
+    labels_seen:
+    - kind:tracking
+    comments_seen: 0
   '1306':
     difficulty: 中等
     summary: ScopeGuard 护栏拦截超出范围的提问
@@ -297,6 +490,11 @@ issues:
     plan: 实现 ScopeGuard 预构建护栏 + 测试 + demo（天级）；风险在 sensitivity 分级语义与 prompt 设计效果。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Build a Guardrail for Work Scope
+    labels_seen:
+    - '[Maintainer] task'
+    - help wanted
+    comments_seen: 0
   '1316':
     difficulty: 简单
     summary: 改进自定义函数作为工具的文档说明
@@ -304,6 +502,10 @@ issues:
     plan: 重构文档结构、明确 declare vs invoke 时机并列举扩展参数（小时级）；风险无。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Improve instruction for using custom function as tool
+    labels_seen:
+    - area:docs
+    comments_seen: 0
   '1320':
     difficulty: 中等
     summary: 附件在消息中的位置交错，媒体块位置信息丢失
@@ -311,6 +513,10 @@ issues:
     plan: 解析内容结构按原始顺序插入块而非尾部追加（小时级到天级）；风险在各 provider 对 interleaved 格式支持不一。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Attachment location interleaving
+    labels_seen:
+    - '[Maintainer] task'
+    comments_seen: 0
   '1321':
     difficulty: 困难
     summary: 大附件走文件 API 自动上传，跨层功能
@@ -318,6 +524,11 @@ issues:
     plan: 附件封装层检测大小阈值→上传→引用替换（天级到周级）；风险为各 provider files API 不一致与上传失败处理。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Attachment through file API
+    labels_seen:
+    - area:core
+    - area:llm
+    comments_seen: 0
   '1343':
     difficulty: 困难
     summary: 编码助手支持全面评估与改进，研究+实现混合票
@@ -325,6 +536,11 @@ issues:
     plan: 先做竞品调研与分析报告，再拆实现子票（周级）；风险在“改进”无明确验收标准，需先定义。
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: Thorough Review of Coding Assistant support
+    labels_seen:
+    - area:integrations
+    - kind:tracking
+    comments_seen: 2
   '1347':
     difficulty: 困难
     summary: 富媒体支持 Epic，多方向大范围架构工作
@@ -332,6 +548,11 @@ issues:
     plan: '逐方向拆子 issue（与 #1321 等关联），分阶段实现（周级到月级）；风险为范围蔓延，需明确 MVP 边界。'
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: '[Epic] Rich media support'
+    labels_seen:
+    - area:add-on
+    - kind:tracking
+    comments_seen: 0
   '1348':
     difficulty: 困难
     summary: 让工具原生返回富内容，需重构类型与调用链，架构级改动
@@ -340,6 +561,10 @@ issues:
     plan: 扩展 ToolResponse 为多模态内容块类型，调用链透传至 provider content parts；需废弃 token hack 并保持向后兼容。（工作量级：周级）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: 'Let tools return rich content (ie: images) natively'
+    labels_seen:
+    - '[Maintainer] task'
+    comments_seen: 0
   '1349':
     difficulty: 中等
     summary: Attachment 支持音频/视频/文件模态，单模块功能扩展
@@ -348,6 +573,11 @@ issues:
     plan: Attachment 增加模态字段 + MIME 推断 + 各 provider 适配层扩展；需多 provider 验证。（工作量级：天级）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Non-image attachments on UserMessage (audio, video, file)
+    labels_seen:
+    - area:core
+    - area:llm
+    comments_seen: 0
   '1353':
     difficulty: 中等
     summary: OpenAI 格式无损导入导出 API，范围明确
@@ -356,6 +586,10 @@ issues:
     plan: 实现序列化/反序列化方法并补全 adapter 对 tool_calls 的往返映射；可选扩展其他格式。（工作量级：天级）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Serializable transcript / history export/input from popular formats
+    labels_seen:
+    - '[Maintainer] task'
+    comments_seen: 0
   '1354':
     difficulty: 中等
     summary: 通用 token 估算器，范围清晰但需选型设计
@@ -363,6 +597,10 @@ issues:
     plan: 封装通用估算器（tiktoken/估算 fallback），接入 guardrails 与 MessageInfo；需 API 设计决策。（工作量级：天级）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Token estimator
+    labels_seen:
+    - '[Maintainer] task'
+    comments_seen: 0
   '1355':
     difficulty: 困难
     summary: 清除 539 个 Pyright 错误，量大且需逐一定位
@@ -370,6 +608,10 @@ issues:
     plan: 按模块分批修类型标注/抑制，收紧 pyright 配置；机械但量大，需防止引入行为变更。（工作量级：周级）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: High Pyright formatting Error numbers
+    labels_seen:
+    - '[Maintainer] task'
+    comments_seen: 0
   '1356':
     difficulty: 中等
     summary: 统一 LLM 子类初始化接口与 from_string 工厂
@@ -377,6 +619,10 @@ issues:
     plan: 定义统一基类参数契约，实现 rt.llm.from_string()，替换映射与回退逻辑；属破坏性 API 调整需迁移。（工作量级：天级）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Non-Uniform Provider Initialization & Model String Mapping
+    labels_seen:
+    - '[Maintainer] task'
+    comments_seen: 0
   '1357':
     difficulty: 中等
     summary: 让 Agent 响应暴露工具调用信息，需接口设计决策
@@ -384,6 +630,11 @@ issues:
     plan: 在 LLMResponse 增加类参数或上下文变量承载调用轨迹；需设计决策（信息不足：具体数据结构未定）。（工作量级：天级）
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: Agent response do not include tool calls.
+    labels_seen:
+    - area:core
+    - area:llm
+    comments_seen: 1
   '1362':
     difficulty: 困难
     summary: 重实现结构化工具调用 LLM，此前被移除、信息不足
@@ -391,6 +642,10 @@ issues:
     plan: 需先与维护者确认设计（结构化输出 + tool 调用组合方式），再实现 agent 级能力。（工作量级：周级）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Reimplement Structured Tool Calling LLM
+    labels_seen:
+    - '[Maintainer] task'
+    comments_seen: 0
   '1375':
     difficulty: 中等
     summary: 清理文档页重复与命名冲突，量大但机械
@@ -398,6 +653,11 @@ issues:
     plan: 去重、合并分片文章、整理导航命名并加重定向；纯文档工作但需仔细盘点。（工作量级：天级）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: '[Documentation] Doc page content and naming duplications'
+    labels_seen:
+    - '[Maintainer] task'
+    - area:docs
+    comments_seen: 1
   '1381':
     difficulty: 简单
     summary: 添加 llms.txt / llms-full.txt，范围明确的文档任务
@@ -405,6 +665,12 @@ issues:
     plan: 按 llms.txt 规范写概览、链接文档与资源；llms-full.txt 可脚本聚合。（工作量级：小时级）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Add llms.txt / llms-full.txt
+    labels_seen:
+    - area:docs
+    - good first issue
+    - help wanted
+    comments_seen: 0
   '1393':
     difficulty: 简单
     summary: 坏 schema 报错不友好，已在手的明确小修
@@ -412,6 +678,11 @@ issues:
     plan: 在 schema 构建处做 pydantic 校验/预检，抛出带原因的本地异常；已 assignee。（工作量级：小时级）
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: More insightful error message for bad schema
+    labels_seen:
+    - bug
+    - good first issue
+    comments_seen: 1
   '1395':
     difficulty: 中等
     summary: 为 agent-as-tool 类场景增加 Custom Tools 抽象
@@ -419,6 +690,10 @@ issues:
     plan: 新增 custom tool 类型，允许自由文本输入输出并适配 provider 请求格式；需 API 设计。（工作量级：天级）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Provide even further tool abstraction
+    labels_seen:
+    - '[Maintainer] task'
+    comments_seen: 0
   '1398':
     difficulty: 中等
     summary: post-init 赋值守卫，涉及大量字段迁移、规范类任务
@@ -426,6 +701,10 @@ issues:
     plan: 短期定规范（frozen/property/_name），新代码遵循；全量迁移需分批（涉及字段范围未核实）。（工作量级：周级（全量）/天级（仅规范））
     analyzed_at: '2026-09-25'
     last_status: open
+    title: post-init assignment guard/docmentation
+    labels_seen:
+    - '[Maintainer] task'
+    comments_seen: 0
   '1409':
     difficulty: 中等
     summary: 成本限额中间件，设计已有雏形的功能
@@ -433,6 +712,10 @@ issues:
     plan: 实现成本追踪器 + 中间件，在调用前后累计 token 费用并超限中断；依赖 usage 数据已有（response.message_info）。（工作量级：天级）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Cost Limiting Middleware
+    labels_seen:
+    - '[Maintainer] task'
+    comments_seen: 1
   '1413':
     difficulty: 中等
     summary: 彩色日志迁移到事件驱动方案，需设计验证
@@ -440,6 +723,10 @@ issues:
     plan: 基于现有 events 重新设计日志渲染层，对比旧输出补齐缺失信息并与团队验证。（工作量级：天级）
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Migrate Current Colourful Logging to use Events Approach
+    labels_seen:
+    - '[Maintainer] task'
+    comments_seen: 0
   '1414':
     difficulty: 困难
     summary: 节点创建事件需补充工具模型信息，设计导向、范围未定
@@ -447,6 +734,10 @@ issues:
     plan: 先设计阶段产出 dashboard 字段清单，再实现事件发送并测试。涉及事件管道、节点元数据、UI 多处协作（工作量级：周级）。风险：需求前置依赖维护者决策，易反复返工。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Add Additional Properties to the Node Creation Events
+    labels_seen:
+    - '[Maintainer] feature'
+    comments_seen: 0
   '1415':
     difficulty: 中等
     summary: 为 ctrl+c 中断注册信号处理器，发送终止事件并刷新
@@ -456,6 +747,10 @@ issues:
       与 asyncio 事件循环交互（工作量级：天级）。风险：跨平台信号行为差异、排空超时取值。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Event emission after forced exit
+    labels_seen:
+    - area:core
+    comments_seen: 1
   '1425':
     difficulty: 中等
     summary: 把 verifier 决策结构化为可观测性事件而非日志
@@ -465,6 +760,11 @@ issues:
       schema 设计需兼容现有消费方，建模选型需维护者认可。
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: Emit verifier decisions as observability events
+    labels_seen:
+    - area:add-on
+    - area:visualizer
+    comments_seen: 1
   '1430':
     difficulty: 中等
     summary: LLM finish_reason 被丢弃，max token 截断时返回空串
@@ -474,6 +774,10 @@ issues:
       provider 语义不一致，需处理兼容。
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: LLM finish_reason  is not respected
+    labels_seen:
+    - area:llm
+    comments_seen: 1
   '1431':
     difficulty: 中等
     summary: 在 LLM 响应/历史对象中透出 thinking tokens
@@ -483,6 +787,10 @@ issues:
       provider 格式差异大，历史序列化兼容性。
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: Surface thinking token in LLM response.
+    labels_seen:
+    - area:llm
+    comments_seen: 0
   '1433':
     difficulty: 简单
     summary: 成本计算纳入 cache hit 折扣 token，显著提升准确度
@@ -491,6 +799,13 @@ issues:
       good first issue 契合度。
     analyzed_at: '2026-09-25'
     last_status: taken-pr
+    title: Precise request cost with cache hit info
+    pr_claims:
+    - 1519
+    labels_seen:
+    - '[Maintainer] task'
+    - good first issue
+    comments_seen: 1
   '1435':
     difficulty: 中等
     summary: railtracks 导入时全局修改 litellm 参数，应局部化
@@ -500,6 +815,10 @@ issues:
       部分参数只有全局开关，局部化可能受限，需验证行为等价。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Railtrack should not modify litellm behaviour globally
+    labels_seen:
+    - '[Maintainer] task'
+    comments_seen: 0
   '1446':
     difficulty: 中等
     summary: 新增 context 创建/读写/完成四类可观测事件
@@ -508,6 +827,10 @@ issues:
       实现与现有事件模型不匹配，可能需适配层，schema 需评审。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Context Events
+    labels_seen:
+    - area:core
+    comments_seen: 0
   '1451':
     difficulty: 中等
     summary: skill 安装从单文件改为目录，元数据从磁盘 SKILL.md 派生
@@ -516,6 +839,10 @@ issues:
     plan: 改造 CLI 安装器：读取目录内 SKILL.md frontmatter，复制支持文件，删除硬编码 SKILLS 注册表（工作量级：天级）。风险：向后兼容旧安装方式、元数据解析边界情况；正文被截断，部分细节信息不足（未核实）。
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: 'Skill Infrastructure: Directories Support'
+    labels_seen:
+    - kind:tracking
+    comments_seen: 0
   '1454':
     difficulty: 困难
     summary: 节点创建时发布静态边检测事件，作为可视化结构图
@@ -523,6 +850,10 @@ issues:
     plan: 需先定义静态图如何从节点拓扑推导、事件 schema，再接入发布管道与可视化（工作量级：周级）。风险：动态拓扑的静态近似可能不准，设计未获认可前实现浪费，信息不足。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Static Node Events
+    labels_seen:
+    - '[Maintainer] task'
+    comments_seen: 0
   '1456':
     difficulty: 困难
     summary: 重试时切换/降级 LLM 模型的 router 式接口，需设计审批
@@ -530,6 +861,9 @@ issues:
     plan: 设计 router/retry 接口使中间件可感知并替换模型，需维护者评审后才能编码（工作量级：周级）。风险：涉及 typing、并行安全、日志等横切关注点，方案分歧大，不宜外部直接动手。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: LLM swap and config adjustment on retry
+    labels_seen: []
+    comments_seen: 4
   '1458':
     difficulty: 中等
     summary: from __future__ import annotations 下工具参数 schema 静默退化为 object
@@ -538,6 +872,11 @@ issues:
     plan: 用 typing.get_type_hints 解析函数注解后再映射参数类型，并对无法解析的情况发警告，补回归测试（工作量级：小时级到天级）。风险：前向引用解析失败（未导入类型）需兜底处理。
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: 'Tool schemas silently degrade to `{"type": "object"}` under `from __future__
+      import annotations`'
+    labels_seen:
+    - area:core
+    comments_seen: 0
   '1462':
     difficulty: 简单
     summary: publisher 关闭后任务仍发布导致 RuntimeError，需条件保护
@@ -546,6 +885,10 @@ issues:
     plan: publish 前检查 publisher 运行状态或捕获该异常，考虑是否需要丢弃日志（工作量级：小时级）。风险：低；需确认真实场景下是否应等待而非丢弃。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: 'Logger: RuntimeError on  unretrieved-task'
+    labels_seen:
+    - area:core
+    comments_seen: 2
   '1463':
     difficulty: 中等
     summary: 重构超长文件 _litellm_wrapper.py 及测试，抽公共逻辑
@@ -554,6 +897,10 @@ issues:
       行测试保障回归（工作量级：天级）。风险：重构期间与并行开发冲突，测试本身也需同步拆分。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: 'Long file cleanup: _litellm_wrapper.py'
+    labels_seen:
+    - '[Maintainer] task'
+    comments_seen: 0
   '1468':
     difficulty: 中等
     summary: MessageHistory/消息对象支持 JSON 序列化与反序列化加载
@@ -563,6 +910,10 @@ issues:
       API，补测试（工作量级：天级）。风险：序列化格式是公共 API，需考虑向前兼容与 ToolResponse 内嵌对象（未核实其结构复杂度）。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: MessageHistory serializable and loadable
+    labels_seen:
+    - '[Maintainer] task'
+    comments_seen: 0
   '1471':
     difficulty: 困难
     summary: 优化框架导入时间，需重构大量动态导入，收益明确但工程量大
@@ -573,6 +924,10 @@ issues:
       subtree 需评估是否可延迟或按 provider 拆分。工作量级：周级。风险：动态导入易引发循环导入、API 兼容性（顶层符号暴露）破坏，需完整回归测试。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Optimize framework import time
+    labels_seen:
+    - tech debt
+    comments_seen: 1
   '1474':
     difficulty: 中等
     summary: 为 ticket/PR 设置最长停留时长并自动延期机制，属流程规范类
@@ -582,6 +937,10 @@ issues:
       PR、与现有 bot 冲突、豁免规则难界定。
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: We need a ticket assign max duration or PR open duration
+    labels_seen:
+    - tech debt
+    comments_seen: 0
   '1488':
     difficulty: 困难
     summary: 提供开箱即用的终端 Assistant 模块，是较大新功能设计
@@ -591,6 +950,9 @@ issues:
       设计定型过早、依赖新增、与未来 prebuilt 体系冲突。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Command Line Assistant Module
+    labels_seen: []
+    comments_seen: 0
   '1496':
     difficulty: 中等
     summary: 给 InputGuard 加 once 开关避免每次工具循环重复触发，方案已明确
@@ -602,6 +964,10 @@ issues:
       task 先落地。工作量级：小时级到天级。风险：与 async guard 任务的状态生命周期管理（"本次调用"判定）、默认值兼容性低风险。'
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Let input guards fire once per agent call instead of per model round-trip
+    labels_seen:
+    - '[Maintainer] task'
+    comments_seen: 0
   '1503':
     difficulty: 中等
     summary: visualizer 增加 AI 输入/输出的 markdown raw/preview 切换，范围明确的前端增强
@@ -611,6 +977,10 @@ issues:
       sanitize）、大输出渲染性能、与现有 UI 风格一致性。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Optional markdown render on visualizer
+    labels_seen:
+    - '[Maintainer] task'
+    comments_seen: 1
   '1509':
     difficulty: 中等
     summary: 统一错误类的 reason/message 术语并上提 notes+reason 到 RTError，需设计决策
@@ -620,6 +990,10 @@ issues:
       并保留兼容别名。工作量级：天级。风险：公共 API 破坏性变更，需 deprecation 周期与全量调用点排查。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Args used to throw a new error is not clear.
+    labels_seen:
+    - '[Maintainer] task'
+    comments_seen: 0
   '1534':
     difficulty: 简单
     summary: 删除 legacy 安装检测代码，前置条件已满足，范围清晰的清理任务
@@ -630,6 +1004,10 @@ issues:
       legacy 检测的隐性兼容诉求。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Delete legacy install detection
+    labels_seen:
+    - area:docs
+    comments_seen: 1
   '1538':
     difficulty: 中等
     summary: 预置中间件未参数化泛型导致 mypy 类型坍缩，根因已定位
@@ -640,6 +1018,13 @@ issues:
       参数改用协议/协变包装。工作量级：小时级到天级。风险：ParamSpec 泛型参数化语法易踩坑，需在多种混合列表场景验证 mypy 行为。
     analyzed_at: '2026-09-25'
     last_status: taken-pr
+    title: Type hints collapse when you use a list of pre-built middlewares
+    pr_claims:
+    - 1558
+    labels_seen:
+    - area:add-on
+    - good first issue
+    comments_seen: 3
   '1547':
     difficulty: 简单
     summary: 文档去模型特定表述（Claude Code、OpenAI 示例），纯文档编辑
@@ -647,7 +1032,13 @@ issues:
       `agent.md` 与 docs 目录（未核实全部命中位置，需全文扫描）。
     plan: 全文检索模型/工具专名，高层文本泛化，具体示例迁至代码段注释或脚本。工作量级：小时级。风险：极低，注意保留必要的技术准确性（如 API 名称不可省略处）。
     analyzed_at: '2026-09-25'
-    last_status: taken-pr
+    last_status: open
+    title: Remove/soften model specific instruction in docs
+    status_changed_at: '2026-09-25T01:12:01+08:00'
+    labels_seen:
+    - good first issue
+    - help wanted
+    comments_seen: 0
   '1562':
     difficulty: 中等
     summary: 'Tool.from_function 把未映射类型静默降级为 object，绕过 #1552 严格校验'
@@ -659,6 +1050,13 @@ issues:
       raise 还是 warn+跳过。工作量级：小时级到天级。风险：可能使此前静默可用的工具函数开始报错（行为破坏），需文档说明与灰度策略。
     analyzed_at: '2026-09-25'
     last_status: taken-assignee
+    title: 'Tool.from_function silently degrades unmapped parameter types to "object"
+      (bypasses #1552''s strict validation)'
+    labels_seen:
+    - area:core
+    - good first issue
+    - help wanted
+    comments_seen: 2
   '1572':
     difficulty: 困难
     summary: 通过环境上下文暴露当前节点/flow 元数据，需架构设计的新能力
@@ -670,6 +1068,10 @@ issues:
       设计需先评审。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: 'Feature Request: Expose current node and flow metadata via ambient execution
+      context (rt.context.get_current_node())'
+    labels_seen: []
+    comments_seen: 0
   '1573':
     difficulty: 简单
     summary: '`railtracks add --force` 前置位置解析顺序 bug，定位明确的 CLI 修复'
@@ -678,6 +1080,11 @@ issues:
     plan: 把 `force = "--force" in args` 提前到 usage 检查前，或改为先过滤 flag 再校验剩余参数；顺带补一条顺序无关的测试（作者指出测试缺失）。工作量级：小时级。风险：极低。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: railtracks add --force before <tool>:<skill> fails, despite usage text
+      showing that order
+    labels_seen:
+    - area:core
+    comments_seen: 0
   '1574':
     difficulty: 中等
     summary: 内部调用路径的 Session 触发 flow_name 警告，误扰正常用户
@@ -688,6 +1095,10 @@ issues:
       传入跳过警告；或仅当用户显式写 `with rt.Session()` 才警告（难以检测，标志方案更实际）。工作量级：小时级。风险：低；注意不要连带静默其他有价值的告警。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Session flow_name warning fires on railtracks' own internal call paths
+    labels_seen:
+    - area:core
+    comments_seen: 0
   '1576':
     difficulty: 困难
     summary: OpenAI Responses-API reasoning_items 支持，前置依赖未就绪
@@ -697,6 +1108,10 @@ issues:
       路由工作。工作量级：字段透传为天级，完整支持为周级。风险：现在实现属投机性 API，litellm 行为可能变动；建议挂起等待路由能力。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Follow-up on OpenAI Responses-API `reasoning_items`
+    labels_seen:
+    - area:llm
+    comments_seen: 0
   '1577':
     difficulty: 简单
     summary: websearch 文档页缺 optional extra 安装说明，纯文档补全
@@ -706,6 +1121,13 @@ issues:
       工具页是否有同类缺失。工作量级：小时级。风险：无。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: 'docs: web search tool page doesn''t document installing the `websearch`
+      extra'
+    labels_seen:
+    - area:docs
+    - good first issue
+    - help wanted
+    comments_seen: 0
   '1581':
     difficulty: 中等
     summary: Union处理错误放宽required，修复明确且影响函数调用正确性
@@ -715,6 +1137,9 @@ issues:
       presence 与 nullability。小时级。风险：可能影响下游依赖旧 schema 行为的测试/兼容性。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Optional[X] with no default is reported as not required
+    labels_seen: []
+    comments_seen: 0
   '1582':
     difficulty: 中等
     summary: 异构元组需改用prefixItems按位约束，修法明确但涉及schema版本兼容
@@ -724,6 +1149,9 @@ issues:
       items。小时级到天级。风险：老客户端不支持 prefixItems；单元素 tuple 等边界情况。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Heterogeneous tuples do not constrain element position
+    labels_seen: []
+    comments_seen: 0
   '1584':
     difficulty: 中等
     summary: 聚合SUM掩盖未定价调用的null成本，与已修的单行端点行为不一致，站点明确
@@ -733,3 +1161,8 @@ issues:
       或部分标记），或用 `SUM(...) 保持null语义` 的条件聚合；保持与行级端点语义一致。小时级。风险：前端对 null 聚合值的展示处理；需同步更新查询测试。
     analyzed_at: '2026-09-25'
     last_status: open
+    title: Aggregate cost SUMs (sessions/nodes) silently drop unresolved-cost calls,
+      unlike the fixed row-level endpoint
+    labels_seen:
+    - area:visualizer
+    comments_seen: 0
