@@ -1,6 +1,14 @@
 publish_mode: direct
 recipes:
 - docs-sync
+opportunity:
+  difficulties:
+  - 简单
+  - 中等
+  max_age_days: 30
+  max_comments: 15
+  repo_pushed_within_days: 30
+  external_merge_within_days: 90
 repos:
 - name: shibing624/agentica
   recipes:
@@ -9,6 +17,8 @@ repos:
   - bug-watch
   - cve-scan
   - issue-radar
+  watch_issues:
+  - 28
 - rakkasei0810/notion-plugin-notion-openai-curated-remote
 - name: RailtownAI/railtracks
   recipes:
