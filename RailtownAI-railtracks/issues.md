@@ -1,6 +1,6 @@
 # Issue 雷达 · RailtownAI/railtracks
 
-> 全景扫描：2026-09-25 · 开放 issue 95 个 · 机会 23 · 未入榜 45 · 被占 27
+> 全景扫描：2026-09-25 · 开放 issue 98 个 · 机会 25 · 未入榜 46 · 被占 27
 
 ## 机会榜（按值得做排序，top 10）
 
@@ -8,6 +8,7 @@
 | --- | --- | --- | --- |
 | [#1577](https://github.com/RailtownAI/railtracks/issues/1577) | 简单 | 新鲜·good first issue+help wanted·收外部PR | docs: web search tool page doesn't document installing the ` —— websearch 文档页缺 optional extra 安装说明，纯文档补全 |
 | [#1547](https://github.com/RailtownAI/railtracks/issues/1547) | 简单 | good first issue+help wanted·收外部PR | Remove/soften model specific instruction in docs —— 文档去模型特定表述（Claude Code、OpenAI 示例），纯文档编辑 |
+| [#1594](https://github.com/RailtownAI/railtracks/issues/1594) | 简单 | 新鲜·收外部PR | CI: test every supported Python version and gate releases on —— CI 增加多 Python 版本矩阵并让发布跑测试，明确且价值高 |
 | [#873](https://github.com/RailtownAI/railtracks/issues/873) | 简单 | good first issue+help wanted·收外部PR | [Docs] Unclear Usage of Context —— Context 用法文档前置，纯文档改动，适合入门 |
 | [#940](https://github.com/RailtownAI/railtracks/issues/940) | 简单 | good first issue+help wanted·收外部PR | [Docs] Update BYFA/RYFA to be a bit better in terms of narra —— BYFA/RYFA 教程叙事重构，纯文档改写 |
 | [#1381](https://github.com/RailtownAI/railtracks/issues/1381) | 简单 | good first issue+help wanted·收外部PR | Add llms.txt / llms-full.txt —— 添加 llms.txt / llms-full.txt，范围明确的文档任务 |
@@ -15,9 +16,9 @@
 | [#1534](https://github.com/RailtownAI/railtracks/issues/1534) | 简单 | 收外部PR | Delete legacy install detection —— 删除 legacy 安装检测代码，前置条件已满足，范围清晰的清理任务 |
 | [#1223](https://github.com/RailtownAI/railtracks/issues/1223) | 简单 | 收外部PR | [Feature] Prebuilt Tool Tags —— 给预构建工具打标签以便可视化器区分展示 |
 | [#1316](https://github.com/RailtownAI/railtracks/issues/1316) | 简单 | 收外部PR | Improve instruction for using custom function as tool —— 改进自定义函数作为工具的文档说明 |
-| [#1574](https://github.com/RailtownAI/railtracks/issues/1574) | 中等 | 新鲜·收外部PR | Session flow_name warning fires on railtracks' own internal  —— 内部调用路径的 Session 触发 flow_name 警告，误扰正常用户 |
 
-## 未入榜（45）
+## 未入榜（46）
+- #1592 Agent.md and agent use of railtracks for building or develop —— 难度困难
 - #1589 Should `rt.context` hand out shared references or copies? —— 难度困难
 - #1576 Follow-up on OpenAI Responses-API `reasoning_items` —— 难度困难
 - #1572 Feature Request: Expose current node and flow metadata via a —— 难度困难
@@ -41,7 +42,7 @@
 - #1353 Serializable transcript / history export/input from popular  —— 建于 49 天前且近 49 天无动静
 - #1348 Let tools return rich content (ie: images) natively —— 难度困难
 - #1321 Attachment through file API —— 难度困难
-- #1320 Attachment location interleaving —— 建于 55 天前且近 55 天无动静
+- #1320 Attachment location interleaving —— 建于 56 天前且近 56 天无动静
 - #1306 Build a Guardrail for Work Scope —— 建于 58 天前且近 37 天无动静
 - #1251 viz command: formalize --dir flag and add subdirectory aware —— 建于 72 天前且近 28 天无动静
 - #1216 [Feature] Store Backends for Key-Value Stores —— 难度困难
@@ -54,7 +55,7 @@
 - #1173 [Feature] [Retrieval] Add `Turbovec` to our stores Integrati —— 建于 108 天前且近 20 天无动静
 - #1172 [Feature]  Define certain class as internal —— 建于 110 天前且近 20 天无动静
 - #1167 [Bug] [Retrieval] same `id` for all rows in `HuggingFaceData —— 建于 112 天前且近 20 天无动静
-- #1160 [Docs] Prefer if api_reference lives under main doc site —— 建于 113 天前且近 20 天无动静
+- #1160 [Docs] Prefer if api_reference lives under main doc site —— 建于 114 天前且近 20 天无动静
 - #1150 [Feature] [Retrieval] Batch write for stores —— 建于 114 天前且近 20 天无动静
 - #1142 [Feature] Implement cached memory compression at the LLM lev —— 难度困难
 - #1131 [Feature] [Retrieval] Integration of `RetrievalRuntime` insi —— 难度困难
@@ -97,6 +98,24 @@
 - #1538 Type hints collapse when you use a list of pre-built middlewares —— PR#1541（2026-09-24）
 
 ## 分析详情（最新分析在前）
+### #1594 [简单|🟢机会] CI: test every supported Python version and gate releases on it
+- CI 增加多 Python 版本矩阵并让发布跑测试，明确且价值高
+- 问题：CI 仅测 3.10，`release_package.yaml` 发布时完全不跑测试，导致 #1590/#1593 等 bug 不可见。改动集中在 GitHub Actions 工作流文件，范围明确。
+- 方案：在各 workflow 中将 `PYTHON_VERSION: "3.10"` 改为 matrix（3.10–3.13+），并在 release 工作流发布前强制跑测试门禁（工作量级：小时级到一天；风险点：e2e 测试在旧版本上可能暴露需修复的历史问题，短期 CI 变红）。
+- 分析于 2026-09-25
+
+### #1593 [中等|🟢机会] Python 3.13+ compatibility: rt.function_node accepts builtins, and asyncio.iscoroutinefunction breaks on 3.16
+- 3.13+ 下 builtin 检测失效及 iscoroutinefunction 兼容性 bug，修复路径清晰
+- 问题：两处 Python 3.13+ 兼容 bug：①`TypeMapper.__init__`（llm/type_mapping.py）靠捕获 `inspect.signature` 的 ValueError 识别 builtin，但 3.13 起 builtin 可内省，守卫失效，`rt.function_node` 误收 builtin（唯一调用点 function_builder.py:54）；②`asyncio.iscoroutinefunction` 在 3.16 被移除导致报错。定位明确，正文截断处细节未核实。
+- 方案：①改为用 `inspect.isbuiltin` / 检查 `obj.__module__ == 'builtins'` 等主动判断；②统一替换为 `inspect.iscoroutinefunction`。单模块小改，天级以内；风险点：需在多版本矩阵下验证（依赖 #1594 的 CI）。
+- 分析于 2026-09-25
+
+### #1592 [困难|🟢机会] Agent.md and agent use of railtracks for building or development
+- Agent.md 及 agent 开发用法的追踪性 Epic，范围宽泛需拆解
+- 问题：Epic 级追踪 issue，覆盖所有 agent.md、claude/ 文件及相关文档，目的是让 agent 能更好地使用 railtracks。范围极宽泛、无具体交付物定义，信息不足难以估量；实际价值高（agent 辅助开发是趋势）但需先拆成子任务。
+- 方案：先盘点现有 agent.md/claude/ 资产，拆分为文档编写、示例、工具链等子 issue 逐个推进（工作量级：周级，含持续维护；风险点：范围蔓延、验收标准缺失）。
+- 分析于 2026-09-25
+
 ### #1590 [中等|🔒认领] import railtracks fails on Python 3.11+ after #1558 (Middleware TypeVar default leaks into BaseGuardrail)
 - PEP 696 TypeVar 默认值跨模块泄漏导致 import 崩溃，可复现、修法清晰，值得做
 - 问题：#1558 给 `Middleware` 加了第三参数 `_Constraint`（默认值引用 middleware/core.py 自己的 `_P`/`_R`）；guardrails/interfaces.py 的同名 `_P`/`_R` 是不同 TypeVar 对象，`BaseGuardrail` 未传第三参数时默认值解析跨模块失败，非 3.10 环境直接 `TypeError`（未核实具体解析机制细节）。影响 `import railtracks`，属核心阻断性 bug。
@@ -197,24 +216,6 @@
 - 给 InputGuard 加 once 开关避免每次工具循环重复触发，方案已明确
 - 问题：Guard 是 `ModelInvoker` 中间件，按 model round-trip 触发；`OutputGuard` 已跳过中间 tool turn（`concrete.py:184`），`InputGuard` 无等价机制，guard 内含 LLM 调用时开销大。涉及 `railtracks` guard/middleware 层。
 - 方案：`InputGuard.__init__` 加 `once: bool = False`，穿透 `input_guard(...)` 装饰器与 `_make_guard`；`once=True` 且本次 agent 调用已触发时 `_middleware_fn` 直接转发。依赖异步 guardrail task 先落地。工作量级：小时级到天级。风险：与 async guard 任务的状态生命周期管理（"本次调用"判定）、默认值兼容性低风险。
-- 分析于 2026-09-25
-
-### #1488 [困难|🟢机会] Command Line Assistant Module
-- 提供开箱即用的终端 Assistant 模块，是较大新功能设计
-- 问题：用户搭建终端助手需自行胶水组合 base agent、shell 工具、python 执行、记忆、clarification、实时输出与 CLI。需要设计 `AssistantPro` + `TerminalUI` 的新 API 面，且作者明确不放 `prebuilt`——归属与分层需维护者决策，正文被截断（信息不足）。
-- 方案：先与维护者确认模块归属与 API 形状，再实现 agent 装配 + 终端 TUI（可能复用 rich/prompt_toolkit，未核实）。工作量级：周级。风险：API 设计定型过早、依赖新增、与未来 prebuilt 体系冲突。
-- 分析于 2026-09-25
-
-### #1474 [中等|🔒认领] We need a ticket assign max duration or PR open duration
-- 为 ticket/PR 设置最长停留时长并自动延期机制，属流程规范类
-- 问题：缺少 ticket assign 与 PR open 的时长上限，防止数月停滞。本质是仓库流程/自动化策略而非代码缺陷；"7 天、任何评论/commit 延期、紧急修复豁免"规则需设计决策。
-- 方案：用 GitHub Action（stale bot 定制或自写 workflow）按 label/活动时间自动提醒、降级或关闭，配置豁免机制。工作量级：小时级到天级。风险：误关活跃但低活动 PR、与现有 bot 冲突、豁免规则难界定。
-- 分析于 2026-09-25
-
-### #1471 [困难|🟢机会] Optimize framework import time
-- 优化框架导入时间，需重构大量动态导入，收益明确但工程量大
-- 问题：litellm subtree 占导入耗时 ~75%（2165 模块，外部依赖），MCP 服务栈 ~300 模块为 railtracks 自身可避免的 eager import；本质是包级初始化策略问题。大概率涉及 `railtracks/__init__.py`、各子包顶层 import、litellm 引入方式（未核实具体懒加载基建是否存在）。
-- 方案：将 100+ 处 import 改为函数级/`__getattr__` 惰性导入，重点先处理 MCP 栈与 requests 相关 provider；litellm subtree 需评估是否可延迟或按 provider 拆分。工作量级：周级。风险：动态导入易引发循环导入、API 兼容性（顶层符号暴露）破坏，需完整回归测试。
 - 分析于 2026-09-25
 
 ## 全量总表
@@ -318,5 +319,8 @@
 | #1588 | 中等 | 🟢机会 | 将 viz 中间件失败匹配从异常消息改为异常 id，避免误匹配 |
 | #1589 | 困难 | 🟡困难 | 语义设计决策：context 引用还是拷贝，需先定规范再改 |
 | #1590 | 中等 | 🔒认领 | PEP 696 TypeVar 默认值跨模块泄漏导致 import 崩溃，可复现、修法清晰，值得做 |
+| #1592 | 困难 | 🟡困难 | Agent.md 及 agent 开发用法的追踪性 Epic，范围宽泛需拆解 |
+| #1593 | 中等 | 🟢机会 | 3.13+ 下 builtin 检测失效及 iscoroutinefunction 兼容性 bug，修复路径清晰 |
+| #1594 | 简单 | 🟢机会 | CI 增加多 Python 版本矩阵并让发布跑测试，明确且价值高 |
 
 </details>

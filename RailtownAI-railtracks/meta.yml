@@ -1,8 +1,9 @@
 repo: RailtownAI/railtracks
-last_synced: 2f1626e3bee243d4bba3769c9bc019ce1d8bd56b
+last_synced: 75c3b17bdb3506485c9403fe0d236d884913affd
 last_mode: incremental
-summary: 雷达：机会 23（新 0）· 未入榜 45 · 被占 27
-updated_at: '2026-09-25T04:00:23+08:00'
+summary: Middleware 泛型第三参数致 Python 3.11+ guardrails 导入失败，75c3b17 显式绑定 constraint 修复；#1583
+  全面改写 agent-facing 文档与技能文案。
+updated_at: '2026-09-25T05:01:10+08:00'
 last_release_tag: v1.5.4
-last_issue_number: 1590
-last_pr_number: 1591
+last_issue_number: 1594
+last_pr_number: 1595

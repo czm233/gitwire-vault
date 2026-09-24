@@ -1,4 +1,4 @@
-last_sweep: '2026-09-25T04:00:14+08:00'
+last_sweep: '2026-09-25T05:00:45+08:00'
 issues:
   '486':
     difficulty: 困难
@@ -243,7 +243,7 @@ issues:
     - area:docs
     comments_seen: 0
     created_at: '2026-06-02T20:28:49Z'
-    excluded: 建于 113 天前且近 20 天无动静
+    excluded: 建于 114 天前且近 20 天无动静
   '1167':
     difficulty: 简单
     summary: HF 数据集所有行 id 相同，破坏 upsert 语义
@@ -600,7 +600,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-07-30T20:52:51Z'
-    excluded: 建于 55 天前且近 55 天无动静
+    excluded: 建于 56 天前且近 56 天无动静
   '1321':
     difficulty: 困难
     summary: 大附件走文件 API 自动上传，跨层功能
@@ -1390,7 +1390,7 @@ issues:
     labels_seen:
     - area:core
     - question
-    comments_seen: 0
+    comments_seen: 1
   '1590':
     difficulty: 中等
     summary: PEP 696 TypeVar 默认值跨模块泄漏导致 import 崩溃，可复现、修法清晰，值得做
@@ -1412,4 +1412,55 @@ issues:
     - area:add-on
     - area:core
     - bug
+    comments_seen: 0
+  '1592':
+    difficulty: 困难
+    summary: Agent.md 及 agent 开发用法的追踪性 Epic，范围宽泛需拆解
+    problem: Epic 级追踪 issue，覆盖所有 agent.md、claude/ 文件及相关文档，目的是让 agent 能更好地使用 railtracks。范围极宽泛、无具体交付物定义，信息不足难以估量；实际价值高（agent
+      辅助开发是趋势）但需先拆成子任务。
+    plan: 先盘点现有 agent.md/claude/ 资产，拆分为文档编写、示例、工具链等子 issue 逐个推进（工作量级：周级，含持续维护；风险点：范围蔓延、验收标准缺失）。
+    analyzed_at: '2026-09-25'
+    title: Agent.md and agent use of railtracks for building or development
+    created_at: '2026-09-24T20:16:25Z'
+    excluded: ''
+    last_status: open
+    status_changed_at: '2026-09-25T05:00:45+08:00'
+    labels_seen:
+    - kind:tracking
+    comments_seen: 1
+  '1593':
+    difficulty: 中等
+    summary: 3.13+ 下 builtin 检测失效及 iscoroutinefunction 兼容性 bug，修复路径清晰
+    problem: 两处 Python 3.13+ 兼容 bug：①`TypeMapper.__init__`（llm/type_mapping.py）靠捕获
+      `inspect.signature` 的 ValueError 识别 builtin，但 3.13 起 builtin 可内省，守卫失效，`rt.function_node`
+      误收 builtin（唯一调用点 function_builder.py:54）；②`asyncio.iscoroutinefunction` 在 3.16
+      被移除导致报错。定位明确，正文截断处细节未核实。
+    plan: '①改为用 `inspect.isbuiltin` / 检查 `obj.__module__ == ''builtins''` 等主动判断；②统一替换为
+      `inspect.iscoroutinefunction`。单模块小改，天级以内；风险点：需在多版本矩阵下验证（依赖 #1594 的 CI）。'
+    analyzed_at: '2026-09-25'
+    title: 'Python 3.13+ compatibility: rt.function_node accepts builtins, and asyncio.iscoroutinefunction
+      breaks on 3.16'
+    created_at: '2026-09-24T20:32:54Z'
+    excluded: ''
+    last_status: open
+    status_changed_at: '2026-09-25T05:00:45+08:00'
+    labels_seen:
+    - area:core
+    - bug
+    comments_seen: 0
+  '1594':
+    difficulty: 简单
+    summary: CI 增加多 Python 版本矩阵并让发布跑测试，明确且价值高
+    problem: 'CI 仅测 3.10，`release_package.yaml` 发布时完全不跑测试，导致 #1590/#1593 等 bug 不可见。改动集中在
+      GitHub Actions 工作流文件，范围明确。'
+    plan: '在各 workflow 中将 `PYTHON_VERSION: "3.10"` 改为 matrix（3.10–3.13+），并在 release
+      工作流发布前强制跑测试门禁（工作量级：小时级到一天；风险点：e2e 测试在旧版本上可能暴露需修复的历史问题，短期 CI 变红）。'
+    analyzed_at: '2026-09-25'
+    title: 'CI: test every supported Python version and gate releases on it'
+    created_at: '2026-09-24T20:33:18Z'
+    excluded: ''
+    last_status: open
+    status_changed_at: '2026-09-25T05:00:45+08:00'
+    labels_seen:
+    - '[Maintainer] task'
     comments_seen: 0

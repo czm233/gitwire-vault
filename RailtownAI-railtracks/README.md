@@ -9,10 +9,11 @@
 - [business-logic.md](business-logic.md) —— 核心流程（agent 构建、调用、中间件、MCP、检索、评估）
 - [changelog/2026-09-25-b28115b.md](changelog/2026-09-25-b28115b.md) —— 首次建档快照记录
 - [changelog/2026-09-25-2f1626e.md](changelog/2026-09-25-2f1626e.md) —— 增量：function_node 中间件类型推断修复（#1538）
+- [changelog/2026-09-25-75c3b17.md](changelog/2026-09-25-75c3b17.md) —— 增量：Middleware 泛型第三参数引发 guardrails 导入修复（#1591）；agent-facing 文档改写（#1583）
 - [tripwires.md](tripwires.md) —— 持续盯防事项
 
 ## 同步信息
 
 - 模式：incremental（本次）
-- 本次同步游标：`b28115b` → `2f1626e`（2026-09-25）
-- 数据来源：仓库 diff（1 个提交，11 个文件变更）
+- 本次同步游标：`2f1626e` → `75c3b17`（2026-09-25）
+- 数据来源：仓库 diff（2 个提交，7 个文件变更）
