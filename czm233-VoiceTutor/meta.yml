@@ -1,0 +1,6 @@
+repo: czm233/VoiceTutor
+last_synced: 263d783596ca98a72a72562b3c71c09b0ed4e2a3
+last_mode: init
+summary: macOS 本地语音英语老师，M0 全链路跑通：LiveKit Agent + 本地 STT/TTS + 自研 LLM 网关（单请求串行防 429），音频不出机器，仅
+  LLM 文本出网。<<<END>>>
+updated_at: '2026-09-24T22:38:01+08:00'
