@@ -30,6 +30,6 @@ owner-repo/
 | [czm233-CC-Balancer](./czm233-CC-Balancer) | — | 已发布 | dfecb1f | — |
 | [czm233-VoiceTutor](./czm233-VoiceTutor) | 建档 | 已发布 | 263d783 | macOS 本地语音英语老师，M0 全链路跑通：LiveKit Agent + 本地 STT/TTS + 自研 LLM 网关（单请求串行防 429），音频不出机器，仅 LLM 文本出网。<<<END>>> |
 | [farion1231-cc-switch](./farion1231-cc-switch) | — | 已发布 | f878871 | — |
-| [shibing624-agentica](./shibing624-agentica) | 建档 | 已发布 | e84fc48 | Agentica 为 async-first Python Agent 框架+CLI/Web/桌面三入口产品，主打零 LLM 摘要压缩与自进化 Skill；本次 init 建档至 e84fc48，近期主线是 MCP 2.x 收敛与空窗换窗压缩。 |
+| [shibing624-agentica](./shibing624-agentica) | 增量 | 已发布 | e84fc48 | v1.4.16 核心：compact 改空窗换窗不再调用 LLM，依赖摘要接口的集成需重点自查后升级。 |
 
 <!-- board:end -->

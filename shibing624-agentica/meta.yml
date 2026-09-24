@@ -1,6 +1,7 @@
 repo: shibing624/agentica
 last_synced: e84fc484fc596cdc40cf2aa3e6985b4f05d2c84f
-last_mode: init
-summary: Agentica 为 async-first Python Agent 框架+CLI/Web/桌面三入口产品，主打零 LLM 摘要压缩与自进化 Skill；本次
-  init 建档至 e84fc48，近期主线是 MCP 2.x 收敛与空窗换窗压缩。
-updated_at: '2026-09-24T21:48:01+08:00'
+last_mode: incremental
+summary: v1.4.16 核心：compact 改空窗换窗不再调用 LLM，依赖摘要接口的集成需重点自查后升级。
+updated_at: '2026-09-24T23:10:08+08:00'
+last_release_tag: v1.4.16
+last_issue_number: 28
