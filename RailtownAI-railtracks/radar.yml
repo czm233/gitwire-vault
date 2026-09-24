@@ -1,4 +1,4 @@
-last_sweep: '2026-09-25T01:12:01+08:00'
+last_sweep: '2026-09-25T01:56:36+08:00'
 issues:
   '486':
     difficulty: 困难
@@ -1017,7 +1017,7 @@ issues:
     plan: 让预置中间件参数化泛型（如 `class Retry(Middleware[_P, _R])` 或用 `__call__` 签名推断）；或给 `middleware=`
       参数改用协议/协变包装。工作量级：小时级到天级。风险：ParamSpec 泛型参数化语法易踩坑，需在多种混合列表场景验证 mypy 行为。
     analyzed_at: '2026-09-25'
-    last_status: taken-pr
+    last_status: closed
     title: Type hints collapse when you use a list of pre-built middlewares
     pr_claims:
     - 1558
@@ -1025,6 +1025,9 @@ issues:
     - area:add-on
     - good first issue
     comments_seen: 3
+    closed_at: '2026-09-24T17:33:21Z'
+    resolved_by: PR#1541
+    status_changed_at: '2026-09-25T01:56:36+08:00'
   '1547':
     difficulty: 简单
     summary: 文档去模型特定表述（Claude Code、OpenAI 示例），纯文档编辑

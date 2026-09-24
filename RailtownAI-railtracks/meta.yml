@@ -1,8 +1,9 @@
 repo: RailtownAI/railtracks
-last_synced: b28115bdb80a558aec3b1bbedd3e9145e41e6d4a
+last_synced: 2f1626e3bee243d4bba3769c9bc019ce1d8bd56b
 last_mode: incremental
-summary: 雷达：机会 48（新 0）· 被占 26 · 困难 19 · 池内动态 14
-updated_at: '2026-09-25T01:12:06+08:00'
+summary: '本次同步确认：railtracks 修复 #1538，为 Middleware 增第三泛型约束并重写 function_node 重载，混合预置中间件不再致
+  mypy 塌缩为 Never，附静态回归与单测。'
+updated_at: '2026-09-25T01:56:39+08:00'
 last_release_tag: v1.5.4
 last_issue_number: 1584
 last_pr_number: 1583

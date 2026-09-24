@@ -1,6 +1,6 @@
 # Issue 雷达 · RailtownAI/railtracks
 
-> 全景扫描：2026-09-25 · 开放 issue 93 个 · 机会 48 · 被占 26 · 困难 19
+> 全景扫描：2026-09-25 · 开放 issue 92 个 · 机会 48 · 被占 25 · 困难 19
 
 ## 机会榜（按值得做排序，top 10）
 
@@ -18,24 +18,10 @@
 | [#1534](https://github.com/RailtownAI/railtracks/issues/1534) | 简单 | — | Delete legacy install detection —— 删除 legacy 安装检测代码，前置条件已满足，范围清晰的清理任务 |
 
 ## 池内动态
-- #873 挂上 good first issue、help wanted 标签，机会升温
-- #940 挂上 good first issue、help wanted 标签，机会升温
-- #1014 挂上 help wanted 标签，机会升温
-- #1053 挂上 help wanted 标签，机会升温
-- #1114 评论 +13，竞争升温
-- #1150 挂上 help wanted 标签，机会升温
-- #1167 挂上 good first issue、help wanted 标签，机会升温
-- #1173 挂上 help wanted 标签，机会升温
-- #1203 挂上 help wanted 标签，机会升温
-- #1306 挂上 help wanted 标签，机会升温
-- #1381 挂上 good first issue、help wanted 标签，机会升温
-- #1547 重回机会池
-- #1547 挂上 good first issue、help wanted 标签，机会升温
-- #1577 挂上 good first issue、help wanted 标签，机会升温
+- #1538 已关闭（PR#1541）
 
 ## 已被占（不必再看）
 - #1562 Tool.from_function silently degrades unmapped parameter types to "object" (bypasses #1552's strict validation) —— 被 assignee rajathpatel23 占
-- #1538 Type hints collapse when you use a list of pre-built middlewares —— 被 PR#1558 占
 - #1474 We need a ticket assign max duration or PR open duration —— 被 assignee CoronRing 占
 - #1458 Tool schemas silently degrade to `{"type": "object"}` under `from __future__ import annotations` —— 被 assignee CoronRing 占
 - #1451 Skill Infrastructure: Directories Support —— 被 assignee Pooria90 占
@@ -60,6 +46,9 @@
 - #947 [Tech Debt] LLM submodule needs its own loggers —— 被 assignee Aryan-Railtown 占
 - #881 [Feature] Add Support for non-google docstring formats —— 被 PR#1452 占
 - #486 [Feature] Documentation App —— 被 assignee Aryan-Railtown 占
+
+## 近期关闭
+- #1538 Type hints collapse when you use a list of pre-built middlewares —— PR#1541（2026-09-24）
 
 ## 分析详情（最新分析在前）
 ### #1584 [中等|🟢机会] Aggregate cost SUMs (sessions/nodes) silently drop unresolved-cost calls, unlike the fixed row-level endpoint
@@ -122,12 +111,6 @@
 - 方案：全文检索模型/工具专名，高层文本泛化，具体示例迁至代码段注释或脚本。工作量级：小时级。风险：极低，注意保留必要的技术准确性（如 API 名称不可省略处）。
 - 分析于 2026-09-25
 
-### #1538 [中等|🔒PR占] Type hints collapse when you use a list of pre-built middlewares
-- 预置中间件未参数化泛型导致 mypy 类型坍缩，根因已定位
-- 问题：`Retry/Timeout/MaxCalls/Lock` 继承裸 `Middleware`（`Generic[_P, _R]`，`_P` 为 ParamSpec），mypy 坍缩为 `Middleware[Never, Never]`；`function_node` 的 `middleware: Iterable[Middleware[_P, _TOutput]]` 因不变性无法统一。根因清晰（`railtracks/middleware/core.py`）。
-- 方案：让预置中间件参数化泛型（如 `class Retry(Middleware[_P, _R])` 或用 `__call__` 签名推断）；或给 `middleware=` 参数改用协议/协变包装。工作量级：小时级到天级。风险：ParamSpec 泛型参数化语法易踩坑，需在多种混合列表场景验证 mypy 行为。
-- 分析于 2026-09-25
-
 ### #1534 [简单|🟢机会] Delete legacy install detection
 - 删除 legacy 安装检测代码，前置条件已满足，范围清晰的清理任务
 - 问题：#1522/#1525 已落地 manifest 与 detector，`find_legacy_installs` 及 `.github/copilot-instructions.md` 标记块、`.cursor/rules/*.mdc` 的 legacy 感知只剩清理工作；需确认 Copilot+Cursor directory handlers 已落地且迁移窗口已过。
@@ -180,6 +163,12 @@
 - 重构超长文件 _litellm_wrapper.py 及测试，抽公共逻辑
 - 问题：三个文件 1000+ 行，_litellm_wrapper.py 需抽父类、拆分流逻辑、用 dataclass 去重复。纯重构，无行为变更，但涉及较大面积代码搬移。
 - 方案：提取 CommonHyperparameters dataclass、拆分 stream 逻辑到独立文件、精简 mixin，靠现有 1000+ 行测试保障回归（工作量级：天级）。风险：重构期间与并行开发冲突，测试本身也需同步拆分。
+- 分析于 2026-09-25
+
+### #1462 [简单|🟢机会] Logger: RuntimeError on  unretrieved-task
+- publisher 关闭后任务仍发布导致 RuntimeError，需条件保护
+- 问题：委托任务在 publisher 关闭后才完成，execution_strategy 的 finally 无条件 publish 触发 "Publisher is not currently running."。定位精确，根因已知。
+- 方案：publish 前检查 publisher 运行状态或捕获该异常，考虑是否需要丢弃日志（工作量级：小时级）。风险：低；需确认真实场景下是否应等待而非丢弃。
 - 分析于 2026-09-25
 
 ## 全量总表
@@ -270,7 +259,6 @@
 | #1503 | 中等 | 🟢机会 | visualizer 增加 AI 输入/输出的 markdown raw/preview 切换，范围明确的前端增强 |
 | #1509 | 中等 | 🟢机会 | 统一错误类的 reason/message 术语并上提 notes+reason 到 RTError，需设计决策 |
 | #1534 | 简单 | 🟢机会 | 删除 legacy 安装检测代码，前置条件已满足，范围清晰的清理任务 |
-| #1538 | 中等 | 🔒PR占 | 预置中间件未参数化泛型导致 mypy 类型坍缩，根因已定位 |
 | #1547 | 简单 | 🟢机会 | 文档去模型特定表述（Claude Code、OpenAI 示例），纯文档编辑 |
 | #1562 | 中等 | 🔒认领 | Tool.from_function 把未映射类型静默降级为 object，绕过 #1552 严格校验 |
 | #1572 | 困难 | 🟡困难 | 通过环境上下文暴露当前节点/flow 元数据，需架构设计的新能力 |
