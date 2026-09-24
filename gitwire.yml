@@ -15,5 +15,6 @@ repos:
   - docs-sync
   - issue-radar
   watch_issues:
+  - 1573
   - 1577
 - browser-use/jev-ultrafast
