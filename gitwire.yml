@@ -14,3 +14,4 @@ repos:
   recipes:
   - docs-sync
   - issue-radar
+- browser-use/jev-ultrafast
