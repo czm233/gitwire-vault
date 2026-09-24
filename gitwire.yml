@@ -8,5 +8,6 @@ repos:
   - feature-tripwire
   - bug-watch
   - cve-scan
+  - issue-radar
 - czm233/VoiceTutor
 - rakkasei0810/notion-plugin-notion-openai-curated-remote
