@@ -1,4 +1,5 @@
 repos:
 - shibing624/agentica
+- czm233/VoiceTutor
 recipes:
 - docs-sync
