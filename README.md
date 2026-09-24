@@ -23,11 +23,12 @@ owner-repo/
 
 <!-- board:start -->
 
-- 最近一轮同步：2026-09-25；4 个监控目标，6 个已发布
+- 最近一轮同步：2026-09-25；4 个监控目标，7 个已发布
 
 | 项目 | 本轮 | 状态 | 同步到 | 摘要 |
 | --- | --- | --- | --- | --- |
 | [RailtownAI-railtracks](./RailtownAI-railtracks) | 建档 | 已发布 | b28115b | 首次建档：railtracks 为纯 Python 组装式 agent 框架（Node/Flow/双层中间件/MCP/retrieval/evaluations），基线 b28115b，无历史 diff，重点盯防 MaxCalls 槽位与 shell 非沙箱风险。 |
+| [browser-use-jev-ultrafast](./browser-use-jev-ultrafast) | 建档 | 已发布 | 1231850 | jev-ultrafast v0.1.0 首次建档：TypeSafe 驱动的选择式浏览器 Agent，单请求决策+原子DOM快照+严格执行守卫，性能声称 25% 提速但样本小，已列三项盯防点。<<<END>>> |
 | [czm233-CC-Balancer](./czm233-CC-Balancer) | — | 已发布 | dfecb1f | — |
 | [czm233-VoiceTutor](./czm233-VoiceTutor) | 建档 | 已发布 | 263d783 | macOS 本地语音英语老师，M0 全链路跑通：LiveKit Agent + 本地 STT/TTS + 自研 LLM 网关（单请求串行防 429），音频不出机器，仅 LLM 文本出网。<<<END>>> |
 | [farion1231-cc-switch](./farion1231-cc-switch) | — | 已发布 | f878871 | — |
