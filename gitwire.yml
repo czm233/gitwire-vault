@@ -8,3 +8,4 @@ repos:
   - feature-tripwire
   - bug-watch
   - cve-scan
+- czm233/VoiceTutor
