@@ -1,0 +1,17 @@
+# RailtownAI/railtracks 情报档案
+
+**一句话定位**：Railtracks 是 Railtown AI 开源的纯 Python Agent 框架，让开发者用普通 Python 对象（无 YAML/DSL）组装自己的 agent harness——工具调用循环、工具面、上下文管理、权限/预算控制、可回放的运行记录（README.md）。
+
+## 档案索引
+
+- [tech-stack.md](tech-stack.md) —— 语言、框架、构建、测试、文档工具链清单
+- [architecture.md](architecture.md) —— 组件架构图与职责说明
+- [business-logic.md](business-logic.md) —— 核心流程（agent 构建、调用、中间件、MCP、检索、评估）
+- [changelog/2026-09-25-b28115b.md](changelog/2026-09-25-b28115b.md) —— 首次建档快照记录
+- [tripwires.md](tripwires.md) —— 持续盯防事项
+
+## 同步信息
+
+- 模式：init（首次全量建档）
+- 本次同步游标：`∅` → `b28115b`（2026-09-25）
+- 数据来源：仓库源码快照（未含 git 提交历史，逐条 commit 归因未核实）

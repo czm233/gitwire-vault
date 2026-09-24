@@ -1,0 +1,735 @@
+last_sweep: '2026-09-25T00:35:27+08:00'
+issues:
+  '486':
+    difficulty: 困难
+    summary: 文档应用+MCP服务，架构级新子系统，价值高但范围大
+    problem: 将文档构建为可部署应用并暴露为 MCP 服务，涉及后端数据检索、MCP 层、部署三个组件，跨模块且需大量设计决策。正文被截断，信息不足。
+    plan: 先做后端索引（docs+代码库），再用现有 MCP 能力暴露问答/检索工具，最后部署。周级。风险：范围过大、检索质量难以评估、需求未收敛。
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '853':
+    difficulty: 困难
+    summary: MCP 协议补全缺失能力，量大且涉及协议设计
+    problem: MCP 实现缺 Resources、Prompts、Notifications、Client Primitives、Capabilities
+      暴露等多项协议能力，涉及传输层与会话生命周期，架构级补全。
+    plan: 按能力逐项实现（Resources/Prompts 相对独立可拆分交付），需对齐 MCP 规范。周级。风险：协议兼容性、破坏现有 STDIO/HTTP
+      客户端。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '873':
+    difficulty: 简单
+    summary: Context 用法文档前置，纯文档改动，适合入门
+    problem: Context 用法文档埋得太深，需在入门层前置说明。纯文档结构调整，已标 good first issue。
+    plan: '在核心文档显眼处新增/改写 Context 使用章节，补充示例。小时级。风险：低，仅需与 #933 相关变更保持一致（未核实）。'
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '881':
+    difficulty: 中等
+    summary: docstring 多格式解析，范围明确需改解析逻辑
+    problem: function_node 目前仅支持 Google 格式 docstring 自动解析，需支持 reST/NumPy 等。涉及解析模块逻辑，单模块内。
+    plan: 引入 docstring 解析库（如 docstring_parser）或自写多格式解析器，替换现有硬编码。天级。风险：解析歧义、需补全测试覆盖。
+    analyzed_at: '2026-09-25'
+    last_status: taken-pr
+  '940':
+    difficulty: 简单
+    summary: BYFA/RYFA 教程叙事重构，纯文档改写
+    problem: 'BYFA/RYFA 教程叙事混乱，需重构结构便于快速进入。纯文档改写，需参考 #933 的变更（未核实）。'
+    plan: '重新组织章节层级与引导路径，统一与 #933 的新结构。小时到天级。风险：低。'
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '947':
+    difficulty: 中等
+    summary: LLM 子模块独立 logger 配置，单模块日志改造
+    problem: LLM 模块直接用 Python 全局 logger 而非 RT 命名空间 logger，需独立 formatter/handler。单模块内日志改造。
+    plan: 在 LLM 封装层统一替换为 RT 子 logger，配置 handler/formatter，检查现有日志调用点。天级。风险：低，注意日志格式变更对下游解析的影响。
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1004':
+    difficulty: 困难
+    summary: 多种 Agent 架构文档父票，范围未定信息不足
+    problem: 多种 Agent 架构实现/文档的父票，具体子任务列表尚未挂出（subissues 未链接），信息不足无法定位范围。
+    plan: 等子任务拆分后逐项处理；父票本身可先建目录骨架。周级（整体）。风险：范围蔓延、依赖框架能力尚未实现。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1014':
+    difficulty: 中等
+    summary: 评估指标增加 shots/examples 支持，DX 设计待定
+    problem: 为 metrics 增加示例（shots）参数以引导评分，现有只有 description。API 设计需决策但范围在 evaluations
+      模块内。
+    plan: 扩展 Categorical 等指标类增加 shots 字段并注入提示词，正文方案截断、DX 待定稿。天级。风险：提示词设计影响评分稳定性，需实验。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1053':
+    difficulty: 简单
+    summary: 长度护栏 Guardrail，接口已定范围明确
+    problem: 新增 Input/Output 长度限制 Guardrail，接口已在 issue 中给出，范围含实现+测试+文档。
+    plan: 实现 InputLengthGuard（首版按字符数截断/拒绝），补测试与文档。天级。风险：低；长度单位（字符/词/token）后续需迭代。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1065':
+    difficulty: 中等
+    summary: 被拦截护栏的重试机制，需设计决策
+    problem: Guardrail 拦截目前直接抛 GuardrailBlockedError 中止流程，需支持重试而非硬中断。涉及执行流控制，需设计决策。
+    plan: 增加重试策略参数（次数/回退动作），在流程层捕获 blocked 错误后按策略重试。天级。风险：与错误语义兼容、避免死循环。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1114':
+    difficulty: 简单
+    summary: 文档语法内容修缺父票，长期跟踪，零散小改
+    problem: 收集文档小修（语法/链接/示例）的长期父票，单项均为小改动，已被认领。
+    plan: 按评论中反馈逐项小修，大项另开票，引用本票为参考。小时级/项。风险：低；注意父票按约定不关闭。
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1131':
+    difficulty: 困难
+    summary: RetrievalRuntime 替换 RAGConfig，架构级重设计
+    problem: 用 RetrievalRuntime 取代 RAGConfig，需同时支持 agentic 与 procedural 两种检索节奏，架构设计未定。已标
+      stale，信息不足。
+    plan: 需先出运行时接口设计（检索/存储时机由 agent 或开发者控制），再迁移替换。周级。风险：API 破坏性变更、与现有 RAG 用户不兼容。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1142':
+    difficulty: 困难
+    summary: LLM 层缓存式上下文压缩，跨模块且依赖未完成项
+    problem: '仿 LangChain SummarizationMiddleware 实现消息历史摘要压缩与选择，依赖 #1132 的节点定制（未核实是否已完成），需缓存策略设计。'
+    plan: 在 LLM wrapper 层加压缩中间件，按缓存键（消息前缀哈希）复用摘要结果。周级。风险：依赖未落地、缓存失效策略、摘要成本与一致性。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1145':
+    difficulty: 困难
+    summary: 默认插件批量父票，范围未拆分信息不足
+    problem: 批量编写默认 add-ons（PII 检测、注入检查、压缩、可观测性等）的跟踪父票，各子项尚未立票，信息不足。
+    plan: 按表格逐类拆子票后逐项实现；单项多为天级。周级（整体）。风险：清单不完整、各插件接口依赖 add-on 框架成熟度。
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1150':
+    difficulty: 简单
+    summary: 存储层批量写入 EmbeddedChunk，接口扩展明确
+    problem: store 目前仅支持单个 EmbeddedChunk 写入，需支持 list 批量写入。接口扩展，范围明确，已标 help wanted。
+    plan: 在存储接口增加 batch write 方法并逐后端实现（可先串行批量），补测试。天级。风险：低，注意事务/部分失败语义。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1156':
+    difficulty: 困难
+    summary: 用 system message 自动生成 agent manifest，自动化程度需设计决策
+    problem: 将 agent 描述/参数 manifest 从手写改为从 system message 自动推导，涉及 API 设计与解析逻辑，且标签
+      status:blocked，可能依赖前置工作。
+    plan: 从 system message 提取描述与参数 schema（LLM 或规则推断）自动填充 ToolManifest；需设计 fallback
+      行为。（工作量级：周级，风险：推断质量与向后兼容）
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1160':
+    difficulty: 中等
+    summary: 把 pdoc API 参考嵌入主文档站，提升一致性
+    problem: pdoc 独立页缺导航/暗色/搜索，需作为子模块注入文档站（未核实具体文档框架及其嵌入机制）。
+    plan: 将 pdoc 生成的 HTML 以 iframe/子页面方式挂载，保留外链入口；涉及文档构建流程。（工作量级：天级，风险：样式与路由兼容）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1167':
+    difficulty: 简单
+    summary: HF 数据集所有行 id 相同，破坏 upsert 语义
+    problem: HuggingFaceDatasetLoader 的 doc id 基于 source 字段，而 HF 数据集 source 全部相同，需加入行级唯一标识。
+    plan: id 生成中拼接行索引或数据集行 hash；改动局限在单个 loader。（工作量级：小时级，风险：低）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1172':
+    difficulty: 中等
+    summary: 将 _Session 等内部类标记为 internal，防误用
+    problem: _Session、_Context 等内部类无访问约束，coding agent 常误用；本质是 API 边界治理。
+    plan: 用模块前移/`__all__` 收紧导出、类型别名或运行时警告/私有协议封装；需平衡兼容性。（工作量级：天级，风险：破坏依赖这些类的下游路径）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1173':
+    difficulty: 中等
+    summary: 新增 Turbovec 向量后端集成
+    problem: 为检索框架添加 Turbovec 作为 VectorBackend；turbovec 不支持 metadata，需 sidecar 方案，设计已较明确。
+    plan: 实现 turbovec.py 后端 + 侧车 dict 存 payload，过滤时构建 allowlist；加 optional extra。（工作量级：天级，风险：turbovec
+      项目成熟度未知）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1179':
+    difficulty: 简单
+    summary: 为文档核心术语定义 glossary 并互链
+    problem: Node/agent node/sequential flow 等术语缺统一定义页与超链接。
+    plan: 新增术语表页，全文给关键术语加链接；纯文档工作。（工作量级：小时级~天级，风险：低）
+    analyzed_at: '2026-09-25'
+    last_status: taken-pr
+  '1184':
+    difficulty: 中等
+    summary: ingest 逐 chunk 单次写库，需增加批量写接口
+    problem: '`_embed_and_store` 循环单条 write，10 万 chunk 即 10 万次网络往返；需协议级批量接口。'
+    plan: Store 加 write_many、VectorBackend 加 upsert_many，各后端（Chroma/pgvector/in-memory）实现并改造
+      runtime；跨多文件但接口清晰。（工作量级：天级，风险：失败批次的原子性/重试语义）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1185':
+    difficulty: 中等
+    summary: 用户 metadata 可覆盖保留 payload 键导致数据损坏
+    problem: '`_entry_to_payload` 先建保留键后 update 用户 metadata，`content`/`document_id`
+      等键冲突会静默覆盖，往返重建出错条目。'
+    plan: 保留键保护（前缀化或 update 顺序反转+冲突拒绝/警告）；逻辑集中在 base.py。（工作量级：小时级~天级，风险：需处理存量数据兼容）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1186':
+    difficulty: 中等
+    summary: Chroma 后端 chunk 内容双份存储，浪费成本
+    problem: upsert 同时把 content 放 documents 和 metadata payload，读路径只用 metadata 副本，双写是纯成本。
+    plan: 二选一：payload 去 content 改由 documents 读回，或去掉 documents；需同步改动 chroma.py 读写两侧。（工作量级：天级，风险：迁移期旧数据双格式兼容）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1187':
+    difficulty: 困难
+    summary: 部分失败的重新 ingest 会删掉旧好版本
+    problem: re-ingest 在首批成功后即删旧版本，后续批次失败则新旧都不完整；本质是缺事务/暂存机制，需设计决策。
+    plan: 先写临时/影子条目，全部成功后原子切换删除旧版；涉及写入协议与陈旧性判断联动。（工作量级：周级，风险：无跨文档事务能力下实现原子切换困难）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1193':
+    difficulty: 困难
+    summary: 用户 context 是无锁普通 dict，并发不安全
+    problem: MutableExternalContext 的 plain dict 被所有并发节点共享读写，asyncio + to_thread 下有竞态；已标注为
+      proposal/discussion，需架构决策。
+    plan: 替换为锁保护的映射或 copy-on-write 语义；涉及核心 context 模块与性能取舍。（工作量级：周级，风险：性能影响与语义兼容）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1203':
+    difficulty: 中等
+    summary: 新增 Thoughts 工具：脑洞/键值/向量三种暂存草稿
+    problem: 为 agent 提供非持久化的短期思考/暂存工具集，三层能力（不存、KV、向量），范围较开放。
+    plan: 作为 add-on 实现三个工具，KV/向量可复用现有 stores；需确定作用域与生命周期（session 级）。（工作量级：天级，风险：与
+      memory 概念边界模糊）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1204':
+    difficulty: 困难
+    summary: 文件系统工具：受控文件/shell 操作，设计问题未决
+    problem: 让 agent 操作文件系统与 shell，安全性、沙箱与可配置性均「to be determined」，信息不足无法定位实现。
+    plan: 需先做安全模型设计（允许路径/命令白名单、沙箱），再实现受控端点。（工作量级：周级，风险：任意 shell 执行的安全风险高）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1209':
+    difficulty: 中等
+    summary: pgvector 后端把所有 metadata 塞单 payload 列
+    problem: payload 全部存一个 JSON 列，psql 终端不可做 SQL 操作；需将保留键提升为列。
+    plan: schema 增加保留列并拆分写读路径，或引入生成列/视图；涉及迁移（未核实现有建表代码位置）。（工作量级：天级，风险：存量数据迁移与查询兼容）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1216':
+    difficulty: 困难
+    summary: 键值存储后端支持（tracking issue，无具体范围）
+    problem: 为 retrieval/stores/key_value 添加 KV 存储后端，tracking issue，无实现细节、无指定后端列表，信息不足。
+    plan: 需先明确支持哪些 KV（Redis 等）及接口映射，再按 VectorBackend 模式实现。（工作量级：周级，风险：范围不清，接口设计未定）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1217':
+    difficulty: 困难
+    summary: 全链路思考块支持，跨流式/解析/序列化架构级改造
+    problem: extended thinking 块在 streaming、响应解析、序列化、上下文回传各层均被丢弃；litellm 返回 content
+      为类型化块列表，涉及 area:llm 多层逻辑（未核实具体文件）。
+    plan: '引入统一的 reasoning 块类型，逐层打通 delta 解析→存储→round-trip，参照 #1206 流式架构；跨模块需设计决策（周级），风险在多
+      provider 差异与向后兼容。'
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1223':
+    difficulty: 简单
+    summary: 给预构建工具打标签以便可视化器区分展示
+    problem: 为 prebuilt tools（如 memory、todolist）增加识别标签并写入 json 字段，供 visualizer 显示图标；方案描述已明确。
+    plan: 在工具定义处添加 tag 字段并序列化到 json，visualizer 侧映射图标；范围小（小时级），风险仅在与 visualizer 团队约定的字段格式。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1228':
+    difficulty: 简单
+    summary: JSON 存储改 UTF-16 以下提升人类/代理可读性
+    problem: json 以 ASCII 转义保存非英文/emoji，可读性差；本质是序列化时未设置 ensure_ascii=False。注：标题说 UTF-16，实际诉求是直接可读编码（UTF-8
+      即可满足）。
+    plan: 序列化处改 ensure_ascii=False 并统一编码声明（小时级）；风险极低，仅需确认 visualizer 解码兼容。
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1233':
+    difficulty: 困难
+    summary: 预构建工具集（内存/文件/TODO/搜索），tracking 票范围大
+    problem: 随框架交付多组 prebuilt tools，为 tracking 父票，子项与设计细节信息不足。
+    plan: 按各工具集拆分子 issue 逐个实现（周级）；风险为 API 设计决策与跨仓协调，需先拆解再评估。
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1239':
+    difficulty: 困难
+    summary: 可观测性重构为事件流，架构级替换现有状态导出
+    problem: 用事件流模块替换“完成后内存状态 json dump”，为 tracking 父票，事件模型、订阅机制均未定义，信息不足。
+    plan: 先设计事件 schema 与发布/消费接口，再渐进迁移并保持向后兼容（周级）；风险是破坏现有 visualizer 数据读取。
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1248':
+    difficulty: 中等
+    summary: 引入 ModelRequest 类型统一模型调用入参
+    problem: model_call 参数分散（message_history/schema/tools），需合并为 ModelRequest 对象并接入
+      ModelInvoker，涉及 area:llm/area:core 两处接口。
+    plan: 定义类型、改 ModelInvoker 签名并迁移调用点，注意向后兼容（天级）；风险在现有 wrapper（@after 等）适配。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1251':
+    difficulty: 中等
+    summary: viz 命令 --dir 标志形式化并修复子目录感知 bug
+    problem: 位置参数改命名 --dir；两个已定位 bug：get_data_dir 忽略 subdir、glob 非递归，位置基本明确。
+    plan: CLI 层改 flag + 修 get_data_dir 的 subdir 逻辑 + 递归 glob（小时级）；风险低，注意向后兼容旧位置参数。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1265':
+    difficulty: 困难
+    summary: HIL 人机协同作为节点中间件，父票含设计决策
+    problem: 通过 @wrap_node 中间件实现 HIL，指定只做 Option 1（输入门控验证器），但为 tracking 父票，通用验证器与
+      HIL 模块的拆分细节不足。
+    plan: 先实现通用 verifier 中间件，再派生 HIL 特化模块（周级）；风险在异常/反馈语义（接受/拒绝+评论）设计。
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1266':
+    difficulty: 中等
+    summary: 通用验证器中间件：callable 校验节点输入并抛异常
+    problem: '#1265 子票，实现接收 Callable[P, bool] 的 verifier 中间件，false 时抛特殊异常；可选支持四态返回，语义尚待细化。'
+    plan: 在现有中间件体系注册 verifier 类型，定义异常类型（天级）；风险为四态返回（接受/拒绝±评论）会扩大异常契约，建议先做 bool 版。
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1306':
+    difficulty: 中等
+    summary: ScopeGuard 护栏拦截超出范围的提问
+    problem: 用 LLM 判断用户输入是否越出 agent 范围，接入 rt.guard 系统，API 已给出示例；标注 help wanted + feature-branch-node-add-on
+      分支。
+    plan: 实现 ScopeGuard 预构建护栏 + 测试 + demo（天级）；风险在 sensitivity 分级语义与 prompt 设计效果。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1316':
+    difficulty: 简单
+    summary: 改进自定义函数作为工具的文档说明
+    problem: docs 中两种声明/调用方式藏于 tabs 且边界模糊，需补 manifest/name/middleware/async 等说明；纯文档任务。
+    plan: 重构文档结构、明确 declare vs invoke 时机并列举扩展参数（小时级）；风险无。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1320':
+    difficulty: 中等
+    summary: 附件在消息中的位置交错，媒体块位置信息丢失
+    problem: _to_litellm_message 将所有媒体块硬编码追加到文末，丢失 text-image-text 交错顺序；位置明确（未核实具体实现）。
+    plan: 解析内容结构按原始顺序插入块而非尾部追加（小时级到天级）；风险在各 provider 对 interleaved 格式支持不一。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1321':
+    difficulty: 困难
+    summary: 大附件走文件 API 自动上传，跨层功能
+    problem: 超限附件（视频/pdf）需经 files API 上传；需识别大小并自动路由，涉及 provider 差异、凭证、异步上传，设计细节信息不足。
+    plan: 附件封装层检测大小阈值→上传→引用替换（天级到周级）；风险为各 provider files API 不一致与上传失败处理。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1343':
+    difficulty: 困难
+    summary: 编码助手支持全面评估与改进，研究+实现混合票
+    problem: 评审同类 agentic 框架、诊断自身 skills 短板并实现改进，为 tracking 票，具体改动范围信息不足。
+    plan: 先做竞品调研与分析报告，再拆实现子票（周级）；风险在“改进”无明确验收标准，需先定义。
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1347':
+    difficulty: 困难
+    summary: 富媒体支持 Epic，多方向大范围架构工作
+    problem: 多模态输入/输出/工具内媒体/流媒体/Files API 等，Epic 父票无子项拆解，信息不足。
+    plan: '逐方向拆子 issue（与 #1321 等关联），分阶段实现（周级到月级）；风险为范围蔓延，需明确 MVP 边界。'
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1348':
+    difficulty: 困难
+    summary: 让工具原生返回富内容，需重构类型与调用链，架构级改动
+    problem: ToolResponse 限定 string，_call_tools 强转 str，媒体需 token 侧通道；涉及 llm_core、工具接口、provider
+      消息组装多层（部分依赖细节未核实）。
+    plan: 扩展 ToolResponse 为多模态内容块类型，调用链透传至 provider content parts；需废弃 token hack 并保持向后兼容。（工作量级：周级）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1349':
+    difficulty: 中等
+    summary: Attachment 支持音频/视频/文件模态，单模块功能扩展
+    problem: message.py:33 硬编码 modality="image"，data-URI 编码用同一常量；需按 MIME 推断模态并映射各
+      provider 原生 content part（provider 映射细节未核实）。
+    plan: Attachment 增加模态字段 + MIME 推断 + 各 provider 适配层扩展；需多 provider 验证。（工作量级：天级）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1353':
+    difficulty: 中等
+    summary: OpenAI 格式无损导入导出 API，范围明确
+    problem: MessageHistory/Response 缺 .to_openai()/.from_openai()，adapter 把 assistant
+      tool_calls 消息压成纯文本，导入有损。
+    plan: 实现序列化/反序列化方法并补全 adapter 对 tool_calls 的往返映射；可选扩展其他格式。（工作量级：天级）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1354':
+    difficulty: 中等
+    summary: 通用 token 估算器，范围清晰但需选型设计
+    problem: 已有 tiktoken 依赖但仅用于 RAG chunker，缺通用 token 计数 API 供长度护栏等使用。
+    plan: 封装通用估算器（tiktoken/估算 fallback），接入 guardrails 与 MessageInfo；需 API 设计决策。（工作量级：天级）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1355':
+    difficulty: 困难
+    summary: 清除 539 个 Pyright 错误，量大且需逐一定位
+    problem: src/ 109 个标准模式错误、全仓 539 个，需逐个修复或抑制以保证新错误可见；分布跨 122 个文件。
+    plan: 按模块分批修类型标注/抑制，收紧 pyright 配置；机械但量大，需防止引入行为变更。（工作量级：周级）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1356':
+    difficulty: 中等
+    summary: 统一 LLM 子类初始化接口与 from_string 工厂
+    problem: 各 *LLM 子类 __init__ 签名不一，_PROVIDER_MAP + try/except TypeError 回退很脆弱，缺统一字符串工厂。
+    plan: 定义统一基类参数契约，实现 rt.llm.from_string()，替换映射与回退逻辑；属破坏性 API 调整需迁移。（工作量级：天级）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1357':
+    difficulty: 中等
+    summary: 让 Agent 响应暴露工具调用信息，需接口设计决策
+    problem: 'LLMResponse 只含文本，agent 过程中的 tool calls 未在公共接口暴露；关联 #1265 #1192 但实现路径未定。'
+    plan: 在 LLMResponse 增加类参数或上下文变量承载调用轨迹；需设计决策（信息不足：具体数据结构未定）。（工作量级：天级）
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1362':
+    difficulty: 困难
+    summary: 重实现结构化工具调用 LLM，此前被移除、信息不足
+    problem: 结构化 tool calling 功能曾被移除，需恢复；移除原因、原实现及设计约束均未说明，信息不足。
+    plan: 需先与维护者确认设计（结构化输出 + tool 调用组合方式），再实现 agent 级能力。（工作量级：周级）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1375':
+    difficulty: 中等
+    summary: 清理文档页重复与命名冲突，量大但机械
+    problem: architectures.md 逐字拼接两篇概念文、fastapi.md 冗余 stub、nav 标签冲突，文档结构混乱（全量清单未核实）。
+    plan: 去重、合并分片文章、整理导航命名并加重定向；纯文档工作但需仔细盘点。（工作量级：天级）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1381':
+    difficulty: 简单
+    summary: 添加 llms.txt / llms-full.txt，范围明确的文档任务
+    problem: 缺 llms.txt，影响 AI 工具对项目的发现与导航；标签含 good first issue。
+    plan: 按 llms.txt 规范写概览、链接文档与资源；llms-full.txt 可脚本聚合。（工作量级：小时级）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1393':
+    difficulty: 简单
+    summary: 坏 schema 报错不友好，已在手的明确小修
+    problem: schema_type/manifest 非法时直接抛出 provider 层 BadRequestError，缺乏前置校验和可读提示。
+    plan: 在 schema 构建处做 pydantic 校验/预检，抛出带原因的本地异常；已 assignee。（工作量级：小时级）
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1395':
+    difficulty: 中等
+    summary: 为 agent-as-tool 类场景增加 Custom Tools 抽象
+    problem: OpenAI 推出无 schema 的 custom tools，railtracks 工具抽象目前偏 function schema，缺自由输入/输出口径。
+    plan: 新增 custom tool 类型，允许自由文本输入输出并适配 provider 请求格式；需 API 设计。（工作量级：天级）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1398':
+    difficulty: 中等
+    summary: post-init 赋值守卫，涉及大量字段迁移、规范类任务
+    problem: llm/tool/schema/rag 等对象初始化后赋值无校验或只读保护，行为不优雅；字段多、迁移面广。
+    plan: 短期定规范（frozen/property/_name），新代码遵循；全量迁移需分批（涉及字段范围未核实）。（工作量级：周级（全量）/天级（仅规范））
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1409':
+    difficulty: 中等
+    summary: 成本限额中间件，设计已有雏形的功能
+    problem: 缺防止 agent 失控成本的限额机制；issue 给出 CostTracker + model_middleware 期望接口。
+    plan: 实现成本追踪器 + 中间件，在调用前后累计 token 费用并超限中断；依赖 usage 数据已有（response.message_info）。（工作量级：天级）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1413':
+    difficulty: 中等
+    summary: 彩色日志迁移到事件驱动方案，需设计验证
+    problem: 现有日志彩色呈现逻辑复杂，希望以事件为唯一事实源，用 rich 重建可配置输出；事件系统细节未核实。
+    plan: 基于现有 events 重新设计日志渲染层，对比旧输出补齐缺失信息并与团队验证。（工作量级：天级）
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1414':
+    difficulty: 困难
+    summary: 节点创建事件需补充工具模型信息，设计导向、范围未定
+    problem: 跨 core/visualizer/dashboard 的架构级设计任务，正文明确「不确定从哪开始」，需先与维护者对齐 UI 需求才能定事件载荷，信息不足无法直接实施。
+    plan: 先设计阶段产出 dashboard 字段清单，再实现事件发送并测试。涉及事件管道、节点元数据、UI 多处协作（工作量级：周级）。风险：需求前置依赖维护者决策，易反复返工。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1415':
+    difficulty: 中等
+    summary: 为 ctrl+c 中断注册信号处理器，发送终止事件并刷新
+    problem: 进程被 SIGINT/SIGTERM 杀死时 publisher 未发出终端事件，visualizer 永远显示 Running。本质是缺少信号处理与事件
+      flush，大概率涉及核心 run 生命周期与 publisher 模块。
+    plan: 注册 SIGINT/SIGTERM 处理器，发射新终端状态（如 Interrupted），并在退出前有界等待异步事件排空。逻辑集中，需注意 handler
+      与 asyncio 事件循环交互（工作量级：天级）。风险：跨平台信号行为差异、排空超时取值。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1425':
+    difficulty: 中等
+    summary: 把 verifier 决策结构化为可观测性事件而非日志
+    problem: 'verifier 中间件目前只用 Python logger 记录 decisions，需改为结构化 trace 事件。事件建模方式（新事件类型
+      vs 复用 guardrail 管道）未定，需读 #1266/#1401 相关代码。'
+    plan: 参照现有 guardrails 的结构化 trace 记录方式，扩展事件模型覆盖 accept/decline/timeout 四种决策（工作量级：天级）。风险：事件
+      schema 设计需兼容现有消费方，建模选型需维护者认可。
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1430':
+    difficulty: 中等
+    summary: LLM finish_reason 被丢弃，max token 截断时返回空串
+    problem: finish_reason 未被传递到最终响应，超限截断静默失败。本质是 LLM 响应模型缺少 finish_reason 字段及传递链路，大概率在
+      llm wrapper 与响应对象、agent 结果层。
+    plan: 响应对象增加 finish_reason 并透传，截断时返回部分内容而非空串，补测试。范围明确但触及响应模型公共 API（工作量级：天级）。风险：多
+      provider 语义不一致，需处理兼容。
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1431':
+    difficulty: 中等
+    summary: 在 LLM 响应/历史对象中透出 thinking tokens
+    problem: gemini/deepseek/anthropic 等的思考 token 未在响应和历史中暴露，deepseek/claude 甚至要求回传。本质是消息/响应模型扩展，涉及各
+      provider 适配层（未核实具体文件）。
+    plan: 响应对象与 MessageHistory 增加 thinking 字段，各 provider wrapper 解析填充。明确「只透出不消费」（工作量级：天级到周级）。风险：多
+      provider 格式差异大，历史序列化兼容性。
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1433':
+    difficulty: 简单
+    summary: 成本计算纳入 cache hit 折扣 token，显著提升准确度
+    problem: provider 已返回 cache 读 token 但成本计算未计入，长会话误差可达 50 倍。本质是 cost/token 统计函数漏字段，定位明确。
+    plan: 解析 cache token 字段并按折扣价计入成本计算，补单测（工作量级：小时级到天级）。风险：各 provider 字段命名与折扣率不同，需注意标注
+      good first issue 契合度。
+    analyzed_at: '2026-09-25'
+    last_status: taken-pr
+  '1435':
+    difficulty: 中等
+    summary: railtracks 导入时全局修改 litellm 参数，应局部化
+    problem: import 时全局设 drop_params/modify_params/suppress_debug_info，污染同进程直接使用 litellm
+      的宿主。本质是导入副作用，需将全局补丁改为调用局部或上下文内设置。
+    plan: 定位 _litellm_wrapper 中 import 副作用，改为请求级/上下文级设置，回归现有测试（工作量级：天级）。风险：litellm
+      部分参数只有全局开关，局部化可能受限，需验证行为等价。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1446':
+    difficulty: 中等
+    summary: 新增 context 创建/读写/完成四类可观测事件
+    problem: context 增删查无事件追踪，且其结构与现有事件差异大，需设计四种新事件（create/get/put/completion）并接入事件管道。
+    plan: 在 context 模块读写路径插入事件发布，定义事件 schema 并在 visualizer 兼容（工作量级：天级）。风险：context
+      实现与现有事件模型不匹配，可能需适配层，schema 需评审。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1451':
+    difficulty: 中等
+    summary: skill 安装从单文件改为目录，元数据从磁盘 SKILL.md 派生
+    problem: '`railtracks add` 目前安装平文件且 frontmatter 由 Python 硬编码字典合成，需改为复制目录并从 SKILL.md
+      读元数据，是 #1343 技能目录的前置工作。'
+    plan: 改造 CLI 安装器：读取目录内 SKILL.md frontmatter，复制支持文件，删除硬编码 SKILLS 注册表（工作量级：天级）。风险：向后兼容旧安装方式、元数据解析边界情况；正文被截断，部分细节信息不足（未核实）。
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1454':
+    difficulty: 困难
+    summary: 节点创建时发布静态边检测事件，作为可视化结构图
+    problem: 希望在节点创建（非运行时）检测可能边并发事件，供 visualizer 画静态结构图。涉及静态图推断与事件系统扩展，正文无实现细节，属设计决策密集。
+    plan: 需先定义静态图如何从节点拓扑推导、事件 schema，再接入发布管道与可视化（工作量级：周级）。风险：动态拓扑的静态近似可能不准，设计未获认可前实现浪费，信息不足。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1456':
+    difficulty: 困难
+    summary: 重试时切换/降级 LLM 模型的 router 式接口，需设计审批
+    problem: LLM 内嵌于 agent、中间件拿不到模型参数，无法实现模型回退重试。正文明确拒绝了一种方案且要求「设计必须在评论区批准后实施」，纯架构设计任务。
+    plan: 设计 router/retry 接口使中间件可感知并替换模型，需维护者评审后才能编码（工作量级：周级）。风险：涉及 typing、并行安全、日志等横切关注点，方案分歧大，不宜外部直接动手。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1458':
+    difficulty: 中等
+    summary: from __future__ import annotations 下工具参数 schema 静默退化为 object
+    problem: Tool.from_function 直接读 annotation，PEP 563 下是字符串导致全部落为 OBJECT，无告警。本质是未调用
+      typing.get_type_hints 解析延迟注解，定位明确。
+    plan: 用 typing.get_type_hints 解析函数注解后再映射参数类型，并对无法解析的情况发警告，补回归测试（工作量级：小时级到天级）。风险：前向引用解析失败（未导入类型）需兜底处理。
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1462':
+    difficulty: 简单
+    summary: publisher 关闭后任务仍发布导致 RuntimeError，需条件保护
+    problem: 委托任务在 publisher 关闭后才完成，execution_strategy 的 finally 无条件 publish 触发 "Publisher
+      is not currently running."。定位精确，根因已知。
+    plan: publish 前检查 publisher 运行状态或捕获该异常，考虑是否需要丢弃日志（工作量级：小时级）。风险：低；需确认真实场景下是否应等待而非丢弃。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1463':
+    difficulty: 中等
+    summary: 重构超长文件 _litellm_wrapper.py 及测试，抽公共逻辑
+    problem: 三个文件 1000+ 行，_litellm_wrapper.py 需抽父类、拆分流逻辑、用 dataclass 去重复。纯重构，无行为变更，但涉及较大面积代码搬移。
+    plan: 提取 CommonHyperparameters dataclass、拆分 stream 逻辑到独立文件、精简 mixin，靠现有 1000+
+      行测试保障回归（工作量级：天级）。风险：重构期间与并行开发冲突，测试本身也需同步拆分。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1468':
+    difficulty: 中等
+    summary: MessageHistory/消息对象支持 JSON 序列化与反序列化加载
+    problem: 'UserMessage/ToolCall/ToolResponse 等均不可 JSON 序列化，无法保存/加载会话。本质是消息模型缺 encode/decode
+      全覆盖，替代 #1353。'
+    plan: 为全部消息内容类型实现 to/from JSON（如 discriminator tag），提供 MessageHistory 级别的 dump/load
+      API，补测试（工作量级：天级）。风险：序列化格式是公共 API，需考虑向前兼容与 ToolResponse 内嵌对象（未核实其结构复杂度）。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1471':
+    difficulty: 困难
+    summary: 优化框架导入时间，需重构大量动态导入，收益明确但工程量大
+    problem: litellm subtree 占导入耗时 ~75%（2165 模块，外部依赖），MCP 服务栈 ~300 模块为 railtracks
+      自身可避免的 eager import；本质是包级初始化策略问题。大概率涉及 `railtracks/__init__.py`、各子包顶层 import、litellm
+      引入方式（未核实具体懒加载基建是否存在）。
+    plan: 将 100+ 处 import 改为函数级/`__getattr__` 惰性导入，重点先处理 MCP 栈与 requests 相关 provider；litellm
+      subtree 需评估是否可延迟或按 provider 拆分。工作量级：周级。风险：动态导入易引发循环导入、API 兼容性（顶层符号暴露）破坏，需完整回归测试。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1474':
+    difficulty: 中等
+    summary: 为 ticket/PR 设置最长停留时长并自动延期机制，属流程规范类
+    problem: 缺少 ticket assign 与 PR open 的时长上限，防止数月停滞。本质是仓库流程/自动化策略而非代码缺陷；"7 天、任何评论/commit
+      延期、紧急修复豁免"规则需设计决策。
+    plan: 用 GitHub Action（stale bot 定制或自写 workflow）按 label/活动时间自动提醒、降级或关闭，配置豁免机制。工作量级：小时级到天级。风险：误关活跃但低活动
+      PR、与现有 bot 冲突、豁免规则难界定。
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1488':
+    difficulty: 困难
+    summary: 提供开箱即用的终端 Assistant 模块，是较大新功能设计
+    problem: 用户搭建终端助手需自行胶水组合 base agent、shell 工具、python 执行、记忆、clarification、实时输出与
+      CLI。需要设计 `AssistantPro` + `TerminalUI` 的新 API 面，且作者明确不放 `prebuilt`——归属与分层需维护者决策，正文被截断（信息不足）。
+    plan: 先与维护者确认模块归属与 API 形状，再实现 agent 装配 + 终端 TUI（可能复用 rich/prompt_toolkit，未核实）。工作量级：周级。风险：API
+      设计定型过早、依赖新增、与未来 prebuilt 体系冲突。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1496':
+    difficulty: 中等
+    summary: 给 InputGuard 加 once 开关避免每次工具循环重复触发，方案已明确
+    problem: Guard 是 `ModelInvoker` 中间件，按 model round-trip 触发；`OutputGuard` 已跳过中间
+      tool turn（`concrete.py:184`），`InputGuard` 无等价机制，guard 内含 LLM 调用时开销大。涉及 `railtracks`
+      guard/middleware 层。
+    plan: '`InputGuard.__init__` 加 `once: bool = False`，穿透 `input_guard(...)` 装饰器与
+      `_make_guard`；`once=True` 且本次 agent 调用已触发时 `_middleware_fn` 直接转发。依赖异步 guardrail
+      task 先落地。工作量级：小时级到天级。风险：与 async guard 任务的状态生命周期管理（"本次调用"判定）、默认值兼容性低风险。'
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1503':
+    difficulty: 中等
+    summary: visualizer 增加 AI 输入/输出的 markdown raw/preview 切换，范围明确的前端增强
+    problem: visualizer 中 raw markdown（含表格、图片）不可读，需 GitHub 式渲染预览。涉及 visualizer 前端渲染组件（未核实技术栈，可能是
+      web/本地 UI）。
+    plan: 为 input/output 面板加 raw/preview 切换，接入 markdown 渲染库（如 marked/markdown-it）。工作量级：小时级到天级。风险：XSS（需
+      sanitize）、大输出渲染性能、与现有 UI 风格一致性。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1509':
+    difficulty: 中等
+    summary: 统一错误类的 reason/message 术语并上提 notes+reason 到 RTError，需设计决策
+    problem: 错误体系中 Reason/Message 混用（同义遗留），Notes 表可行动建议。作者提议把 notes+reason 收敛为 `RTError`
+      共享属性，并统一 reason→message，但明确说"两个都超出本 ticket 范围，征求意见"——即范围本身未定，需维护者先拍板（信息不足于最终决定）。
+    plan: 讨论定型后：在 `RTError` 基类统一 `message`/`notes` 属性，子类删除重复 `__init__` 定义；全局替换 reason→message
+      并保留兼容别名。工作量级：天级。风险：公共 API 破坏性变更，需 deprecation 周期与全量调用点排查。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1534':
+    difficulty: 简单
+    summary: 删除 legacy 安装检测代码，前置条件已满足，范围清晰的清理任务
+    problem: '#1522/#1525 已落地 manifest 与 detector，`find_legacy_installs` 及 `.github/copilot-instructions.md`
+      标记块、`.cursor/rules/*.mdc` 的 legacy 感知只剩清理工作；需确认 Copilot+Cursor directory handlers
+      已落地且迁移窗口已过。'
+    plan: 删除 `find_legacy_installs` 及 CLI/tests 中的 legacy 形状处理，清理 `ai_setup.md` 迁移期说明。工作量级：小时级。风险：低；仅注意是否有外部用户仍依赖
+      legacy 检测的隐性兼容诉求。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1538':
+    difficulty: 中等
+    summary: 预置中间件未参数化泛型导致 mypy 类型坍缩，根因已定位
+    problem: '`Retry/Timeout/MaxCalls/Lock` 继承裸 `Middleware`（`Generic[_P, _R]`，`_P`
+      为 ParamSpec），mypy 坍缩为 `Middleware[Never, Never]`；`function_node` 的 `middleware:
+      Iterable[Middleware[_P, _TOutput]]` 因不变性无法统一。根因清晰（`railtracks/middleware/core.py`）。'
+    plan: 让预置中间件参数化泛型（如 `class Retry(Middleware[_P, _R])` 或用 `__call__` 签名推断）；或给 `middleware=`
+      参数改用协议/协变包装。工作量级：小时级到天级。风险：ParamSpec 泛型参数化语法易踩坑，需在多种混合列表场景验证 mypy 行为。
+    analyzed_at: '2026-09-25'
+    last_status: taken-pr
+  '1547':
+    difficulty: 简单
+    summary: 文档去模型特定表述（Claude Code、OpenAI 示例），纯文档编辑
+    problem: agent.md 多处假定用户使用 Claude Code，文档高层指令嵌入 OpenAI 具体示例，应泛化为 "agents" 或移入代码注释。涉及
+      `agent.md` 与 docs 目录（未核实全部命中位置，需全文扫描）。
+    plan: 全文检索模型/工具专名，高层文本泛化，具体示例迁至代码段注释或脚本。工作量级：小时级。风险：极低，注意保留必要的技术准确性（如 API 名称不可省略处）。
+    analyzed_at: '2026-09-25'
+    last_status: taken-pr
+  '1562':
+    difficulty: 中等
+    summary: 'Tool.from_function 把未映射类型静默降级为 object，绕过 #1552 严格校验'
+    problem: '`ParameterType.from_python_type` 的 `mapping.get(py_type, cls.OBJECT)`
+      默认兜底，使 `DefaultParameterHandler.create_parameter` 在调用 `Parameter()` 前就把注解坍缩为合法字符串
+      `"object"`，#1552 的严格校验永不触发。涉及 `packages/railtracks/src/railtracks/llm/tools/parameters/_base.py`
+      与 `parameter_handlers.py`。'
+    plan: 移除/收紧 `from_python_type` 的默认兜底使其抛错，或在 `create_parameter` 处对未映射类型显式校验；评估现有用户函数中未映射类型的实际存在量，决定
+      raise 还是 warn+跳过。工作量级：小时级到天级。风险：可能使此前静默可用的工具函数开始报错（行为破坏），需文档说明与灰度策略。
+    analyzed_at: '2026-09-25'
+    last_status: taken-assignee
+  '1572':
+    difficulty: 困难
+    summary: 通过环境上下文暴露当前节点/flow 元数据，需架构设计的新能力
+    problem: '现有 `rt.context` 只暴露 session 级身份与 `get_parent_id()` 裸 UUID；节点名称、类型、元数据未入
+      scope 栈，middleware/工具无法感知所在节点。涉及 `railtracks.context.central` 的 `ContextVarScopeManager`/`SessionContext.scope`
+      与节点执行路径，源自 #1570/#1571 系列设计（正文截断，部分信息不足）。'
+    plan: 在节点入栈时推送 `{name, type, metadata}`，新增 `rt.context.get_current_node()`；需设计与
+      session identity 的关系、性能开销与跨 await 安全。工作量级：天级到周级。风险：ContextVar 生命周期与嵌套节点边界易出错，API
+      设计需先评审。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1573':
+    difficulty: 简单
+    summary: '`railtracks add --force` 前置位置解析顺序 bug，定位明确的 CLI 修复'
+    problem: '`_run_add` 在解析 `--force` 之前检查 `args[0].startswith("-")`，导致 usage 文本承诺的
+      `railtracks add --force <tool>:<skill>` 顺序实际报错退出。位置：`packages/railtracks/src/railtracks/cli/__init__.py`。'
+    plan: 把 `force = "--force" in args` 提前到 usage 检查前，或改为先过滤 flag 再校验剩余参数；顺带补一条顺序无关的测试（作者指出测试缺失）。工作量级：小时级。风险：极低。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1574':
+    difficulty: 中等
+    summary: 内部调用路径的 Session 触发 flow_name 警告，误扰正常用户
+    problem: '`Session.__init__`（`_session.py:90-94`）对无 `flow_name` 的构造发警告，但 `interaction/_call.py`
+      与 `_astream.py` 的内部路径同样开 `with Session()`，使文档推荐的顶层 `await rt.call(...)` 也告警。本质是"内部路径
+      vs 用户路径"无法区分。'
+    plan: 给 `Session.__init__` 加内部标志参数（如 `_internal=True`）由 `_call.py`/`_astream.py`
+      传入跳过警告；或仅当用户显式写 `with rt.Session()` 才警告（难以检测，标志方案更实际）。工作量级：小时级。风险：低；注意不要连带静默其他有价值的告警。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1576':
+    difficulty: 困难
+    summary: OpenAI Responses-API reasoning_items 支持，前置依赖未就绪
+    problem: litellm 1.89 的 `reasoning_items` 是 Responses-API 字段，railtracks 当前走 `litellm.completion`（Chat
+      Completions），根本不暴露该数据——issue 自己也承认"今天不需要"。真正落地需先把 OpenAI 路由切到 Responses API（大前置工程，信息不足于该切换的方案）。
+    plan: 短期在 `Message`/`Delta` 模型上预留 `reasoning_items` 字段与序列化透传；长期依赖 Responses API
+      路由工作。工作量级：字段透传为天级，完整支持为周级。风险：现在实现属投机性 API，litellm 行为可能变动；建议挂起等待路由能力。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1577':
+    difficulty: 简单
+    summary: websearch 文档页缺 optional extra 安装说明，纯文档补全
+    problem: Web Search Tool 文档未说明需安装 `websearch` extra（`tavily-python`、`trafilatura`
+      在 `pyproject.toml` 的 optional extra 中），照文档操作会 ImportError。源文件：`docs/documentation/agent_design/tools/prebuilt/websearch.md`。
+    plan: 在文档开头加 `pip install "railtracks[websearch]"` 及 API key 说明；顺带检查其他 prebuilt
+      工具页是否有同类缺失。工作量级：小时级。风险：无。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1581':
+    difficulty: 中等
+    summary: Union处理错误放宽required，修复明确且影响函数调用正确性
+    problem: '`UnionParameterHandler` 在联合类型含 None 时错误地将参数标记为非必填，混淆了"值可为 None"与"键可省略"；大概率在
+      schema 生成模块的 union 处理器（未核实具体路径）。'
+    plan: 移除 union handler 对 `required` 的覆盖，沿用 `Tool.from_function` 的 default 判断；或区分
+      presence 与 nullability。小时级。风险：可能影响下游依赖旧 schema 行为的测试/兼容性。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1582':
+    difficulty: 中等
+    summary: 异构元组需改用prefixItems按位约束，修法明确但涉及schema版本兼容
+    problem: 定长异构 tuple 生成的 items 用 anyOf，元素位置不受约束，`["a","b"]` 可通过 `Tuple[str, int]`；大概率在
+      tuple→array 的 schema 转换逻辑（未核实具体路径）。
+    plan: 按成员顺序生成 `prefixItems`（保留 minItems/maxItems），需处理 JSON Schema draft 版本兼容及所有成员同类型时回退
+      items。小时级到天级。风险：老客户端不支持 prefixItems；单元素 tuple 等边界情况。
+    analyzed_at: '2026-09-25'
+    last_status: open
+  '1584':
+    difficulty: 中等
+    summary: 聚合SUM掩盖未定价调用的null成本，与已修的单行端点行为不一致，站点明确
+    problem: '裸 `SUM(total_cost)` 跳过 NULL 行，混合定价/未定价的 session/node 成本被静默低估，与 #1553/#1568
+      修复的行级端点不一致；站点已明确列出 sessions.py/nodes.py 等（第三处被截断，需核实完整清单）。'
+    plan: 改用 `SUM` + NULL 检测（如 `COUNT(*) FILTER (WHERE total_cost IS NULL)` 配合输出 null
+      或部分标记），或用 `SUM(...) 保持null语义` 的条件聚合；保持与行级端点语义一致。小时级。风险：前端对 null 聚合值的展示处理；需同步更新查询测试。
+    analyzed_at: '2026-09-25'
+    last_status: open
