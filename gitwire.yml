@@ -10,4 +10,7 @@ repos:
   - cve-scan
   - issue-radar
 - rakkasei0810/notion-plugin-notion-openai-curated-remote
-- RailtownAI/railtracks
+- name: RailtownAI/railtracks
+  recipes:
+  - docs-sync
+  - issue-radar
