@@ -9,3 +9,4 @@ repos:
   - bug-watch
   - cve-scan
 - czm233/VoiceTutor
+- rakkasei0810/notion-plugin-notion-openai-curated-remote
