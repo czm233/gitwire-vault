@@ -1,6 +1,6 @@
 # Issue 雷达 · RailtownAI/railtracks
 
-> 全景扫描：2026-09-25 · 开放 issue 96 个 · 机会 25 · 未入榜 46 · 被占 25
+> 全景扫描：2026-09-25 · 开放 issue 96 个 · 机会 24 · 未入榜 47 · 被占 25
 
 ## 机会榜（按值得做排序，top 10）
 
@@ -15,9 +15,9 @@
 | [#1573](https://github.com/RailtownAI/railtracks/issues/1573) | 简单 | 较新·收外部PR | railtracks add --force before <tool>:<skill> fails, despite  —— `railtracks add --force` 前置位置解析顺序 bug，定位明确的 CLI 修复 |
 | [#1534](https://github.com/RailtownAI/railtracks/issues/1534) | 简单 | 收外部PR | Delete legacy install detection —— 删除 legacy 安装检测代码，前置条件已满足，范围清晰的清理任务 |
 | [#1223](https://github.com/RailtownAI/railtracks/issues/1223) | 简单 | 收外部PR | [Feature] Prebuilt Tool Tags —— 给预构建工具打标签以便可视化器区分展示 |
-| [#1316](https://github.com/RailtownAI/railtracks/issues/1316) | 简单 | 收外部PR | Improve instruction for using custom function as tool —— 改进自定义函数作为工具的文档说明 |
+| [#1574](https://github.com/RailtownAI/railtracks/issues/1574) | 中等 | 新鲜·收外部PR | Session flow_name warning fires on railtracks' own internal  —— 内部调用路径的 Session 触发 flow_name 警告，误扰正常用户 |
 
-## 未入榜（46）
+## 未入榜（47）
 - #1592 Agent.md and agent use of railtracks for building or develop —— 难度困难
 - #1589 Should `rt.context` hand out shared references or copies? —— 难度困难
 - #1576 Follow-up on OpenAI Responses-API `reasoning_items` —— 难度困难
@@ -31,19 +31,20 @@
 - #1454 Static Node Events —— 难度困难
 - #1435 Railtrack should not modify litellm behaviour globally —— 建于 37 天前且近 37 天无动静
 - #1414 Add Additional Properties to the Node Creation Events —— 难度困难
-- #1413 Migrate Current Colourful Logging to use Events Approach —— 建于 37 天前且近 37 天无动静
+- #1413 Migrate Current Colourful Logging to use Events Approach —— 建于 38 天前且近 38 天无动静
 - #1398 post-init assignment guard/docmentation —— 建于 42 天前且近 42 天无动静
 - #1395 Provide even further tool abstraction —— 建于 42 天前且近 42 天无动静
 - #1375 [Documentation] Doc page content and naming duplications —— 建于 44 天前且近 44 天无动静
 - #1362 Reimplement Structured Tool Calling LLM —— 难度困难
-- #1356 Non-Uniform Provider Initialization & Model String Mapping —— 建于 49 天前且近 49 天无动静
+- #1356 Non-Uniform Provider Initialization & Model String Mapping —— 建于 50 天前且近 50 天无动静
 - #1355 High Pyright formatting Error numbers —— 难度困难
 - #1354 Token estimator —— 建于 50 天前且近 50 天无动静
 - #1353 Serializable transcript / history export/input from popular  —— 建于 50 天前且近 50 天无动静
 - #1348 Let tools return rich content (ie: images) natively —— 难度困难
 - #1321 Attachment through file API —— 难度困难
 - #1320 Attachment location interleaving —— 建于 56 天前且近 56 天无动静
-- #1306 Build a Guardrail for Work Scope —— 建于 58 天前且近 37 天无动静
+- #1316 Improve instruction for using custom function as tool —— 建于 56 天前且近 15 天无动静
+- #1306 Build a Guardrail for Work Scope —— 建于 58 天前且近 38 天无动静
 - #1251 viz command: formalize --dir flag and add subdirectory aware —— 建于 72 天前且近 28 天无动静
 - #1216 [Feature] Store Backends for Key-Value Stores —— 难度困难
 - #1209 [Tech Debt] Current Pgvector Backend throws all metadata to  —— 建于 98 天前且近 98 天无动静
@@ -59,17 +60,17 @@
 - #1150 [Feature] [Retrieval] Batch write for stores —— 建于 114 天前且近 21 天无动静
 - #1142 [Feature] Implement cached memory compression at the LLM lev —— 难度困难
 - #1131 [Feature] [Retrieval] Integration of `RetrievalRuntime` insi —— 难度困难
-- #1065 [Feature] `retry` mechanism for blocked guardrail decisions —— 建于 163 天前且近 21 天无动静
+- #1065 [Feature] `retry` mechanism for blocked guardrail decisions —— 建于 163 天前且近 22 天无动静
 - #1053 [Feature] Add Length Requirement Guardrail —— 建于 175 天前且近 79 天无动静
 - #1014 [Feature] Evaluation Shots/Examples/Rubric —— 建于 191 天前且近 16 天无动静
 - #1004 [Docs] Implement Various Agent Architectures —— 难度困难
 - #853 [Feature] Support for all of MCP features —— 难度困难
 
 ## 池内动态
-- #1431 已关闭（PR#1563）
-- #1590 已关闭（PR#1591）
+- #1217 已关闭（已关闭（来源未识别））
 
 ## 已被占（不必再看）
+- #1596 OpenAILLM rejects reasoning_effort for gpt-6-luna (litellm pinned <= 1.89.0) —— 被 assignee Aryan-Railtown 占
 - #1562 Tool.from_function silently degrades unmapped parameter types to "object" (bypasses #1552's strict validation) —— 被 assignee rajathpatel23 占
 - #1474 We need a ticket assign max duration or PR open duration —— 被 assignee CoronRing 占
 - #1458 Tool schemas silently degrade to `{"type": "object"}` under `from __future__ import annotations` —— 被 assignee CoronRing 占
@@ -87,7 +88,6 @@
 - #1239 Rethinking observability into an events stream —— 被 assignee Amir-R25 占
 - #1233 Prebuilt Tools —— 被 assignee Pooria90 占
 - #1228 [Feature] Json should store in UTF-16 instead of ASC-II —— 被 assignee CoronRing 占
-- #1217 [Feature] [Middleware] Thinking model support — streaming, storage, and round-tripping of reasoning blocks —— 被 assignee CoronRing 占
 - #1179 [Docs] Define of keywords —— 被 PR#1566 占
 - #1156 [Feature]  Auto populate agent manifest by ingesting system message. —— 被 assignee CoronRing 占
 - #1145 [Feature] General Issue for Supported Add Ons —— 被 assignee soulFood5632 占
@@ -97,11 +97,18 @@
 - #486 [Feature] Documentation App —— 被 assignee Aryan-Railtown 占
 
 ## 近期关闭
+- #1217 [Feature] [Middleware] Thinking model support — streaming, storage, and round-tripping of reasoning blocks —— 已关闭（来源未识别）（2026-09-24）
 - #1431 Surface thinking token in LLM response. —— PR#1563（2026-09-24）
 - #1590 import railtracks fails on Python 3.11+ after #1558 (Middleware TypeVar default leaks into BaseGuardrail) —— PR#1591（2026-09-24）
 - #1538 Type hints collapse when you use a list of pre-built middlewares —— PR#1541（2026-09-24）
 
 ## 分析详情（最新分析在前）
+### #1596 [中等|🔒认领] OpenAILLM rejects reasoning_effort for gpt-6-luna (litellm pinned <= 1.89.0)
+- 依赖版本上限导致 gpt-6 系列不支持 reasoning_effort，值得升级 litellm
+- 问题：litellm 钉在 <=1.89.0，其参数支持列表未把 gpt-6-* 识别为推理模型，`is_hyperparameter_supported()` 依据该列表拒绝构造 OpenAILLM；模型能力元数据本身是对的。大概率涉及依赖版本约束（pyproject/poetry.lock）及超参数校验逻辑，或改用 `model_cost` 能力判断（未核实）。
+- 方案：升级 litellm 下限至 1.101.0（首选），或改为同时查询 `model_cost.supports_reasoning` 的宽松校验；并补回归测试。风险：litellm 大版本跨度升级的兼容性、API 变动。工作量级：小时级到天级。
+- 分析于 2026-09-25
+
 ### #1594 [简单|🟢机会] CI: test every supported Python version and gate releases on it
 - CI 增加多 Python 版本矩阵并让发布跑测试，明确且价值高
 - 问题：CI 仅测 3.10，`release_package.yaml` 发布时完全不跑测试，导致 #1590/#1593 等 bug 不可见。改动集中在 GitHub Actions 工作流文件，范围明确。
@@ -216,12 +223,6 @@
 - 方案：`InputGuard.__init__` 加 `once: bool = False`，穿透 `input_guard(...)` 装饰器与 `_make_guard`；`once=True` 且本次 agent 调用已触发时 `_middleware_fn` 直接转发。依赖异步 guardrail task 先落地。工作量级：小时级到天级。风险：与 async guard 任务的状态生命周期管理（"本次调用"判定）、默认值兼容性低风险。
 - 分析于 2026-09-25
 
-### #1488 [困难|🟢机会] Command Line Assistant Module
-- 提供开箱即用的终端 Assistant 模块，是较大新功能设计
-- 问题：用户搭建终端助手需自行胶水组合 base agent、shell 工具、python 执行、记忆、clarification、实时输出与 CLI。需要设计 `AssistantPro` + `TerminalUI` 的新 API 面，且作者明确不放 `prebuilt`——归属与分层需维护者决策，正文被截断（信息不足）。
-- 方案：先与维护者确认模块归属与 API 形状，再实现 agent 装配 + 终端 TUI（可能复用 rich/prompt_toolkit，未核实）。工作量级：周级。风险：API 设计定型过早、依赖新增、与未来 prebuilt 体系冲突。
-- 分析于 2026-09-25
-
 ## 全量总表
 
 <details><summary>展开全部开放 issue</summary>
@@ -258,7 +259,6 @@
 | #1204 | 困难 | 🟡困难 | 文件系统工具：受控文件/shell 操作，设计问题未决 |
 | #1209 | 中等 | 🟢机会 | pgvector 后端把所有 metadata 塞单 payload 列 |
 | #1216 | 困难 | 🟡困难 | 键值存储后端支持（tracking issue，无具体范围） |
-| #1217 | 困难 | 🔒认领 | 全链路思考块支持，跨流式/解析/序列化架构级改造 |
 | #1223 | 简单 | 🟢机会 | 给预构建工具打标签以便可视化器区分展示 |
 | #1228 | 简单 | 🔒认领 | JSON 存储改 UTF-16 以下提升人类/代理可读性 |
 | #1233 | 困难 | 🔒认领 | 预构建工具集（内存/文件/TODO/搜索），tracking 票范围大 |
@@ -324,5 +324,6 @@
 | #1592 | 困难 | 🟡困难 | Agent.md 及 agent 开发用法的追踪性 Epic，范围宽泛需拆解 |
 | #1593 | 中等 | 🟢机会 | 3.13+ 下 builtin 检测失效及 iscoroutinefunction 兼容性 bug，修复路径清晰 |
 | #1594 | 简单 | 🟢机会 | CI 增加多 Python 版本矩阵并让发布跑测试，明确且价值高 |
+| #1596 | 中等 | 🔒认领 | 依赖版本上限导致 gpt-6 系列不支持 reasoning_effort，值得升级 litellm |
 
 </details>

@@ -1,4 +1,4 @@
-last_sweep: '2026-09-25T06:00:45+08:00'
+last_sweep: '2026-09-25T07:00:46+08:00'
 issues:
   '486':
     difficulty: 困难
@@ -142,7 +142,7 @@ issues:
     - area:add-on
     comments_seen: 0
     created_at: '2026-04-14T01:41:33Z'
-    excluded: 建于 163 天前且近 21 天无动静
+    excluded: 建于 163 天前且近 22 天无动静
   '1114':
     difficulty: 简单
     summary: 文档语法内容修缺父票，长期跟踪，零散小改
@@ -441,7 +441,7 @@ issues:
     plan: '引入统一的 reasoning 块类型，逐层打通 delta 解析→存储→round-trip，参照 #1206 流式架构；跨模块需设计决策（周级），风险在多
       provider 差异与向后兼容。'
     analyzed_at: '2026-09-25'
-    last_status: taken-assignee
+    last_status: closed
     title: '[Feature] [Middleware] Thinking model support — streaming, storage, and
       round-tripping of reasoning blocks'
     labels_seen:
@@ -450,6 +450,9 @@ issues:
     comments_seen: 1
     created_at: '2026-06-23T19:34:13Z'
     excluded: ''
+    closed_at: '2026-09-24T22:53:21Z'
+    resolved_by: 已关闭（来源未识别）
+    status_changed_at: '2026-09-25T07:00:46+08:00'
   '1223':
     difficulty: 简单
     summary: 给预构建工具打标签以便可视化器区分展示
@@ -574,7 +577,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-07-28T19:07:51Z'
-    excluded: 建于 58 天前且近 37 天无动静
+    excluded: 建于 58 天前且近 38 天无动静
   '1316':
     difficulty: 简单
     summary: 改进自定义函数作为工具的文档说明
@@ -587,7 +590,7 @@ issues:
     - area:docs
     comments_seen: 0
     created_at: '2026-07-30T19:50:57Z'
-    excluded: ''
+    excluded: 建于 56 天前且近 15 天无动静
   '1320':
     difficulty: 中等
     summary: 附件在消息中的位置交错，媒体块位置信息丢失
@@ -724,7 +727,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-05T22:08:58Z'
-    excluded: 建于 49 天前且近 49 天无动静
+    excluded: 建于 50 天前且近 50 天无动静
   '1357':
     difficulty: 中等
     summary: 让 Agent 响应暴露工具调用信息，需接口设计决策
@@ -846,7 +849,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-17T22:42:32Z'
-    excluded: 建于 37 天前且近 37 天无动静
+    excluded: 建于 38 天前且近 38 天无动静
   '1414':
     difficulty: 困难
     summary: 节点创建事件需补充工具模型信息，设计导向、范围未定
@@ -1292,7 +1295,7 @@ issues:
     title: Follow-up on OpenAI Responses-API `reasoning_items`
     labels_seen:
     - area:llm
-    comments_seen: 0
+    comments_seen: 1
     created_at: '2026-09-18T21:20:59Z'
     excluded: ''
   '1577':
@@ -1393,7 +1396,7 @@ issues:
     labels_seen:
     - area:core
     - question
-    comments_seen: 2
+    comments_seen: 3
   '1590':
     difficulty: 中等
     summary: PEP 696 TypeVar 默认值跨模块泄漏导致 import 崩溃，可复现、修法清晰，值得做
@@ -1467,5 +1470,22 @@ issues:
     last_status: open
     status_changed_at: '2026-09-25T05:00:45+08:00'
     labels_seen:
-    - '[Maintainer] task'
+    - area:core
+    comments_seen: 1
+  '1596':
+    difficulty: 中等
+    summary: 依赖版本上限导致 gpt-6 系列不支持 reasoning_effort，值得升级 litellm
+    problem: litellm 钉在 <=1.89.0，其参数支持列表未把 gpt-6-* 识别为推理模型，`is_hyperparameter_supported()`
+      依据该列表拒绝构造 OpenAILLM；模型能力元数据本身是对的。大概率涉及依赖版本约束（pyproject/poetry.lock）及超参数校验逻辑，或改用
+      `model_cost` 能力判断（未核实）。
+    plan: 升级 litellm 下限至 1.101.0（首选），或改为同时查询 `model_cost.supports_reasoning` 的宽松校验；并补回归测试。风险：litellm
+      大版本跨度升级的兼容性、API 变动。工作量级：小时级到天级。
+    analyzed_at: '2026-09-25'
+    title: OpenAILLM rejects reasoning_effort for gpt-6-luna (litellm pinned <= 1.89.0)
+    created_at: '2026-09-24T22:17:05Z'
+    excluded: ''
+    last_status: taken-assignee
+    status_changed_at: '2026-09-25T07:00:46+08:00'
+    labels_seen:
+    - area:core
     comments_seen: 0
