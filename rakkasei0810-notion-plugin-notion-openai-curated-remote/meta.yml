@@ -1,0 +1,8 @@
+repo: rakkasei0810/notion-plugin-notion-openai-curated-remote
+last_synced: 0b2db47d27bbbda563f19d333bf1f758ed39f4fd
+last_mode: init
+summary: GetToIt 是画师/单主委托排单计时双端工作台：Next.js+Koa+Prisma/MySQL，含 RBAC 后台、邮箱/QQ 登录、COS
+  图片直传；本次为首次全量建档，需盯防仓库名错位与 prod MySQL 端口暴露。
+updated_at: '2026-09-24T23:37:38+08:00'
+last_release_tag: null
+last_issue_number: null
