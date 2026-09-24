@@ -1,4 +1,4 @@
-last_sweep: '2026-09-25T05:00:45+08:00'
+last_sweep: '2026-09-25T06:00:45+08:00'
 issues:
   '486':
     difficulty: 困难
@@ -116,7 +116,7 @@ issues:
     - help wanted
     comments_seen: 1
     created_at: '2026-03-17T16:52:56Z'
-    excluded: 建于 191 天前且近 15 天无动静
+    excluded: 建于 191 天前且近 16 天无动静
   '1053':
     difficulty: 简单
     summary: 长度护栏 Guardrail，接口已定范围明确
@@ -129,7 +129,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-04-02T21:46:04Z'
-    excluded: 建于 174 天前且近 79 天无动静
+    excluded: 建于 175 天前且近 79 天无动静
   '1065':
     difficulty: 中等
     summary: 被拦截护栏的重试机制，需设计决策
@@ -214,7 +214,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-06-01T23:32:31Z'
-    excluded: 建于 114 天前且近 20 天无动静
+    excluded: 建于 114 天前且近 21 天无动静
   '1156':
     difficulty: 困难
     summary: 用 system message 自动生成 agent manifest，自动化程度需设计决策
@@ -243,7 +243,7 @@ issues:
     - area:docs
     comments_seen: 0
     created_at: '2026-06-02T20:28:49Z'
-    excluded: 建于 114 天前且近 20 天无动静
+    excluded: 建于 114 天前且近 21 天无动静
   '1167':
     difficulty: 简单
     summary: HF 数据集所有行 id 相同，破坏 upsert 语义
@@ -258,7 +258,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-06-04T19:11:01Z'
-    excluded: 建于 112 天前且近 20 天无动静
+    excluded: 建于 112 天前且近 21 天无动静
   '1172':
     difficulty: 中等
     summary: 将 _Session 等内部类标记为 internal，防误用
@@ -271,7 +271,7 @@ issues:
     - area:core
     comments_seen: 1
     created_at: '2026-06-05T23:49:17Z'
-    excluded: 建于 110 天前且近 20 天无动静
+    excluded: 建于 110 天前且近 21 天无动静
   '1173':
     difficulty: 中等
     summary: 新增 Turbovec 向量后端集成
@@ -287,7 +287,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-06-08T16:34:15Z'
-    excluded: 建于 108 天前且近 20 天无动静
+    excluded: 建于 108 天前且近 21 天无动静
   '1179':
     difficulty: 简单
     summary: 为文档核心术语定义 glossary 并互链
@@ -419,7 +419,7 @@ issues:
     - tech debt
     comments_seen: 0
     created_at: '2026-06-18T21:26:55Z'
-    excluded: 建于 97 天前且近 97 天无动静
+    excluded: 建于 98 天前且近 98 天无动静
   '1216':
     difficulty: 困难
     summary: 键值存储后端支持（tracking issue，无具体范围）
@@ -685,7 +685,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-05T21:51:42Z'
-    excluded: 建于 49 天前且近 49 天无动静
+    excluded: 建于 50 天前且近 50 天无动静
   '1354':
     difficulty: 中等
     summary: 通用 token 估算器，范围清晰但需选型设计
@@ -698,7 +698,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-05T21:57:15Z'
-    excluded: 建于 49 天前且近 49 天无动静
+    excluded: 建于 50 天前且近 50 天无动静
   '1355':
     difficulty: 困难
     summary: 清除 539 个 Pyright 错误，量大且需逐一定位
@@ -765,7 +765,7 @@ issues:
     - area:docs
     comments_seen: 1
     created_at: '2026-08-11T19:08:06Z'
-    excluded: 建于 44 天前且近 43 天无动静
+    excluded: 建于 44 天前且近 44 天无动静
   '1381':
     difficulty: 简单
     summary: 添加 llms.txt / llms-full.txt，范围明确的文档任务
@@ -820,7 +820,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-13T21:01:02Z'
-    excluded: 建于 41 天前且近 41 天无动静
+    excluded: 建于 42 天前且近 42 天无动静
   '1409':
     difficulty: 中等
     summary: 成本限额中间件，设计已有雏形的功能
@@ -914,13 +914,16 @@ issues:
     plan: 响应对象与 MessageHistory 增加 thinking 字段，各 provider wrapper 解析填充。明确「只透出不消费」（工作量级：天级到周级）。风险：多
       provider 格式差异大，历史序列化兼容性。
     analyzed_at: '2026-09-25'
-    last_status: taken-assignee
+    last_status: closed
     title: Surface thinking token in LLM response.
     labels_seen:
     - area:llm
     comments_seen: 0
     created_at: '2026-08-18T20:40:01Z'
     excluded: ''
+    closed_at: '2026-09-24T21:19:44Z'
+    resolved_by: PR#1563
+    status_changed_at: '2026-09-25T06:00:45+08:00'
   '1433':
     difficulty: 简单
     summary: 成本计算纳入 cache hit 折扣 token，显著提升准确度
@@ -952,7 +955,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-18T21:05:40Z'
-    excluded: 建于 36 天前且近 36 天无动静
+    excluded: 建于 37 天前且近 37 天无动静
   '1446':
     difficulty: 中等
     summary: 新增 context 创建/读写/完成四类可观测事件
@@ -1390,7 +1393,7 @@ issues:
     labels_seen:
     - area:core
     - question
-    comments_seen: 1
+    comments_seen: 2
   '1590':
     difficulty: 中等
     summary: PEP 696 TypeVar 默认值跨模块泄漏导致 import 崩溃，可复现、修法清晰，值得做
@@ -1406,13 +1409,15 @@ issues:
       default leaks into BaseGuardrail)'
     created_at: '2026-09-24T19:52:09Z'
     excluded: ''
-    last_status: taken-assignee
-    status_changed_at: '2026-09-25T04:00:14+08:00'
+    last_status: closed
+    status_changed_at: '2026-09-25T06:00:45+08:00'
     labels_seen:
     - area:add-on
     - area:core
     - bug
     comments_seen: 0
+    closed_at: '2026-09-24T21:00:11Z'
+    resolved_by: PR#1591
   '1592':
     difficulty: 困难
     summary: Agent.md 及 agent 开发用法的追踪性 Epic，范围宽泛需拆解

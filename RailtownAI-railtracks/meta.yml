@@ -1,9 +1,8 @@
 repo: RailtownAI/railtracks
-last_synced: 75c3b17bdb3506485c9403fe0d236d884913affd
+last_synced: ee5d84d9d417c9d9017fd9be78472e67515a6cab
 last_mode: incremental
-summary: Middleware 泛型第三参数致 Python 3.11+ guardrails 导入失败，75c3b17 显式绑定 constraint 修复；#1583
-  全面改写 agent-facing 文档与技能文案。
-updated_at: '2026-09-25T05:01:10+08:00'
+summary: railtracks 单提交增量：AssistantMessage/Response 全链路透出模型 reasoning/thinking，含签名块回传与工具循环元数据保留（#1431，ee5d84d）。
+updated_at: '2026-09-25T06:00:50+08:00'
 last_release_tag: v1.5.4
 last_issue_number: 1594
 last_pr_number: 1595

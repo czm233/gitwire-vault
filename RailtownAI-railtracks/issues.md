@@ -1,6 +1,6 @@
 # Issue 雷达 · RailtownAI/railtracks
 
-> 全景扫描：2026-09-25 · 开放 issue 98 个 · 机会 25 · 未入榜 46 · 被占 27
+> 全景扫描：2026-09-25 · 开放 issue 96 个 · 机会 25 · 未入榜 46 · 被占 25
 
 ## 机会榜（按值得做排序，top 10）
 
@@ -29,51 +29,53 @@
 - #1462 Logger: RuntimeError on  unretrieved-task —— 建于 35 天前且近 16 天无动静
 - #1456 LLM swap and config adjustment on retry —— 难度困难
 - #1454 Static Node Events —— 难度困难
-- #1435 Railtrack should not modify litellm behaviour globally —— 建于 36 天前且近 36 天无动静
+- #1435 Railtrack should not modify litellm behaviour globally —— 建于 37 天前且近 37 天无动静
 - #1414 Add Additional Properties to the Node Creation Events —— 难度困难
 - #1413 Migrate Current Colourful Logging to use Events Approach —— 建于 37 天前且近 37 天无动静
-- #1398 post-init assignment guard/docmentation —— 建于 41 天前且近 41 天无动静
+- #1398 post-init assignment guard/docmentation —— 建于 42 天前且近 42 天无动静
 - #1395 Provide even further tool abstraction —— 建于 42 天前且近 42 天无动静
-- #1375 [Documentation] Doc page content and naming duplications —— 建于 44 天前且近 43 天无动静
+- #1375 [Documentation] Doc page content and naming duplications —— 建于 44 天前且近 44 天无动静
 - #1362 Reimplement Structured Tool Calling LLM —— 难度困难
 - #1356 Non-Uniform Provider Initialization & Model String Mapping —— 建于 49 天前且近 49 天无动静
 - #1355 High Pyright formatting Error numbers —— 难度困难
-- #1354 Token estimator —— 建于 49 天前且近 49 天无动静
-- #1353 Serializable transcript / history export/input from popular  —— 建于 49 天前且近 49 天无动静
+- #1354 Token estimator —— 建于 50 天前且近 50 天无动静
+- #1353 Serializable transcript / history export/input from popular  —— 建于 50 天前且近 50 天无动静
 - #1348 Let tools return rich content (ie: images) natively —— 难度困难
 - #1321 Attachment through file API —— 难度困难
 - #1320 Attachment location interleaving —— 建于 56 天前且近 56 天无动静
 - #1306 Build a Guardrail for Work Scope —— 建于 58 天前且近 37 天无动静
 - #1251 viz command: formalize --dir flag and add subdirectory aware —— 建于 72 天前且近 28 天无动静
 - #1216 [Feature] Store Backends for Key-Value Stores —— 难度困难
-- #1209 [Tech Debt] Current Pgvector Backend throws all metadata to  —— 建于 97 天前且近 97 天无动静
+- #1209 [Tech Debt] Current Pgvector Backend throws all metadata to  —— 建于 98 天前且近 98 天无动静
 - #1204 [Feature] File System Tool —— 难度困难
 - #1193 [Bug] Context variable dict is not concurrency safe —— 难度困难
 - #1187 [Bug] [Retrieval] Partially-failed re-ingest deletes the pri —— 难度困难
 - #1186 [Perf] [Retrieval] Chroma backend stores chunk content twice —— 建于 106 天前且近 106 天无动静
 - #1184 [Perf] [Retrieval] Ingest issues one store round-trip per ch —— 建于 106 天前且近 106 天无动静
-- #1173 [Feature] [Retrieval] Add `Turbovec` to our stores Integrati —— 建于 108 天前且近 20 天无动静
-- #1172 [Feature]  Define certain class as internal —— 建于 110 天前且近 20 天无动静
-- #1167 [Bug] [Retrieval] same `id` for all rows in `HuggingFaceData —— 建于 112 天前且近 20 天无动静
-- #1160 [Docs] Prefer if api_reference lives under main doc site —— 建于 114 天前且近 20 天无动静
-- #1150 [Feature] [Retrieval] Batch write for stores —— 建于 114 天前且近 20 天无动静
+- #1173 [Feature] [Retrieval] Add `Turbovec` to our stores Integrati —— 建于 108 天前且近 21 天无动静
+- #1172 [Feature]  Define certain class as internal —— 建于 110 天前且近 21 天无动静
+- #1167 [Bug] [Retrieval] same `id` for all rows in `HuggingFaceData —— 建于 112 天前且近 21 天无动静
+- #1160 [Docs] Prefer if api_reference lives under main doc site —— 建于 114 天前且近 21 天无动静
+- #1150 [Feature] [Retrieval] Batch write for stores —— 建于 114 天前且近 21 天无动静
 - #1142 [Feature] Implement cached memory compression at the LLM lev —— 难度困难
 - #1131 [Feature] [Retrieval] Integration of `RetrievalRuntime` insi —— 难度困难
 - #1065 [Feature] `retry` mechanism for blocked guardrail decisions —— 建于 163 天前且近 21 天无动静
-- #1053 [Feature] Add Length Requirement Guardrail —— 建于 174 天前且近 79 天无动静
-- #1014 [Feature] Evaluation Shots/Examples/Rubric —— 建于 191 天前且近 15 天无动静
+- #1053 [Feature] Add Length Requirement Guardrail —— 建于 175 天前且近 79 天无动静
+- #1014 [Feature] Evaluation Shots/Examples/Rubric —— 建于 191 天前且近 16 天无动静
 - #1004 [Docs] Implement Various Agent Architectures —— 难度困难
 - #853 [Feature] Support for all of MCP features —— 难度困难
 
+## 池内动态
+- #1431 已关闭（PR#1563）
+- #1590 已关闭（PR#1591）
+
 ## 已被占（不必再看）
-- #1590 import railtracks fails on Python 3.11+ after #1558 (Middleware TypeVar default leaks into BaseGuardrail) —— 被 assignee CoronRing 占
 - #1562 Tool.from_function silently degrades unmapped parameter types to "object" (bypasses #1552's strict validation) —— 被 assignee rajathpatel23 占
 - #1474 We need a ticket assign max duration or PR open duration —— 被 assignee CoronRing 占
 - #1458 Tool schemas silently degrade to `{"type": "object"}` under `from __future__ import annotations` —— 被 assignee CoronRing 占
 - #1451 Skill Infrastructure: Directories Support —— 被 assignee Pooria90 占
 - #1446 Context Events —— 被 assignee Amir-R25 占
 - #1433 Precise request cost with cache hit info —— 被 PR#1519 占
-- #1431 Surface thinking token in LLM response. —— 被 assignee Pooria90 占
 - #1430 LLM finish_reason  is not respected —— 被 assignee CoronRing 占
 - #1425 Emit verifier decisions as observability events —— 被 assignee Aryan-Railtown 占
 - #1393 More insightful error message for bad schema —— 被 assignee CoronRing 占
@@ -95,6 +97,8 @@
 - #486 [Feature] Documentation App —— 被 assignee Aryan-Railtown 占
 
 ## 近期关闭
+- #1431 Surface thinking token in LLM response. —— PR#1563（2026-09-24）
+- #1590 import railtracks fails on Python 3.11+ after #1558 (Middleware TypeVar default leaks into BaseGuardrail) —— PR#1591（2026-09-24）
 - #1538 Type hints collapse when you use a list of pre-built middlewares —— PR#1541（2026-09-24）
 
 ## 分析详情（最新分析在前）
@@ -114,12 +118,6 @@
 - Agent.md 及 agent 开发用法的追踪性 Epic，范围宽泛需拆解
 - 问题：Epic 级追踪 issue，覆盖所有 agent.md、claude/ 文件及相关文档，目的是让 agent 能更好地使用 railtracks。范围极宽泛、无具体交付物定义，信息不足难以估量；实际价值高（agent 辅助开发是趋势）但需先拆成子任务。
 - 方案：先盘点现有 agent.md/claude/ 资产，拆分为文档编写、示例、工具链等子 issue 逐个推进（工作量级：周级，含持续维护；风险点：范围蔓延、验收标准缺失）。
-- 分析于 2026-09-25
-
-### #1590 [中等|🔒认领] import railtracks fails on Python 3.11+ after #1558 (Middleware TypeVar default leaks into BaseGuardrail)
-- PEP 696 TypeVar 默认值跨模块泄漏导致 import 崩溃，可复现、修法清晰，值得做
-- 问题：#1558 给 `Middleware` 加了第三参数 `_Constraint`（默认值引用 middleware/core.py 自己的 `_P`/`_R`）；guardrails/interfaces.py 的同名 `_P`/`_R` 是不同 TypeVar 对象，`BaseGuardrail` 未传第三参数时默认值解析跨模块失败，非 3.10 环境直接 `TypeError`（未核实具体解析机制细节）。影响 `import railtracks`，属核心阻断性 bug。
-- 方案：让默认值引用自身类型参数或改为显式传参（BaseGuardrail 写 `Middleware[_P, _R, _MiddlewareSignature[_P, _R]]`），或用 `default=_MiddlewareSignature[...]` 可序列化的替代写法/移除默认值。工作量级：小时级。风险点：需在 3.11–3.13 全版本回归验证泛型解析；可能还有其他未传参的子类有同样问题（未核实）。
 - 分析于 2026-09-25
 
 ### #1589 [困难|🟢机会] Should `rt.context` hand out shared references or copies?
@@ -218,6 +216,12 @@
 - 方案：`InputGuard.__init__` 加 `once: bool = False`，穿透 `input_guard(...)` 装饰器与 `_make_guard`；`once=True` 且本次 agent 调用已触发时 `_middleware_fn` 直接转发。依赖异步 guardrail task 先落地。工作量级：小时级到天级。风险：与 async guard 任务的状态生命周期管理（"本次调用"判定）、默认值兼容性低风险。
 - 分析于 2026-09-25
 
+### #1488 [困难|🟢机会] Command Line Assistant Module
+- 提供开箱即用的终端 Assistant 模块，是较大新功能设计
+- 问题：用户搭建终端助手需自行胶水组合 base agent、shell 工具、python 执行、记忆、clarification、实时输出与 CLI。需要设计 `AssistantPro` + `TerminalUI` 的新 API 面，且作者明确不放 `prebuilt`——归属与分层需维护者决策，正文被截断（信息不足）。
+- 方案：先与维护者确认模块归属与 API 形状，再实现 agent 装配 + 终端 TUI（可能复用 rich/prompt_toolkit，未核实）。工作量级：周级。风险：API 设计定型过早、依赖新增、与未来 prebuilt 体系冲突。
+- 分析于 2026-09-25
+
 ## 全量总表
 
 <details><summary>展开全部开放 issue</summary>
@@ -288,7 +292,6 @@
 | #1415 | 中等 | 🟢机会 | 为 ctrl+c 中断注册信号处理器，发送终止事件并刷新 |
 | #1425 | 中等 | 🔒认领 | 把 verifier 决策结构化为可观测性事件而非日志 |
 | #1430 | 中等 | 🔒认领 | LLM finish_reason 被丢弃，max token 截断时返回空串 |
-| #1431 | 中等 | 🔒认领 | 在 LLM 响应/历史对象中透出 thinking tokens |
 | #1433 | 简单 | 🔒PR占 | 成本计算纳入 cache hit 折扣 token，显著提升准确度 |
 | #1435 | 中等 | 🟢机会 | railtracks 导入时全局修改 litellm 参数，应局部化 |
 | #1446 | 中等 | 🔒认领 | 新增 context 创建/读写/完成四类可观测事件 |
@@ -318,7 +321,6 @@
 | #1584 | 中等 | 🟢机会 | 聚合SUM掩盖未定价调用的null成本，与已修的单行端点行为不一致，站点明确 |
 | #1588 | 中等 | 🟢机会 | 将 viz 中间件失败匹配从异常消息改为异常 id，避免误匹配 |
 | #1589 | 困难 | 🟡困难 | 语义设计决策：context 引用还是拷贝，需先定规范再改 |
-| #1590 | 中等 | 🔒认领 | PEP 696 TypeVar 默认值跨模块泄漏导致 import 崩溃，可复现、修法清晰，值得做 |
 | #1592 | 困难 | 🟡困难 | Agent.md 及 agent 开发用法的追踪性 Epic，范围宽泛需拆解 |
 | #1593 | 中等 | 🟢机会 | 3.13+ 下 builtin 检测失效及 iscoroutinefunction 兼容性 bug，修复路径清晰 |
 | #1594 | 简单 | 🟢机会 | CI 增加多 Python 版本矩阵并让发布跑测试，明确且价值高 |
