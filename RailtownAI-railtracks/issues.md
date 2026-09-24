@@ -1,6 +1,6 @@
 # Issue 雷达 · RailtownAI/railtracks
 
-> 全景扫描：2026-09-25 · 开放 issue 94 个 · 机会 23 · 未入榜 45 · 被占 26
+> 全景扫描：2026-09-25 · 开放 issue 95 个 · 机会 23 · 未入榜 45 · 被占 27
 
 ## 机会榜（按值得做排序，top 10）
 
@@ -23,7 +23,7 @@
 - #1572 Feature Request: Expose current node and flow metadata via a —— 难度困难
 - #1488 Command Line Assistant Module —— 难度困难
 - #1471 Optimize framework import time —— 难度困难
-- #1468 MessageHistory serializable and loadable —— 建于 34 天前且近 34 天无动静
+- #1468 MessageHistory serializable and loadable —— 建于 35 天前且近 35 天无动静
 - #1463 Long file cleanup: _litellm_wrapper.py —— 建于 35 天前且近 35 天无动静
 - #1462 Logger: RuntimeError on  unretrieved-task —— 建于 35 天前且近 16 天无动静
 - #1456 LLM swap and config adjustment on retry —— 难度困难
@@ -65,6 +65,7 @@
 - #853 [Feature] Support for all of MCP features —— 难度困难
 
 ## 已被占（不必再看）
+- #1590 import railtracks fails on Python 3.11+ after #1558 (Middleware TypeVar default leaks into BaseGuardrail) —— 被 assignee CoronRing 占
 - #1562 Tool.from_function silently degrades unmapped parameter types to "object" (bypasses #1552's strict validation) —— 被 assignee rajathpatel23 占
 - #1474 We need a ticket assign max duration or PR open duration —— 被 assignee CoronRing 占
 - #1458 Tool schemas silently degrade to `{"type": "object"}` under `from __future__ import annotations` —— 被 assignee CoronRing 占
@@ -96,6 +97,12 @@
 - #1538 Type hints collapse when you use a list of pre-built middlewares —— PR#1541（2026-09-24）
 
 ## 分析详情（最新分析在前）
+### #1590 [中等|🔒认领] import railtracks fails on Python 3.11+ after #1558 (Middleware TypeVar default leaks into BaseGuardrail)
+- PEP 696 TypeVar 默认值跨模块泄漏导致 import 崩溃，可复现、修法清晰，值得做
+- 问题：#1558 给 `Middleware` 加了第三参数 `_Constraint`（默认值引用 middleware/core.py 自己的 `_P`/`_R`）；guardrails/interfaces.py 的同名 `_P`/`_R` 是不同 TypeVar 对象，`BaseGuardrail` 未传第三参数时默认值解析跨模块失败，非 3.10 环境直接 `TypeError`（未核实具体解析机制细节）。影响 `import railtracks`，属核心阻断性 bug。
+- 方案：让默认值引用自身类型参数或改为显式传参（BaseGuardrail 写 `Middleware[_P, _R, _MiddlewareSignature[_P, _R]]`），或用 `default=_MiddlewareSignature[...]` 可序列化的替代写法/移除默认值。工作量级：小时级。风险点：需在 3.11–3.13 全版本回归验证泛型解析；可能还有其他未传参的子类有同样问题（未核实）。
+- 分析于 2026-09-25
+
 ### #1589 [困难|🟢机会] Should `rt.context` hand out shared references or copies?
 - 语义设计决策：context 引用还是拷贝，需先定规范再改
 - 问题：本质是 API 语义未定义：rt.context 的 get/put 是共享引用还是拷贝，代码不一致（FlowConnection 深拷贝隔离了跨 invoke，但 run 内共享；且深拷贝导致含锁/客户端的 context 抛 TypeError）。涉及核心 context 模块与 FlowConnection.ainvoke（位置未核实），且已有 #192 有意做成可变，需设计决策。
@@ -210,12 +217,6 @@
 - 方案：将 100+ 处 import 改为函数级/`__getattr__` 惰性导入，重点先处理 MCP 栈与 requests 相关 provider；litellm subtree 需评估是否可延迟或按 provider 拆分。工作量级：周级。风险：动态导入易引发循环导入、API 兼容性（顶层符号暴露）破坏，需完整回归测试。
 - 分析于 2026-09-25
 
-### #1468 [中等|🟢机会] MessageHistory serializable and loadable
-- MessageHistory/消息对象支持 JSON 序列化与反序列化加载
-- 问题：UserMessage/ToolCall/ToolResponse 等均不可 JSON 序列化，无法保存/加载会话。本质是消息模型缺 encode/decode 全覆盖，替代 #1353。
-- 方案：为全部消息内容类型实现 to/from JSON（如 discriminator tag），提供 MessageHistory 级别的 dump/load API，补测试（工作量级：天级）。风险：序列化格式是公共 API，需考虑向前兼容与 ToolResponse 内嵌对象（未核实其结构复杂度）。
-- 分析于 2026-09-25
-
 ## 全量总表
 
 <details><summary>展开全部开放 issue</summary>
@@ -316,5 +317,6 @@
 | #1584 | 中等 | 🟢机会 | 聚合SUM掩盖未定价调用的null成本，与已修的单行端点行为不一致，站点明确 |
 | #1588 | 中等 | 🟢机会 | 将 viz 中间件失败匹配从异常消息改为异常 id，避免误匹配 |
 | #1589 | 困难 | 🟡困难 | 语义设计决策：context 引用还是拷贝，需先定规范再改 |
+| #1590 | 中等 | 🔒认领 | PEP 696 TypeVar 默认值跨模块泄漏导致 import 崩溃，可复现、修法清晰，值得做 |
 
 </details>

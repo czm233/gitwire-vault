@@ -1,4 +1,4 @@
-last_sweep: '2026-09-25T03:31:00+08:00'
+last_sweep: '2026-09-25T04:00:14+08:00'
 issues:
   '486':
     difficulty: 困难
@@ -1064,7 +1064,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-20T19:52:06Z'
-    excluded: 建于 34 天前且近 34 天无动静
+    excluded: 建于 35 天前且近 35 天无动静
   '1471':
     difficulty: 困难
     summary: 优化框架导入时间，需重构大量动态导入，收益明确但工程量大
@@ -1390,4 +1390,26 @@ issues:
     labels_seen:
     - area:core
     - question
+    comments_seen: 0
+  '1590':
+    difficulty: 中等
+    summary: PEP 696 TypeVar 默认值跨模块泄漏导致 import 崩溃，可复现、修法清晰，值得做
+    problem: '#1558 给 `Middleware` 加了第三参数 `_Constraint`（默认值引用 middleware/core.py 自己的
+      `_P`/`_R`）；guardrails/interfaces.py 的同名 `_P`/`_R` 是不同 TypeVar 对象，`BaseGuardrail`
+      未传第三参数时默认值解析跨模块失败，非 3.10 环境直接 `TypeError`（未核实具体解析机制细节）。影响 `import railtracks`，属核心阻断性
+      bug。'
+    plan: 让默认值引用自身类型参数或改为显式传参（BaseGuardrail 写 `Middleware[_P, _R, _MiddlewareSignature[_P,
+      _R]]`），或用 `default=_MiddlewareSignature[...]` 可序列化的替代写法/移除默认值。工作量级：小时级。风险点：需在
+      3.11–3.13 全版本回归验证泛型解析；可能还有其他未传参的子类有同样问题（未核实）。
+    analyzed_at: '2026-09-25'
+    title: 'import railtracks fails on Python 3.11+ after #1558 (Middleware TypeVar
+      default leaks into BaseGuardrail)'
+    created_at: '2026-09-24T19:52:09Z'
+    excluded: ''
+    last_status: taken-assignee
+    status_changed_at: '2026-09-25T04:00:14+08:00'
+    labels_seen:
+    - area:add-on
+    - area:core
+    - bug
     comments_seen: 0
