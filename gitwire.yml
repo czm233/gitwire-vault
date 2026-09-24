@@ -1,0 +1,4 @@
+repos:
+- shibing624/agentica
+recipes:
+- docs-sync
