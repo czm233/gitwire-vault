@@ -23,11 +23,11 @@ owner-repo/
 
 <!-- board:start -->
 
-- 最近一轮同步：2026-09-25；4 个监控目标，7 个已发布
+- 最近一轮同步：2026-09-26；4 个监控目标，7 个已发布
 
 | 项目 | 本轮 | 状态 | 同步到 | 摘要 |
 | --- | --- | --- | --- | --- |
-| [RailtownAI-railtracks](./RailtownAI-railtracks) | 增量 | 已发布 | 1c3ab8c | 雷达：机会 26（新 1）· 未入榜 47 · 被占 25 |
+| [RailtownAI-railtracks](./RailtownAI-railtracks) | 增量 | 已发布 | 1c3ab8c | 雷达：机会 26（新 0）· 未入榜 47 · 被占 25 |
 | [browser-use-jev-ultrafast](./browser-use-jev-ultrafast) | 建档 | 已发布 | 1231850 | jev-ultrafast v0.1.0 首次建档：TypeSafe 驱动的选择式浏览器 Agent，单请求决策+原子DOM快照+严格执行守卫，性能声称 25% 提速但样本小，已列三项盯防点。<<<END>>> |
 | [czm233-CC-Balancer](./czm233-CC-Balancer) | — | 已发布 | dfecb1f | — |
 | [czm233-VoiceTutor](./czm233-VoiceTutor) | 建档 | 已发布 | 263d783 | macOS 本地语音英语老师，M0 全链路跑通：LiveKit Agent + 本地 STT/TTS + 自研 LLM 网关（单请求串行防 429），音频不出机器，仅 LLM 文本出网。<<<END>>> |

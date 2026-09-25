@@ -1,6 +1,6 @@
 # Issue 雷达 · RailtownAI/railtracks
 
-> 全景扫描：2026-09-25 · 开放 issue 98 个 · 机会 26 · 未入榜 47 · 被占 25
+> 全景扫描：2026-09-26 · 开放 issue 98 个 · 机会 26 · 未入榜 47 · 被占 25
 
 ## 机会榜（按值得做排序，top 10）
 
@@ -25,17 +25,17 @@
 - #1572 Feature Request: Expose current node and flow metadata via a —— 难度困难
 - #1488 Command Line Assistant Module —— 难度困难
 - #1471 Optimize framework import time —— 难度困难
-- #1468 MessageHistory serializable and loadable —— 建于 35 天前且近 35 天无动静
-- #1463 Long file cleanup: _litellm_wrapper.py —— 建于 35 天前且近 35 天无动静
-- #1462 Logger: RuntimeError on  unretrieved-task —— 建于 35 天前且近 16 天无动静
+- #1468 MessageHistory serializable and loadable —— 建于 36 天前且近 36 天无动静
+- #1463 Long file cleanup: _litellm_wrapper.py —— 建于 36 天前且近 36 天无动静
+- #1462 Logger: RuntimeError on  unretrieved-task —— 建于 36 天前且近 17 天无动静
 - #1456 LLM swap and config adjustment on retry —— 难度困难
 - #1454 Static Node Events —— 难度困难
 - #1435 Railtrack should not modify litellm behaviour globally —— 建于 37 天前且近 37 天无动静
 - #1414 Add Additional Properties to the Node Creation Events —— 难度困难
 - #1413 Migrate Current Colourful Logging to use Events Approach —— 建于 38 天前且近 38 天无动静
 - #1398 post-init assignment guard/docmentation —— 建于 42 天前且近 42 天无动静
-- #1395 Provide even further tool abstraction —— 建于 42 天前且近 42 天无动静
-- #1375 [Documentation] Doc page content and naming duplications —— 建于 44 天前且近 44 天无动静
+- #1395 Provide even further tool abstraction —— 建于 43 天前且近 43 天无动静
+- #1375 [Documentation] Doc page content and naming duplications —— 建于 45 天前且近 44 天无动静
 - #1362 Reimplement Structured Tool Calling LLM —— 难度困难
 - #1356 Non-Uniform Provider Initialization & Model String Mapping —— 建于 50 天前且近 50 天无动静
 - #1355 High Pyright formatting Error numbers —— 难度困难
@@ -43,9 +43,9 @@
 - #1353 Serializable transcript / history export/input from popular  —— 建于 50 天前且近 50 天无动静
 - #1348 Let tools return rich content (ie: images) natively —— 难度困难
 - #1321 Attachment through file API —— 难度困难
-- #1316 Improve instruction for using custom function as tool —— 建于 56 天前且近 15 天无动静
-- #1306 Build a Guardrail for Work Scope —— 建于 58 天前且近 38 天无动静
-- #1251 viz command: formalize --dir flag and add subdirectory aware —— 建于 72 天前且近 28 天无动静
+- #1316 Improve instruction for using custom function as tool —— 建于 57 天前且近 15 天无动静
+- #1306 Build a Guardrail for Work Scope —— 建于 59 天前且近 38 天无动静
+- #1251 viz command: formalize --dir flag and add subdirectory aware —— 建于 73 天前且近 29 天无动静
 - #1216 [Feature] Store Backends for Key-Value Stores —— 难度困难
 - #1209 [Tech Debt] Current Pgvector Backend throws all metadata to  —— 建于 98 天前且近 98 天无动静
 - #1204 [Feature] File System Tool —— 难度困难
@@ -53,16 +53,16 @@
 - #1187 [Bug] [Retrieval] Partially-failed re-ingest deletes the pri —— 难度困难
 - #1186 [Perf] [Retrieval] Chroma backend stores chunk content twice —— 建于 107 天前且近 107 天无动静
 - #1184 [Perf] [Retrieval] Ingest issues one store round-trip per ch —— 建于 107 天前且近 107 天无动静
-- #1173 [Feature] [Retrieval] Add `Turbovec` to our stores Integrati —— 建于 108 天前且近 21 天无动静
+- #1173 [Feature] [Retrieval] Add `Turbovec` to our stores Integrati —— 建于 109 天前且近 21 天无动静
 - #1172 [Feature]  Define certain class as internal —— 建于 111 天前且近 21 天无动静
-- #1167 [Bug] [Retrieval] same `id` for all rows in `HuggingFaceData —— 建于 112 天前且近 21 天无动静
+- #1167 [Bug] [Retrieval] same `id` for all rows in `HuggingFaceData —— 建于 113 天前且近 21 天无动静
 - #1160 [Docs] Prefer if api_reference lives under main doc site —— 建于 114 天前且近 21 天无动静
 - #1150 [Feature] [Retrieval] Batch write for stores —— 建于 115 天前且近 21 天无动静
 - #1142 [Feature] Implement cached memory compression at the LLM lev —— 难度困难
 - #1131 [Feature] [Retrieval] Integration of `RetrievalRuntime` insi —— 难度困难
-- #1065 [Feature] `retry` mechanism for blocked guardrail decisions —— 建于 163 天前且近 22 天无动静
-- #1053 [Feature] Add Length Requirement Guardrail —— 建于 175 天前且近 79 天无动静
-- #1014 [Feature] Evaluation Shots/Examples/Rubric —— 建于 191 天前且近 16 天无动静
+- #1065 [Feature] `retry` mechanism for blocked guardrail decisions —— 建于 164 天前且近 22 天无动静
+- #1053 [Feature] Add Length Requirement Guardrail —— 建于 175 天前且近 80 天无动静
+- #1014 [Feature] Evaluation Shots/Examples/Rubric —— 建于 192 天前且近 16 天无动静
 - #1004 [Docs] Implement Various Agent Architectures —— 难度困难
 - #853 [Feature] Support for all of MCP features —— 难度困难
 
