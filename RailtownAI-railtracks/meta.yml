@@ -1,8 +1,9 @@
 repo: RailtownAI/railtracks
-last_synced: 1c3ab8c3be9e28adb58e093f9e7860aef0f7ae1f
+last_synced: e8b0590adf2b48accf02c2c51bcd1aace0464496
 last_mode: incremental
-summary: 雷达：机会 26（新 0）· 未入榜 47 · 被占 25
-updated_at: '2026-09-26T04:00:16+08:00'
+summary: 本次为纯依赖升级：litellm 升至 1.101.0–1.102.1 以支持 gpt-6 reasoning_effort，anyio 升至 4.15.1，无源代码与
+  API 变更。
+updated_at: '2026-09-26T06:00:48+08:00'
 last_release_tag: v1.5.4
 last_issue_number: 1599
-last_pr_number: 1600
+last_pr_number: 1595

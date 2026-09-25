@@ -12,10 +12,11 @@
 - [changelog/2026-09-25-75c3b17.md](changelog/2026-09-25-75c3b17.md) —— 增量：Middleware 泛型第三参数引发 guardrails 导入修复（#1591）；agent-facing 文档改写（#1583）
 - [changelog/2026-09-25-ee5d84d.md](changelog/2026-09-25-ee5d84d.md) —— 增量：LLM 响应全链路透出 reasoning/thinking（#1431/#1563）
 - [changelog/2026-09-25-1c3ab8c.md](changelog/2026-09-25-1c3ab8c.md) —— 增量：verifier 事件透出 + viz 分类（#1425/#1569）
+- [changelog/2026-09-26-e8b0590.md](changelog/2026-09-26-e8b0590.md) —— 增量：litellm 升级至 <=1.102.1 支持 gpt-6 reasoning_effort（#1596）；anyio 4.15.1
 - [tripwires.md](tripwires.md) —— 持续盯防事项
 
 ## 同步信息
 
 - 模式：incremental（本次）
-- 本次同步游标：`ee5d84d` → `1c3ab8c`（2026-09-25）
-- 数据来源：仓库 diff（1 个提交，9 个文件变更）
+- 本次同步游标：`1c3ab8c` → `e8b0590`（2026-09-26）
+- 数据来源：仓库 diff（2 个提交，2 个文件变更）
