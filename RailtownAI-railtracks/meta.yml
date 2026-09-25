@@ -1,9 +1,8 @@
 repo: RailtownAI/railtracks
 last_synced: 1c3ab8c3be9e28adb58e093f9e7860aef0f7ae1f
 last_mode: incremental
-summary: verifier 全链路可观测化：新增 6 种事件与 VerifierDecision，viz 将 verifier 归入 Middleware
-  分类并把 VerifierRejectedError 判为 Blocked。
-updated_at: '2026-09-25T07:01:01+08:00'
+summary: 雷达：机会 26（新 1）· 未入榜 47 · 被占 25
+updated_at: '2026-09-25T08:00:35+08:00'
 last_release_tag: v1.5.4
-last_issue_number: 1596
+last_issue_number: 1599
 last_pr_number: 1597

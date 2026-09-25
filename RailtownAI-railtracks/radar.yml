@@ -1,4 +1,4 @@
-last_sweep: '2026-09-25T07:00:46+08:00'
+last_sweep: '2026-09-25T08:00:14+08:00'
 issues:
   '486':
     difficulty: 困难
@@ -214,7 +214,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-06-01T23:32:31Z'
-    excluded: 建于 114 天前且近 21 天无动静
+    excluded: 建于 115 天前且近 21 天无动静
   '1156':
     difficulty: 困难
     summary: 用 system message 自动生成 agent manifest，自动化程度需设计决策
@@ -271,7 +271,7 @@ issues:
     - area:core
     comments_seen: 1
     created_at: '2026-06-05T23:49:17Z'
-    excluded: 建于 110 天前且近 21 天无动静
+    excluded: 建于 111 天前且近 21 天无动静
   '1173':
     difficulty: 中等
     summary: 新增 Turbovec 向量后端集成
@@ -319,7 +319,7 @@ issues:
     - tech debt
     comments_seen: 0
     created_at: '2026-06-09T23:53:19Z'
-    excluded: 建于 106 天前且近 106 天无动静
+    excluded: 建于 107 天前且近 107 天无动静
   '1185':
     difficulty: 中等
     summary: 用户 metadata 可覆盖保留 payload 键导致数据损坏
@@ -348,7 +348,7 @@ issues:
     - tech debt
     comments_seen: 0
     created_at: '2026-06-09T23:53:51Z'
-    excluded: 建于 106 天前且近 106 天无动静
+    excluded: 建于 107 天前且近 107 天无动静
   '1187':
     difficulty: 困难
     summary: 部分失败的重新 ingest 会删掉旧好版本
@@ -603,7 +603,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-07-30T20:52:51Z'
-    excluded: 建于 56 天前且近 56 天无动静
+    excluded: ''
   '1321':
     difficulty: 困难
     summary: 大附件走文件 API 自动上传，跨层功能
@@ -1488,4 +1488,37 @@ issues:
     status_changed_at: '2026-09-25T07:00:46+08:00'
     labels_seen:
     - area:core
+    comments_seen: 0
+  '1598':
+    difficulty: 中等
+    summary: 把 Skills 目录迁到根路径并在文档/README 增加入口指引，适合作为贡献起点
+    problem: 本质是资源目录位置调整 + 文档可见性补强。涉及移动 Skills 文件夹（CLI 到 root/.agents，未核实具体路径），需排查所有引用该路径的代码与文档链接；另需在文档落地页加
+      skills 引导框、改 README.md 和 AGENTS.md。范围明确但涉及多文件同步修改。
+    plan: 移动目录并全局替换路径引用，更新 CLI 加载逻辑（未核实）；docs 站点首页加组件框；README/AGENTS.md 补段落。工作量级：小时级到天级。风险：路径硬编码遗漏导致
+      CI/测试失败；文档站结构需熟悉。
+    analyzed_at: '2026-09-25'
+    title: Improve Skills Visibility for Users and Developers
+    created_at: '2026-09-24T23:18:02Z'
+    excluded: ''
+    last_status: open
+    status_changed_at: '2026-09-25T08:00:14+08:00'
+    labels_seen:
+    - area:docs
+    - kind:tracking
+    comments_seen: 0
+  '1599':
+    difficulty: 困难
+    summary: 发布 Claude Marketplace/插件形式的 RT Skills，信息不足需先做方案设计
+    problem: issue 仅有外链示例，缺少 RT 侧具体目标、发布形态（marketplace 插件 vs 本地 plugin 目录）和验收标准（acceptance
+      criteria 为空），信息不足无法直接定位改动点。大概率涉及新增 skills 打包/清单文件与发布流程（未核实）。
+    plan: 先对照 typesafe.ai 示例明确需求，再设计 plugin 清单（如 plugin.json/marketplace.json）与打包发布流程。工作量级：天级。风险：需求未定即开工易返工；依赖
+      Claude 侧插件规范的时效性。
+    analyzed_at: '2026-09-25'
+    title: Claude Marketplace / Plugin for RT Skills
+    created_at: '2026-09-24T23:22:57Z'
+    excluded: ''
+    last_status: open
+    status_changed_at: '2026-09-25T08:00:14+08:00'
+    labels_seen:
+    - area:docs
     comments_seen: 0

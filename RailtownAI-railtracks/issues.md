@@ -1,6 +1,6 @@
 # Issue 雷达 · RailtownAI/railtracks
 
-> 全景扫描：2026-09-25 · 开放 issue 96 个 · 机会 24 · 未入榜 47 · 被占 25
+> 全景扫描：2026-09-25 · 开放 issue 98 个 · 机会 26 · 未入榜 47 · 被占 25
 
 ## 机会榜（按值得做排序，top 10）
 
@@ -18,6 +18,7 @@
 | [#1574](https://github.com/RailtownAI/railtracks/issues/1574) | 中等 | 新鲜·收外部PR | Session flow_name warning fires on railtracks' own internal  —— 内部调用路径的 Session 触发 flow_name 警告，误扰正常用户 |
 
 ## 未入榜（47）
+- #1599 Claude Marketplace / Plugin for RT Skills —— 难度困难
 - #1592 Agent.md and agent use of railtracks for building or develop —— 难度困难
 - #1589 Should `rt.context` hand out shared references or copies? —— 难度困难
 - #1576 Follow-up on OpenAI Responses-API `reasoning_items` —— 难度困难
@@ -42,7 +43,6 @@
 - #1353 Serializable transcript / history export/input from popular  —— 建于 50 天前且近 50 天无动静
 - #1348 Let tools return rich content (ie: images) natively —— 难度困难
 - #1321 Attachment through file API —— 难度困难
-- #1320 Attachment location interleaving —— 建于 56 天前且近 56 天无动静
 - #1316 Improve instruction for using custom function as tool —— 建于 56 天前且近 15 天无动静
 - #1306 Build a Guardrail for Work Scope —— 建于 58 天前且近 38 天无动静
 - #1251 viz command: formalize --dir flag and add subdirectory aware —— 建于 72 天前且近 28 天无动静
@@ -51,13 +51,13 @@
 - #1204 [Feature] File System Tool —— 难度困难
 - #1193 [Bug] Context variable dict is not concurrency safe —— 难度困难
 - #1187 [Bug] [Retrieval] Partially-failed re-ingest deletes the pri —— 难度困难
-- #1186 [Perf] [Retrieval] Chroma backend stores chunk content twice —— 建于 106 天前且近 106 天无动静
-- #1184 [Perf] [Retrieval] Ingest issues one store round-trip per ch —— 建于 106 天前且近 106 天无动静
+- #1186 [Perf] [Retrieval] Chroma backend stores chunk content twice —— 建于 107 天前且近 107 天无动静
+- #1184 [Perf] [Retrieval] Ingest issues one store round-trip per ch —— 建于 107 天前且近 107 天无动静
 - #1173 [Feature] [Retrieval] Add `Turbovec` to our stores Integrati —— 建于 108 天前且近 21 天无动静
-- #1172 [Feature]  Define certain class as internal —— 建于 110 天前且近 21 天无动静
+- #1172 [Feature]  Define certain class as internal —— 建于 111 天前且近 21 天无动静
 - #1167 [Bug] [Retrieval] same `id` for all rows in `HuggingFaceData —— 建于 112 天前且近 21 天无动静
 - #1160 [Docs] Prefer if api_reference lives under main doc site —— 建于 114 天前且近 21 天无动静
-- #1150 [Feature] [Retrieval] Batch write for stores —— 建于 114 天前且近 21 天无动静
+- #1150 [Feature] [Retrieval] Batch write for stores —— 建于 115 天前且近 21 天无动静
 - #1142 [Feature] Implement cached memory compression at the LLM lev —— 难度困难
 - #1131 [Feature] [Retrieval] Integration of `RetrievalRuntime` insi —— 难度困难
 - #1065 [Feature] `retry` mechanism for blocked guardrail decisions —— 建于 163 天前且近 22 天无动静
@@ -65,9 +65,6 @@
 - #1014 [Feature] Evaluation Shots/Examples/Rubric —— 建于 191 天前且近 16 天无动静
 - #1004 [Docs] Implement Various Agent Architectures —— 难度困难
 - #853 [Feature] Support for all of MCP features —— 难度困难
-
-## 池内动态
-- #1217 已关闭（已关闭（来源未识别））
 
 ## 已被占（不必再看）
 - #1596 OpenAILLM rejects reasoning_effort for gpt-6-luna (litellm pinned <= 1.89.0) —— 被 assignee Aryan-Railtown 占
@@ -82,7 +79,7 @@
 - #1393 More insightful error message for bad schema —— 被 assignee CoronRing 占
 - #1357 Agent response do not include tool calls. —— 被 assignee CoronRing 占
 - #1347 [Epic] Rich media support —— 被 assignee CoronRing 占
-- #1343 Thorough Review of Coding Assistant support —— 被 assignee Pooria90 占
+- #1343 Rethinking Skills —— 被 assignee Pooria90 占
 - #1266 General Verifier —— 被 assignee Aryan-Railtown 占
 - #1265 Implement Naive Human in the loop —— 被 assignee Aryan-Railtown 占
 - #1239 Rethinking observability into an events stream —— 被 assignee Amir-R25 占
@@ -103,6 +100,18 @@
 - #1538 Type hints collapse when you use a list of pre-built middlewares —— PR#1541（2026-09-24）
 
 ## 分析详情（最新分析在前）
+### #1599 [困难|🟢机会] Claude Marketplace / Plugin for RT Skills
+- 发布 Claude Marketplace/插件形式的 RT Skills，信息不足需先做方案设计
+- 问题：issue 仅有外链示例，缺少 RT 侧具体目标、发布形态（marketplace 插件 vs 本地 plugin 目录）和验收标准（acceptance criteria 为空），信息不足无法直接定位改动点。大概率涉及新增 skills 打包/清单文件与发布流程（未核实）。
+- 方案：先对照 typesafe.ai 示例明确需求，再设计 plugin 清单（如 plugin.json/marketplace.json）与打包发布流程。工作量级：天级。风险：需求未定即开工易返工；依赖 Claude 侧插件规范的时效性。
+- 分析于 2026-09-25
+
+### #1598 [中等|🟢机会] Improve Skills Visibility for Users and Developers
+- 把 Skills 目录迁到根路径并在文档/README 增加入口指引，适合作为贡献起点
+- 问题：本质是资源目录位置调整 + 文档可见性补强。涉及移动 Skills 文件夹（CLI 到 root/.agents，未核实具体路径），需排查所有引用该路径的代码与文档链接；另需在文档落地页加 skills 引导框、改 README.md 和 AGENTS.md。范围明确但涉及多文件同步修改。
+- 方案：移动目录并全局替换路径引用，更新 CLI 加载逻辑（未核实）；docs 站点首页加组件框；README/AGENTS.md 补段落。工作量级：小时级到天级。风险：路径硬编码遗漏导致 CI/测试失败；文档站结构需熟悉。
+- 分析于 2026-09-25
+
 ### #1596 [中等|🔒认领] OpenAILLM rejects reasoning_effort for gpt-6-luna (litellm pinned <= 1.89.0)
 - 依赖版本上限导致 gpt-6 系列不支持 reasoning_effort，值得升级 litellm
 - 问题：litellm 钉在 <=1.89.0，其参数支持列表未把 gpt-6-* 识别为推理模型，`is_hyperparameter_supported()` 依据该列表拒绝构造 OpenAILLM；模型能力元数据本身是对的。大概率涉及依赖版本约束（pyproject/poetry.lock）及超参数校验逻辑，或改用 `model_cost` 能力判断（未核实）。
@@ -211,18 +220,6 @@
 - 方案：讨论定型后：在 `RTError` 基类统一 `message`/`notes` 属性，子类删除重复 `__init__` 定义；全局替换 reason→message 并保留兼容别名。工作量级：天级。风险：公共 API 破坏性变更，需 deprecation 周期与全量调用点排查。
 - 分析于 2026-09-25
 
-### #1503 [中等|🟢机会] Optional markdown render on visualizer
-- visualizer 增加 AI 输入/输出的 markdown raw/preview 切换，范围明确的前端增强
-- 问题：visualizer 中 raw markdown（含表格、图片）不可读，需 GitHub 式渲染预览。涉及 visualizer 前端渲染组件（未核实技术栈，可能是 web/本地 UI）。
-- 方案：为 input/output 面板加 raw/preview 切换，接入 markdown 渲染库（如 marked/markdown-it）。工作量级：小时级到天级。风险：XSS（需 sanitize）、大输出渲染性能、与现有 UI 风格一致性。
-- 分析于 2026-09-25
-
-### #1496 [中等|🟢机会] Let input guards fire once per agent call instead of per model round-trip
-- 给 InputGuard 加 once 开关避免每次工具循环重复触发，方案已明确
-- 问题：Guard 是 `ModelInvoker` 中间件，按 model round-trip 触发；`OutputGuard` 已跳过中间 tool turn（`concrete.py:184`），`InputGuard` 无等价机制，guard 内含 LLM 调用时开销大。涉及 `railtracks` guard/middleware 层。
-- 方案：`InputGuard.__init__` 加 `once: bool = False`，穿透 `input_guard(...)` 装饰器与 `_make_guard`；`once=True` 且本次 agent 调用已触发时 `_middleware_fn` 直接转发。依赖异步 guardrail task 先落地。工作量级：小时级到天级。风险：与 async guard 任务的状态生命周期管理（"本次调用"判定）、默认值兼容性低风险。
-- 分析于 2026-09-25
-
 ## 全量总表
 
 <details><summary>展开全部开放 issue</summary>
@@ -325,5 +322,7 @@
 | #1593 | 中等 | 🟢机会 | 3.13+ 下 builtin 检测失效及 iscoroutinefunction 兼容性 bug，修复路径清晰 |
 | #1594 | 简单 | 🟢机会 | CI 增加多 Python 版本矩阵并让发布跑测试，明确且价值高 |
 | #1596 | 中等 | 🔒认领 | 依赖版本上限导致 gpt-6 系列不支持 reasoning_effort，值得升级 litellm |
+| #1598 | 中等 | 🟢机会 | 把 Skills 目录迁到根路径并在文档/README 增加入口指引，适合作为贡献起点 |
+| #1599 | 困难 | 🟡困难 | 发布 Claude Marketplace/插件形式的 RT Skills，信息不足需先做方案设计 |
 
 </details>
