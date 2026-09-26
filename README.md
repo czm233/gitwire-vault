@@ -27,7 +27,7 @@ owner-repo/
 
 | 项目 | 本轮 | 状态 | 同步到 | 摘要 |
 | --- | --- | --- | --- | --- |
-| [RailtownAI-railtracks](./RailtownAI-railtracks) | 增量 | 已发布 | e8b0590 | 本次为纯依赖升级：litellm 升至 1.101.0–1.102.1 以支持 gpt-6 reasoning_effort，anyio 升至 4.15.1，无源代码与 API 变更。 |
+| [RailtownAI-railtracks](./RailtownAI-railtracks) | 增量 | 已发布 | e8b0590 | 雷达：机会 23（新 0）· 未入榜 50 · 被占 24 |
 | [browser-use-jev-ultrafast](./browser-use-jev-ultrafast) | 增量 | 已发布 | 1231850 | 雷达：机会 0（新 0）· 未入榜 23 · 被占 9 |
 | [czm233-CC-Balancer](./czm233-CC-Balancer) | — | 已发布 | dfecb1f | — |
 | [czm233-DanceBattler](./czm233-DanceBattler) | 增量 | 已发布 | 019bec5 | 雷达：机会 0（新 0）· 未入榜 0 · 被占 0 |

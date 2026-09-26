@@ -1,4 +1,4 @@
-last_sweep: '2026-09-26T06:00:44+08:00'
+last_sweep: '2026-09-27T02:27:09+08:00'
 issues:
   '486':
     difficulty: 困难
@@ -116,7 +116,7 @@ issues:
     - help wanted
     comments_seen: 1
     created_at: '2026-03-17T16:52:56Z'
-    excluded: 建于 192 天前且近 17 天无动静
+    excluded: 建于 193 天前且近 17 天无动静
   '1053':
     difficulty: 简单
     summary: 长度护栏 Guardrail，接口已定范围明确
@@ -129,7 +129,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-04-02T21:46:04Z'
-    excluded: 建于 176 天前且近 80 天无动静
+    excluded: 建于 176 天前且近 81 天无动静
   '1065':
     difficulty: 中等
     summary: 被拦截护栏的重试机制，需设计决策
@@ -142,7 +142,7 @@ issues:
     - area:add-on
     comments_seen: 0
     created_at: '2026-04-14T01:41:33Z'
-    excluded: 建于 164 天前且近 22 天无动静
+    excluded: 建于 165 天前且近 23 天无动静
   '1114':
     difficulty: 简单
     summary: 文档语法内容修缺父票，长期跟踪，零散小改
@@ -214,7 +214,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-06-01T23:32:31Z'
-    excluded: 建于 115 天前且近 22 天无动静
+    excluded: 建于 116 天前且近 22 天无动静
   '1156':
     difficulty: 困难
     summary: 用 system message 自动生成 agent manifest，自动化程度需设计决策
@@ -271,7 +271,7 @@ issues:
     - area:core
     comments_seen: 1
     created_at: '2026-06-05T23:49:17Z'
-    excluded: 建于 111 天前且近 22 天无动静
+    excluded: 建于 112 天前且近 22 天无动静
   '1173':
     difficulty: 中等
     summary: 新增 Turbovec 向量后端集成
@@ -287,7 +287,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-06-08T16:34:15Z'
-    excluded: 建于 109 天前且近 22 天无动静
+    excluded: 建于 110 天前且近 22 天无动静
   '1179':
     difficulty: 简单
     summary: 为文档核心术语定义 glossary 并互链
@@ -319,7 +319,7 @@ issues:
     - tech debt
     comments_seen: 0
     created_at: '2026-06-09T23:53:19Z'
-    excluded: 建于 107 天前且近 107 天无动静
+    excluded: 建于 108 天前且近 108 天无动静
   '1185':
     difficulty: 中等
     summary: 用户 metadata 可覆盖保留 payload 键导致数据损坏
@@ -348,7 +348,7 @@ issues:
     - tech debt
     comments_seen: 0
     created_at: '2026-06-09T23:53:51Z'
-    excluded: 建于 107 天前且近 107 天无动静
+    excluded: 建于 108 天前且近 108 天无动静
   '1187':
     difficulty: 困难
     summary: 部分失败的重新 ingest 会删掉旧好版本
@@ -520,7 +520,7 @@ issues:
     - area:llm
     comments_seen: 2
     created_at: '2026-07-13T19:39:09Z'
-    excluded: ''
+    excluded: 建于 74 天前且近 15 天无动静
   '1251':
     difficulty: 中等
     summary: viz 命令 --dir 标志形式化并修复子目录感知 bug
@@ -534,7 +534,7 @@ issues:
     - area:visualizer
     comments_seen: 2
     created_at: '2026-07-14T17:30:42Z'
-    excluded: 建于 73 天前且近 29 天无动静
+    excluded: 建于 74 天前且近 30 天无动静
   '1265':
     difficulty: 困难
     summary: HIL 人机协同作为节点中间件，父票含设计决策
@@ -577,7 +577,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-07-28T19:07:51Z'
-    excluded: 建于 59 天前且近 38 天无动静
+    excluded: 建于 59 天前且近 39 天无动静
   '1316':
     difficulty: 简单
     summary: 改进自定义函数作为工具的文档说明
@@ -590,7 +590,7 @@ issues:
     - area:docs
     comments_seen: 0
     created_at: '2026-07-30T19:50:57Z'
-    excluded: 建于 57 天前且近 15 天无动静
+    excluded: 建于 57 天前且近 16 天无动静
   '1320':
     difficulty: 中等
     summary: 附件在消息中的位置交错，媒体块位置信息丢失
@@ -727,7 +727,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-05T22:08:58Z'
-    excluded: 建于 50 天前且近 50 天无动静
+    excluded: 建于 51 天前且近 51 天无动静
   '1357':
     difficulty: 中等
     summary: 让 Agent 响应暴露工具调用信息，需接口设计决策
@@ -849,7 +849,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-17T22:42:32Z'
-    excluded: 建于 38 天前且近 38 天无动静
+    excluded: 建于 39 天前且近 39 天无动静
   '1414':
     difficulty: 困难
     summary: 节点创建事件需补充工具模型信息，设计导向、范围未定
@@ -877,7 +877,7 @@ issues:
     - area:core
     comments_seen: 1
     created_at: '2026-08-17T23:05:58Z'
-    excluded: ''
+    excluded: 建于 39 天前且近 15 天无动静
   '1425':
     difficulty: 中等
     summary: 把 verifier 决策结构化为可观测性事件而非日志
@@ -1041,7 +1041,7 @@ issues:
     - area:core
     comments_seen: 2
     created_at: '2026-08-20T18:49:53Z'
-    excluded: 建于 36 天前且近 17 天无动静
+    excluded: 建于 36 天前且近 18 天无动静
   '1463':
     difficulty: 中等
     summary: 重构超长文件 _litellm_wrapper.py 及测试，抽公共逻辑
@@ -1132,7 +1132,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-26T00:34:03Z'
-    excluded: ''
+    excluded: 建于 31 天前且近 31 天无动静
   '1503':
     difficulty: 中等
     summary: visualizer 增加 AI 输入/输出的 markdown raw/preview 切换，范围明确的前端增强

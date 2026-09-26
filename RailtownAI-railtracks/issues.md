@@ -1,6 +1,6 @@
 # Issue 雷达 · RailtownAI/railtracks
 
-> 全景扫描：2026-09-26 · 开放 issue 97 个 · 机会 26 · 未入榜 47 · 被占 24
+> 全景扫描：2026-09-27 · 开放 issue 97 个 · 机会 23 · 未入榜 50 · 被占 24
 
 ## 机会榜（按值得做排序，top 10）
 
@@ -15,59 +15,59 @@
 | [#1573](https://github.com/RailtownAI/railtracks/issues/1573) | 简单 | 较新·收外部PR | railtracks add --force before <tool>:<skill> fails, despite  —— `railtracks add --force` 前置位置解析顺序 bug，定位明确的 CLI 修复 |
 | [#1534](https://github.com/RailtownAI/railtracks/issues/1534) | 简单 | 收外部PR | Delete legacy install detection —— 删除 legacy 安装检测代码，前置条件已满足，范围清晰的清理任务 |
 | [#1223](https://github.com/RailtownAI/railtracks/issues/1223) | 简单 | 收外部PR | [Feature] Prebuilt Tool Tags —— 给预构建工具打标签以便可视化器区分展示 |
-| [#1574](https://github.com/RailtownAI/railtracks/issues/1574) | 中等 | 新鲜·收外部PR | Session flow_name warning fires on railtracks' own internal  —— 内部调用路径的 Session 触发 flow_name 警告，误扰正常用户 |
+| [#1581](https://github.com/RailtownAI/railtracks/issues/1581) | 中等 | 新鲜·收外部PR | Optional[X] with no default is reported as not required —— Union处理错误放宽required，修复明确且影响函数调用正确性 |
 
-## 未入榜（47）
+## 未入榜（50）
 - #1599 Claude Marketplace / Plugin for RT Skills —— 难度困难
 - #1592 Agent.md and agent use of railtracks for building or develop —— 难度困难
 - #1589 Should `rt.context` hand out shared references or copies? —— 难度困难
 - #1576 Follow-up on OpenAI Responses-API `reasoning_items` —— 难度困难
 - #1572 Feature Request: Expose current node and flow metadata via a —— 难度困难
+- #1496 Let input guards fire once per agent call instead of per mod —— 建于 31 天前且近 31 天无动静
 - #1488 Command Line Assistant Module —— 难度困难
 - #1471 Optimize framework import time —— 难度困难
 - #1468 MessageHistory serializable and loadable —— 建于 36 天前且近 36 天无动静
 - #1463 Long file cleanup: _litellm_wrapper.py —— 建于 36 天前且近 36 天无动静
-- #1462 Logger: RuntimeError on  unretrieved-task —— 建于 36 天前且近 17 天无动静
+- #1462 Logger: RuntimeError on  unretrieved-task —— 建于 36 天前且近 18 天无动静
 - #1456 LLM swap and config adjustment on retry —— 难度困难
 - #1454 Static Node Events —— 难度困难
 - #1435 Railtrack should not modify litellm behaviour globally —— 建于 38 天前且近 38 天无动静
+- #1415 Event emission after forced exit —— 建于 39 天前且近 15 天无动静
 - #1414 Add Additional Properties to the Node Creation Events —— 难度困难
-- #1413 Migrate Current Colourful Logging to use Events Approach —— 建于 38 天前且近 38 天无动静
+- #1413 Migrate Current Colourful Logging to use Events Approach —— 建于 39 天前且近 39 天无动静
 - #1398 post-init assignment guard/docmentation —— 建于 43 天前且近 43 天无动静
 - #1395 Provide even further tool abstraction —— 建于 43 天前且近 43 天无动静
 - #1375 [Documentation] Doc page content and naming duplications —— 建于 45 天前且近 45 天无动静
 - #1362 Reimplement Structured Tool Calling LLM —— 难度困难
-- #1356 Non-Uniform Provider Initialization & Model String Mapping —— 建于 50 天前且近 50 天无动静
+- #1356 Non-Uniform Provider Initialization & Model String Mapping —— 建于 51 天前且近 51 天无动静
 - #1355 High Pyright formatting Error numbers —— 难度困难
 - #1354 Token estimator —— 建于 51 天前且近 51 天无动静
 - #1353 Serializable transcript / history export/input from popular  —— 建于 51 天前且近 51 天无动静
 - #1348 Let tools return rich content (ie: images) natively —— 难度困难
 - #1321 Attachment through file API —— 难度困难
-- #1316 Improve instruction for using custom function as tool —— 建于 57 天前且近 15 天无动静
-- #1306 Build a Guardrail for Work Scope —— 建于 59 天前且近 38 天无动静
-- #1251 viz command: formalize --dir flag and add subdirectory aware —— 建于 73 天前且近 29 天无动静
+- #1316 Improve instruction for using custom function as tool —— 建于 57 天前且近 16 天无动静
+- #1306 Build a Guardrail for Work Scope —— 建于 59 天前且近 39 天无动静
+- #1251 viz command: formalize --dir flag and add subdirectory aware —— 建于 74 天前且近 30 天无动静
+- #1248 Create a ModelRequest type —— 建于 74 天前且近 15 天无动静
 - #1216 [Feature] Store Backends for Key-Value Stores —— 难度困难
 - #1209 [Tech Debt] Current Pgvector Backend throws all metadata to  —— 建于 99 天前且近 99 天无动静
 - #1204 [Feature] File System Tool —— 难度困难
 - #1193 [Bug] Context variable dict is not concurrency safe —— 难度困难
 - #1187 [Bug] [Retrieval] Partially-failed re-ingest deletes the pri —— 难度困难
-- #1186 [Perf] [Retrieval] Chroma backend stores chunk content twice —— 建于 107 天前且近 107 天无动静
-- #1184 [Perf] [Retrieval] Ingest issues one store round-trip per ch —— 建于 107 天前且近 107 天无动静
-- #1173 [Feature] [Retrieval] Add `Turbovec` to our stores Integrati —— 建于 109 天前且近 22 天无动静
-- #1172 [Feature]  Define certain class as internal —— 建于 111 天前且近 22 天无动静
+- #1186 [Perf] [Retrieval] Chroma backend stores chunk content twice —— 建于 108 天前且近 108 天无动静
+- #1184 [Perf] [Retrieval] Ingest issues one store round-trip per ch —— 建于 108 天前且近 108 天无动静
+- #1173 [Feature] [Retrieval] Add `Turbovec` to our stores Integrati —— 建于 110 天前且近 22 天无动静
+- #1172 [Feature]  Define certain class as internal —— 建于 112 天前且近 22 天无动静
 - #1167 [Bug] [Retrieval] same `id` for all rows in `HuggingFaceData —— 建于 113 天前且近 22 天无动静
 - #1160 [Docs] Prefer if api_reference lives under main doc site —— 建于 115 天前且近 22 天无动静
-- #1150 [Feature] [Retrieval] Batch write for stores —— 建于 115 天前且近 22 天无动静
+- #1150 [Feature] [Retrieval] Batch write for stores —— 建于 116 天前且近 22 天无动静
 - #1142 [Feature] Implement cached memory compression at the LLM lev —— 难度困难
 - #1131 [Feature] [Retrieval] Integration of `RetrievalRuntime` insi —— 难度困难
-- #1065 [Feature] `retry` mechanism for blocked guardrail decisions —— 建于 164 天前且近 22 天无动静
-- #1053 [Feature] Add Length Requirement Guardrail —— 建于 176 天前且近 80 天无动静
-- #1014 [Feature] Evaluation Shots/Examples/Rubric —— 建于 192 天前且近 17 天无动静
+- #1065 [Feature] `retry` mechanism for blocked guardrail decisions —— 建于 165 天前且近 23 天无动静
+- #1053 [Feature] Add Length Requirement Guardrail —— 建于 176 天前且近 81 天无动静
+- #1014 [Feature] Evaluation Shots/Examples/Rubric —— 建于 193 天前且近 17 天无动静
 - #1004 [Docs] Implement Various Agent Architectures —— 难度困难
 - #853 [Feature] Support for all of MCP features —— 难度困难
-
-## 池内动态
-- #1596 已关闭（PR#1600）
 
 ## 已被占（不必再看）
 - #1562 Tool.from_function silently degrades unmapped parameter types to "object" (bypasses #1552's strict validation) —— 被 assignee rajathpatel23 占
