@@ -34,6 +34,6 @@ owner-repo/
 | [czm233-VoiceTutor](./czm233-VoiceTutor) | 建档 | 已发布 | 263d783 | macOS 本地语音英语老师，M0 全链路跑通：LiveKit Agent + 本地 STT/TTS + 自研 LLM 网关（单请求串行防 429），音频不出机器，仅 LLM 文本出网。<<<END>>> |
 | [farion1231-cc-switch](./farion1231-cc-switch) | — | 已发布 | f878871 | — |
 | [rakkasei0810-notion-plugin-notion-openai-curated-remote](./rakkasei0810-notion-plugin-notion-openai-curated-remote) | 建档 | 已发布 | 0b2db47 | GetToIt 是画师/单主委托排单计时双端工作台：Next.js+Koa+Prisma/MySQL，含 RBAC 后台、邮箱/QQ 登录、COS 图片直传；本次为首次全量建档，需盯防仓库名错位与 prod MySQL 端口暴露。 |
-| [shibing624-agentica](./shibing624-agentica) | 增量 | 已发布 | e84fc48 | 追踪 1 个 issue |
+| [shibing624-agentica](./shibing624-agentica) | 增量 | 已发布 | e84fc48 | 雷达：机会 0（新 0）· 未入榜 1 · 被占 0 |
 
 <!-- board:end -->
