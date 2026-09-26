@@ -1,9 +1,8 @@
 repo: browser-use/jev-ultrafast
 last_synced: 1231850a0bf1a0c0341fe408ef1668dbbfdfac46
-last_mode: init
-summary: jev-ultrafast v0.1.0 首次建档：TypeSafe 驱动的选择式浏览器 Agent，单请求决策+原子DOM快照+严格执行守卫，性能声称
-  25% 提速但样本小，已列三项盯防点。<<<END>>>
-updated_at: '2026-09-25T00:39:35+08:00'
+last_mode: incremental
+summary: 雷达：机会 0（新 0）· 未入榜 23 · 被占 9 · 池内动态 1
+updated_at: '2026-09-27T02:19:46+08:00'
 last_release_tag: null
-last_issue_number: 140
-last_pr_number: null
+last_issue_number: 149
+last_pr_number: 151
