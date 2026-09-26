@@ -27,9 +27,6 @@
 - #5 Fix Windows static asset decoding in demo server —— 仓库从未合并外部 PR
 - #1 Library API: first observation can return an empty action sp —— 难度困难
 
-## 池内动态
-- #67 评论 +8，竞争升温
-
 ## 已被占（不必再看）
 - #133 choose() can return raw KeyError for an off-envelope HTTP-200 response —— 被 PR#135 占
 - #132 Stale action ids can select a different live control without an error —— 被 PR#148 占
