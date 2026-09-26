@@ -28,7 +28,7 @@ owner-repo/
 | 项目 | 本轮 | 状态 | 同步到 | 摘要 |
 | --- | --- | --- | --- | --- |
 | [RailtownAI-railtracks](./RailtownAI-railtracks) | 增量 | 已发布 | e8b0590 | 雷达：机会 23（新 0）· 未入榜 50 · 被占 24 |
-| [browser-use-jev-ultrafast](./browser-use-jev-ultrafast) | 增量 | 已发布 | 1231850 | 雷达：机会 0（新 0）· 未入榜 23 · 被占 9 |
+| [browser-use-jev-ultrafast](./browser-use-jev-ultrafast) | 增量 | 已发布 | 1231850 | 雷达：机会 0（新 0）· 未入榜 24 · 被占 9 |
 | [czm233-CC-Balancer](./czm233-CC-Balancer) | — | 已发布 | dfecb1f | — |
 | [czm233-DanceBattler](./czm233-DanceBattler) | 增量 | 已发布 | 019bec5 | 雷达：机会 0（新 0）· 未入榜 0 · 被占 0 |
 | [czm233-VoiceTutor](./czm233-VoiceTutor) | 建档 | 已发布 | 263d783 | macOS 本地语音英语老师，M0 全链路跑通：LiveKit Agent + 本地 STT/TTS + 自研 LLM 网关（单请求串行防 429），音频不出机器，仅 LLM 文本出网。<<<END>>> |

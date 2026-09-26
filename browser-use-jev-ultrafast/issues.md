@@ -1,8 +1,9 @@
 # Issue 雷达 · browser-use/jev-ultrafast
 
-> 全景扫描：2026-09-27 · 开放 issue 32 个 · 机会 0 · 未入榜 23 · 被占 9
+> 全景扫描：2026-09-27 · 开放 issue 33 个 · 机会 0 · 未入榜 24 · 被占 9
 
-## 未入榜（23）
+## 未入榜（24）
+- #152 Community project built on a bounded Jev loop: Jev Social —— 仓库从未合并外部 PR
 - #149 Could the visible page state preserve more semantic structur —— 仓库从未合并外部 PR
 - #145 Community project built on this: jev-browse (agent-callable  —— 难度困难
 - #140 ioio —— 难度困难
@@ -39,6 +40,12 @@
 - #36 Missing TEXT_MODEL_API_KEY crashes mid-run; code default base URL differs from .env.example —— 被 PR#147 占
 
 ## 分析详情（最新分析在前）
+### #152 [简单|🟢机会] Community project built on a bounded Jev loop: Jev Social
+- 外部社区项目分享经验帖，非开发任务，仅需评估其反馈是否值得回溯参考
+- 问题：本质是社区项目（Jev Social）基于本仓库成果的展示帖，并附三条实现经验（证据深度作为状态等），非缺陷或功能请求。正文被截断，无明确待办。大概率只需维护者阅读评论回复，或评估经验是否转化为 issue（未核实：涉及的 indexed, typed-action loop 模块位置）。
+- 方案：回复致谢并归档；若采纳经验则另立功能 issue 讨论（工作量级：小时级）。风险：正文截断导致经验细节不全，无法直接评估技术价值。
+- 分析于 2026-09-27
+
 ### #149 [中等|🟢机会] Could the visible page state preserve more semantic structure?
 - 建议保留页面快照语义结构，单模块改进，值得做
 - 问题：`snapshot.js` 用 TreeWalker 收集可见文本后 `join('\n').slice(0, 6000)` 扁平化，丢失 DOM 层级/分组关系；`model.py` 将其作为 page.text 连同索引元素表发给 Jev。本质是观测表征质量与 6000 字符预算的权衡（未核实：具体截断策略细节）。
@@ -153,12 +160,6 @@
 - 方案：用 ruff/black 按配置重新格式化并跑测试确认无行为变更。机械性工作。（工作量级：小时级）
 - 分析于 2026-09-27
 
-### #51 [中等|🟢机会] Windows: owned tab is backgrounded, modal menus do not paint in time, Flights demo always returns BLOCKED
-- Windows 后台标签页不绘制致模态遮挡判 BLOCKED，加 bringToFront 即可修
-- 问题：owned tab 后台创建，setFocusEmulationEnabled 不恢复前台绘制，元素表为空致 BLOCKED。与 #1 根因不同。
-- 方案：创建后调用 Page.bringToFront；提交者已验证 3/3 通过。单点修复，风险低。（工作量级：小时级）
-- 分析于 2026-09-27
-
 ## 全量总表
 
 <details><summary>展开全部开放 issue</summary>
@@ -197,5 +198,6 @@
 | #140 | 困难 | 🟡困难 | 正文为空的"ioio"，无任何信息，无法分析 |
 | #145 | 困难 | 🟡困难 | 社区衍生项目投稿，涉及上游集成决策，需维护者定方向 |
 | #149 | 中等 | 🟢机会 | 建议保留页面快照语义结构，单模块改进，值得做 |
+| #152 | 简单 | 🟢机会 | 外部社区项目分享经验帖，非开发任务，仅需评估其反馈是否值得回溯参考 |
 
 </details>
