@@ -30,7 +30,7 @@ owner-repo/
 | [RailtownAI-railtracks](./RailtownAI-railtracks) | 增量 | 已发布 | e8b0590 | 本次为纯依赖升级：litellm 升至 1.101.0–1.102.1 以支持 gpt-6 reasoning_effort，anyio 升至 4.15.1，无源代码与 API 变更。 |
 | [browser-use-jev-ultrafast](./browser-use-jev-ultrafast) | 建档 | 已发布 | 1231850 | jev-ultrafast v0.1.0 首次建档：TypeSafe 驱动的选择式浏览器 Agent，单请求决策+原子DOM快照+严格执行守卫，性能声称 25% 提速但样本小，已列三项盯防点。<<<END>>> |
 | [czm233-CC-Balancer](./czm233-CC-Balancer) | — | 已发布 | dfecb1f | — |
-| [czm233-DanceBattler](./czm233-DanceBattler) | 建档 | 已发布 | 019bec5 | DanceBattler为圣华跳舞机的非官方全栈数据聚合平台：代理外部ShApi提供成绩/排行/机台地图/资源管理，存在凭据泄露、地理数据公开与非官方爬取三类待追踪风险。 |
+| [czm233-DanceBattler](./czm233-DanceBattler) | 增量 | 已发布 | 019bec5 | 雷达：机会 0（新 0）· 未入榜 0 · 被占 0 |
 | [czm233-VoiceTutor](./czm233-VoiceTutor) | 建档 | 已发布 | 263d783 | macOS 本地语音英语老师，M0 全链路跑通：LiveKit Agent + 本地 STT/TTS + 自研 LLM 网关（单请求串行防 429），音频不出机器，仅 LLM 文本出网。<<<END>>> |
 | [farion1231-cc-switch](./farion1231-cc-switch) | — | 已发布 | f878871 | — |
 | [rakkasei0810-notion-plugin-notion-openai-curated-remote](./rakkasei0810-notion-plugin-notion-openai-curated-remote) | 建档 | 已发布 | 0b2db47 | GetToIt 是画师/单主委托排单计时双端工作台：Next.js+Koa+Prisma/MySQL，含 RBAC 后台、邮箱/QQ 登录、COS 图片直传；本次为首次全量建档，需盯防仓库名错位与 prod MySQL 端口暴露。 |

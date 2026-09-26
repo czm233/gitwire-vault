@@ -1,8 +1,8 @@
 repo: czm233/DanceBattler
 last_synced: 019bec51926d9ec074283a91cddf96fa1b770e54
-last_mode: init
-summary: DanceBattler为圣华跳舞机的非官方全栈数据聚合平台：代理外部ShApi提供成绩/排行/机台地图/资源管理，存在凭据泄露、地理数据公开与非官方爬取三类待追踪风险。
-updated_at: '2026-09-27T00:59:01+08:00'
+last_mode: incremental
+summary: 雷达：机会 0（新 0）· 未入榜 0 · 被占 0
+updated_at: '2026-09-27T02:07:44+08:00'
 last_release_tag: null
 last_issue_number: null
-last_pr_number: null
+last_pr_number: 0
