@@ -1,8 +1,9 @@
 # Issue 雷达 · browser-use/jev-ultrafast
 
-> 全景扫描：2026-09-27 · 开放 issue 33 个 · 机会 0 · 未入榜 24 · 被占 9
+> 全景扫描：2026-09-28 · 开放 issue 34 个 · 机会 0 · 未入榜 25 · 被占 9
 
-## 未入榜（24）
+## 未入榜（25）
+- #156 Hardcoded date in flights example and demo default is now in —— 仓库从未合并外部 PR
 - #152 Community project built on a bounded Jev loop: Jev Social —— 仓库从未合并外部 PR
 - #149 Could the visible page state preserve more semantic structur —— 仓库从未合并外部 PR
 - #145 Community project built on this: jev-browse (agent-callable  —— 难度困难
@@ -40,6 +41,12 @@
 - #36 Missing TEXT_MODEL_API_KEY crashes mid-run; code default base URL differs from .env.example —— 被 PR#147 占
 
 ## 分析详情（最新分析在前）
+### #156 [简单|🟢机会] Hardcoded date in flights example and demo default is now in the past — agent deadlocks in the date picker
+- 示例和演示默认日期硬编码已过期导致日历死锁，值得快速修复
+- 问题：日期硬编码在 examples/flights.py 的 GOALS 与各 verify() 断言，以及 jev_ultrafast/static/app.js:7 的默认目标；日期过期后 Google Flights 禁用该日期，agent 在日历环节死循环。修复点明确，属配置级小修。
+- 方案：将硬编码日期改为动态生成（如 today+N 天），或提升为环境变量/参数；同步更新 verify() 匹配逻辑以容忍相对日期。工作量级：小时级。风险点：verify() 断言对动态日期的格式匹配需测试；未核实 app.js 是否还有其他日期引用。
+- 分析于 2026-09-28
+
 ### #152 [简单|🟢机会] Community project built on a bounded Jev loop: Jev Social
 - 外部社区项目分享经验帖，非开发任务，仅需评估其反馈是否值得回溯参考
 - 问题：本质是社区项目（Jev Social）基于本仓库成果的展示帖，并附三条实现经验（证据深度作为状态等），非缺陷或功能请求。正文被截断，无明确待办。大概率只需维护者阅读评论回复，或评估经验是否转化为 issue（未核实：涉及的 indexed, typed-action loop 模块位置）。
@@ -154,12 +161,6 @@
 - 方案：改为正确 clone URL（未核实真实正确地址，需确认）。一行文档修改。（工作量级：小时级）
 - 分析于 2026-09-27
 
-### #53 [中等|🟢机会] agent.py is minified and violates the project's own line-length configuration ```File: jev_ultrafast/agent.py```
-- agent.py 被压缩成超长行，违反项目自身 ruff line-length 配置
-- 问题：agent.py 82 行全被压缩，多处超 300 字符，违反 pyproject.toml line-length=120。
-- 方案：用 ruff/black 按配置重新格式化并跑测试确认无行为变更。机械性工作。（工作量级：小时级）
-- 分析于 2026-09-27
-
 ## 全量总表
 
 <details><summary>展开全部开放 issue</summary>
@@ -199,5 +200,6 @@
 | #145 | 困难 | 🟡困难 | 社区衍生项目投稿，涉及上游集成决策，需维护者定方向 |
 | #149 | 中等 | 🟢机会 | 建议保留页面快照语义结构，单模块改进，值得做 |
 | #152 | 简单 | 🟢机会 | 外部社区项目分享经验帖，非开发任务，仅需评估其反馈是否值得回溯参考 |
+| #156 | 简单 | 🟢机会 | 示例和演示默认日期硬编码已过期导致日历死锁，值得快速修复 |
 
 </details>

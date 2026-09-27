@@ -1,4 +1,4 @@
-last_sweep: '2026-09-27T19:00:20+08:00'
+last_sweep: '2026-09-28T01:00:19+08:00'
 issues:
   '1':
     difficulty: 困难
@@ -379,7 +379,7 @@ issues:
     last_status: taken-pr
     status_changed_at: '2026-09-27T02:17:51+08:00'
     labels_seen: []
-    comments_seen: 3
+    comments_seen: 4
   '129':
     difficulty: 困难
     summary: MDN 用例路径断言失败，正文只有数据缺问题描述
@@ -487,5 +487,21 @@ issues:
     excluded: 仓库从未合并外部 PR
     last_status: open
     status_changed_at: '2026-09-27T04:00:20+08:00'
+    labels_seen: []
+    comments_seen: 0
+  '156':
+    difficulty: 简单
+    summary: 示例和演示默认日期硬编码已过期导致日历死锁，值得快速修复
+    problem: 日期硬编码在 examples/flights.py 的 GOALS 与各 verify() 断言，以及 jev_ultrafast/static/app.js:7
+      的默认目标；日期过期后 Google Flights 禁用该日期，agent 在日历环节死循环。修复点明确，属配置级小修。
+    plan: 将硬编码日期改为动态生成（如 today+N 天），或提升为环境变量/参数；同步更新 verify() 匹配逻辑以容忍相对日期。工作量级：小时级。风险点：verify()
+      断言对动态日期的格式匹配需测试；未核实 app.js 是否还有其他日期引用。
+    analyzed_at: '2026-09-28'
+    title: Hardcoded date in flights example and demo default is now in the past —
+      agent deadlocks in the date picker
+    created_at: '2026-09-27T16:21:22Z'
+    excluded: 仓库从未合并外部 PR
+    last_status: open
+    status_changed_at: '2026-09-28T01:00:19+08:00'
     labels_seen: []
     comments_seen: 0
