@@ -1,4 +1,4 @@
-last_sweep: '2026-09-28T01:00:19+08:00'
+last_sweep: '2026-10-01T21:10:18+08:00'
 issues:
   '1':
     difficulty: 困难
@@ -278,9 +278,9 @@ issues:
     pr_claims:
     - 103
     - 88
-    excluded: ''
-    last_status: taken-pr
-    status_changed_at: '2026-09-27T02:17:51+08:00'
+    excluded: 仓库从未合并外部 PR
+    last_status: open
+    status_changed_at: '2026-10-01T21:10:18+08:00'
     labels_seen: []
     comments_seen: 0
   '93':
@@ -296,9 +296,9 @@ issues:
     created_at: '2026-09-21T07:27:41Z'
     pr_claims:
     - 109
-    excluded: ''
-    last_status: taken-pr
-    status_changed_at: '2026-09-27T02:17:51+08:00'
+    excluded: 仓库从未合并外部 PR
+    last_status: open
+    status_changed_at: '2026-10-01T21:10:18+08:00'
     labels_seen: []
     comments_seen: 0
   '94':
@@ -313,8 +313,6 @@ issues:
     created_at: '2026-09-21T07:28:17Z'
     pr_claims:
     - 131
-    - 114
-    - 105
     excluded: ''
     last_status: taken-pr
     status_changed_at: '2026-09-27T02:17:51+08:00'
@@ -341,11 +339,13 @@ issues:
     analyzed_at: '2026-09-27'
     title: Add a theme switch button
     created_at: '2026-09-22T05:42:01Z'
-    excluded: 仓库从未合并外部 PR
-    last_status: open
-    status_changed_at: '2026-09-27T02:17:51+08:00'
+    excluded: ''
+    last_status: taken-pr
+    status_changed_at: '2026-10-01T21:10:18+08:00'
     labels_seen: []
     comments_seen: 1
+    pr_claims:
+    - 184
   '120':
     difficulty: 中等
     summary: 为普通浏览器动作暴露置信度门槛，涉及决策执行核心逻辑
@@ -503,5 +503,78 @@ issues:
     excluded: 仓库从未合并外部 PR
     last_status: open
     status_changed_at: '2026-09-28T01:00:19+08:00'
+    labels_seen: []
+    comments_seen: 0
+  '157':
+    difficulty: 中等
+    summary: 单次调用无重试导致瞬态错误中断整个运行，值得修复
+    problem: field_text() 只做一次 post_json+严格解析，尾随 markdown 围栏或 HTTP200 错误体均会抛异常杀死整个
+      run。大概率涉及 jev_ultrafast/model.py 的 field_text 解析逻辑（未核实调用链）。
+    plan: 加 2-3 次重试；解析前剥离 ``` 围栏/正则提取 JSON；对齐 post_json 错误检测。工作量级：小时级。风险：重试掩盖系统性解析缺陷，需区分可重试与不可重试错误。
+    analyzed_at: '2026-10-01'
+    title: One transient text-model failure aborts the whole run — no retry in field_text
+    created_at: '2026-09-28T01:58:26Z'
+    pr_claims:
+    - 180
+    excluded: ''
+    last_status: taken-pr
+    status_changed_at: '2026-10-01T21:10:18+08:00'
+    labels_seen: []
+    comments_seen: 0
+  '158':
+    difficulty: 简单
+    summary: HTTP 200 + error body 被当作成功响应，应加体级校验
+    problem: post_json() (model.py:15-27) 只校验 HTTP 状态码，OpenRouter 返回 200+error 对象时穿透到调用方，在远处以
+      KeyError 形式爆掉。定位明确，单函数修复。
+    plan: 解析响应体后检查 "error" 键并提前抛出/重试；补单元测试。工作量级：小时级。风险：低，注意各 provider 错误体格式差异（未核实）。
+    analyzed_at: '2026-10-01'
+    title: post_json treats HTTP 200 with an error body as a successful response
+    created_at: '2026-09-28T01:58:33Z'
+    pr_claims:
+    - 179
+    excluded: ''
+    last_status: taken-pr
+    status_changed_at: '2026-10-01T21:10:18+08:00'
+    labels_seen: []
+    comments_seen: 0
+  '159':
+    difficulty: 困难
+    summary: 新用户体验失败状态不可见，跨 UI/CDP/引导多层问题
+    problem: 新用户无法分辨哪一层失败：Start demo 按钮语义误导、无下一步提示、后台 tab 被内存回收后只显示裸 CDP 错误。涉及前端状态机、错误展示、资源管理多层，正文不完整（信息不足，后半段被截断）。
+    plan: 需先明确各失败点的状态映射与用户提示文案，再加 UI 状态提示与 CDP 错误友好化；工作量级：周级（跨模块+设计决策）。风险：范围蔓延，需先与维护者拆分
+      issue。
+    analyzed_at: '2026-10-01'
+    title: 'Demo UX: a first-time user cannot tell why nothing works — states and
+      failures are invisible'
+    created_at: '2026-09-28T02:24:28Z'
+    excluded: ''
+    last_status: open
+    status_changed_at: '2026-10-01T21:10:18+08:00'
+    labels_seen: []
+    comments_seen: 0
+  '177':
+    difficulty: 简单
+    summary: 第三方 AI 分析报告通告，信息性 issue，无需开发
+    problem: 外部发布 AI 辅助分析报告并礼貌请求纠错/删除。本质是社区通告，非代码问题，仅需维护者核实报告论断（约 2 千行代码、价值在接口设计等）是否属实。
+    plan: 人工核对报告内容，回复确认或请求更正，之后关闭。工作量级：小时级。风险：极低；注意勿被当作技术改进项误处理。
+    analyzed_at: '2026-10-01'
+    title: Third-party AI-assisted analysis report on jev-ultrafast
+    created_at: '2026-09-29T15:04:38Z'
+    excluded: 仓库从未合并外部 PR
+    last_status: open
+    status_changed_at: '2026-10-01T21:10:18+08:00'
+    labels_seen: []
+    comments_seen: 0
+  '187':
+    difficulty: 困难
+    summary: 多阶段 agent 架构提案，概念性、需架构决策、信息不足
+    problem: 提议 2-3 阶段多 agent 流水线提升决策准确率，正文不完整（被截断），无具体任务基准与评测数据，"70% 准确率"来源未核实。属架构级提案，需维护者设计决策。
+    plan: 先与作者/社区讨论明确目标场景与评估方式，再做原型验证；工作量级：周级。风险：成本上升、收益未证实，可能长期停留在讨论阶段。
+    analyzed_at: '2026-10-01'
+    title: 'Idea: Multi-Stage Agent Architecture for Improved Decision Accuracy'
+    created_at: '2026-10-01T07:34:42Z'
+    excluded: ''
+    last_status: open
+    status_changed_at: '2026-10-01T21:10:18+08:00'
     labels_seen: []
     comments_seen: 0

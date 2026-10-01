@@ -1,15 +1,19 @@
 # Issue 雷达 · browser-use/jev-ultrafast
 
-> 全景扫描：2026-09-28 · 开放 issue 34 个 · 机会 0 · 未入榜 25 · 被占 9
+> 全景扫描：2026-10-01 · 开放 issue 39 个 · 机会 0 · 未入榜 29 · 被占 10
 
-## 未入榜（25）
+## 未入榜（29）
+- #187 Idea: Multi-Stage Agent Architecture for Improved Decision A —— 难度困难
+- #177 Third-party AI-assisted analysis report on jev-ultrafast —— 仓库从未合并外部 PR
+- #159 Demo UX: a first-time user cannot tell why nothing works — s —— 难度困难
 - #156 Hardcoded date in flights example and demo default is now in —— 仓库从未合并外部 PR
 - #152 Community project built on a bounded Jev loop: Jev Social —— 仓库从未合并外部 PR
 - #149 Could the visible page state preserve more semantic structur —— 仓库从未合并外部 PR
 - #145 Community project built on this: jev-browse (agent-callable  —— 难度困难
 - #140 ioio —— 难度困难
-- #115 Add a theme switch button —— 仓库从未合并外部 PR
 - #100 qr-menu —— 难度困难
+- #93 The bundled Google Flights demo can no longer succeed: its g —— 仓库从未合并外部 PR
+- #87 Model responses with invalid JSON leak decoder errors —— 仓库从未合并外部 PR
 - #85 Latency from Japan: 12-17s per task - it's the client's link —— 难度困难
 - #77 Create main.ym. —— 难度困难
 - #67 Jev ultra fast Can't complete simple task —— 难度困难
@@ -30,17 +34,48 @@
 - #1 Library API: first observation can return an empty action sp —— 难度困难
 
 ## 已被占（不必再看）
+- #158 post_json treats HTTP 200 with an error body as a successful response —— 被 PR#179 占
+- #157 One transient text-model failure aborts the whole run — no retry in field_text —— 被 PR#180 占
 - #133 choose() can return raw KeyError for an off-envelope HTTP-200 response —— 被 PR#135 占
 - #132 Stale action ids can select a different live control without an error —— 被 PR#148 占
 - #129 MDN wrong-waypoint actions —— 被 PR#151 占
 - #125 Feature Request: Support local resident decision backend (SemIf) and Model Context Protocol (MCP) —— 被 PR#126 占
 - #120 Expose a confidence gate for ordinary browser actions —— 被 PR#127 占
+- #115 Add a theme switch button —— 被 PR#184 占
 - #94 A failed post-action observation (page_changed: null) disables the three-repeat no-progress check, so a stalled run keeps spending model calls —— 被 PR#131 占
-- #93 The bundled Google Flights demo can no longer succeed: its goal date (2026-09-20) is in the past and past days are not indexed —— 被 PR#109 占
-- #87 Model responses with invalid JSON leak decoder errors —— 被 PR#103 占
 - #36 Missing TEXT_MODEL_API_KEY crashes mid-run; code default base URL differs from .env.example —— 被 PR#147 占
 
 ## 分析详情（最新分析在前）
+### #187 [困难|🟢机会] Idea: Multi-Stage Agent Architecture for Improved Decision Accuracy
+- 多阶段 agent 架构提案，概念性、需架构决策、信息不足
+- 问题：提议 2-3 阶段多 agent 流水线提升决策准确率，正文不完整（被截断），无具体任务基准与评测数据，"70% 准确率"来源未核实。属架构级提案，需维护者设计决策。
+- 方案：先与作者/社区讨论明确目标场景与评估方式，再做原型验证；工作量级：周级。风险：成本上升、收益未证实，可能长期停留在讨论阶段。
+- 分析于 2026-10-01
+
+### #177 [简单|🟢机会] Third-party AI-assisted analysis report on jev-ultrafast
+- 第三方 AI 分析报告通告，信息性 issue，无需开发
+- 问题：外部发布 AI 辅助分析报告并礼貌请求纠错/删除。本质是社区通告，非代码问题，仅需维护者核实报告论断（约 2 千行代码、价值在接口设计等）是否属实。
+- 方案：人工核对报告内容，回复确认或请求更正，之后关闭。工作量级：小时级。风险：极低；注意勿被当作技术改进项误处理。
+- 分析于 2026-10-01
+
+### #159 [困难|🟢机会] Demo UX: a first-time user cannot tell why nothing works — states and failures are invisible
+- 新用户体验失败状态不可见，跨 UI/CDP/引导多层问题
+- 问题：新用户无法分辨哪一层失败：Start demo 按钮语义误导、无下一步提示、后台 tab 被内存回收后只显示裸 CDP 错误。涉及前端状态机、错误展示、资源管理多层，正文不完整（信息不足，后半段被截断）。
+- 方案：需先明确各失败点的状态映射与用户提示文案，再加 UI 状态提示与 CDP 错误友好化；工作量级：周级（跨模块+设计决策）。风险：范围蔓延，需先与维护者拆分 issue。
+- 分析于 2026-10-01
+
+### #158 [简单|🔒PR占] post_json treats HTTP 200 with an error body as a successful response
+- HTTP 200 + error body 被当作成功响应，应加体级校验
+- 问题：post_json() (model.py:15-27) 只校验 HTTP 状态码，OpenRouter 返回 200+error 对象时穿透到调用方，在远处以 KeyError 形式爆掉。定位明确，单函数修复。
+- 方案：解析响应体后检查 "error" 键并提前抛出/重试；补单元测试。工作量级：小时级。风险：低，注意各 provider 错误体格式差异（未核实）。
+- 分析于 2026-10-01
+
+### #157 [中等|🔒PR占] One transient text-model failure aborts the whole run — no retry in field_text
+- 单次调用无重试导致瞬态错误中断整个运行，值得修复
+- 问题：field_text() 只做一次 post_json+严格解析，尾随 markdown 围栏或 HTTP200 错误体均会抛异常杀死整个 run。大概率涉及 jev_ultrafast/model.py 的 field_text 解析逻辑（未核实调用链）。
+- 方案：加 2-3 次重试；解析前剥离 ``` 围栏/正则提取 JSON；对齐 post_json 错误检测。工作量级：小时级。风险：重试掩盖系统性解析缺陷，需区分可重试与不可重试错误。
+- 分析于 2026-10-01
+
 ### #156 [简单|🟢机会] Hardcoded date in flights example and demo default is now in the past — agent deadlocks in the date picker
 - 示例和演示默认日期硬编码已过期导致日历死锁，值得快速修复
 - 问题：日期硬编码在 examples/flights.py 的 GOALS 与各 verify() 断言，以及 jev_ultrafast/static/app.js:7 的默认目标；日期过期后 Google Flights 禁用该日期，agent 在日历环节死循环。修复点明确，属配置级小修。
@@ -101,7 +136,7 @@
 - 方案：在 act 执行路径加可配置阈值（低于阈值时拒绝执行/降级为 blocked），需设计默认值、配置暴露方式（env/config）、与 #99 终态门控的一致性；报告者附有测量数据但正文截断。存在行为变更风险（阈值过严导致 run 频繁卡死）。（工作量级：天级）
 - 分析于 2026-09-27
 
-### #115 [简单|🟢机会] Add a theme switch button
+### #115 [简单|🔒PR占] Add a theme switch button
 - 落地页增加主题切换按钮，范围明确的前端小功能
 - 问题：官网无明暗主题切换，提议在导航栏加按钮，附带截图，需求清晰，纯前端 UI 功能。
 - 方案：加主题状态（localStorage 持久化）、切换按钮、CSS 变量/暗色样式；需注意与现有样式体系统一。标准前端任务。（工作量级：小时级）
@@ -119,46 +154,16 @@
 - 方案：修改停滞检测条件，将 None（观察失败）视为无进展信号之一（如 `h["page_changed"] is not True`），或区分观察失败与成功不动；同时补对应测试。逻辑集中在一处但需考虑误判风险（暂时性观察超时不应立即算停滞）。（工作量级：小时级到天级）
 - 分析于 2026-09-27
 
-### #93 [简单|🔒PR占] The bundled Google Flights demo can no longer succeed: its goal date (2026-09-20) is in the past and past days are not indexed
+### #93 [简单|🟢机会] The bundled Google Flights demo can no longer succeed: its goal date (2026-09-20) is in the past and past days are not indexed
 - 演示目标日期硬编码为过去日期导致 demo 必然失败，需更新或参数化
 - 问题：flights demo 的目标日期 2026-09-20 已过期，Google Flights 不再索引过去日期，导致所有演示路径 blocked。涉及 static/app.js、index.html、examples/flights.py、README、docs 多处硬编码。
 - 方案：短期更新日期为未来；长期将日期参数化/相对化（如"下周日"）。跨 5+ 文件但均为配置/文案级改动；注意 examples/flights.py 中 verify() 断言需同步。（工作量级：小时级）
 - 分析于 2026-09-27
 
-### #87 [简单|🔒PR占] Model responses with invalid JSON leak decoder errors
+### #87 [简单|🟢机会] Model responses with invalid JSON leak decoder errors
 - HTTP 200 非 JSON 响应泄漏解码错误，应包装为清晰 RuntimeError
 - 问题：post_json() 在 HTTP 成功后直接调 response.json()，非 JSON 体导致 ValueError/JSONDecodeError 直接逃逸，与既有错误路径（"no action executed"）风格不一致。
 - 方案：在 post_json() 中捕获 JSON 解码异常，包装为 RuntimeError("Model provider returned invalid JSON; no action executed.")，并补单测。范围明确，单函数修改。（工作量级：小时级）
-- 分析于 2026-09-27
-
-### #85 [困难|🟢机会] Latency from Japan: 12-17s per task - it's the client's link, not the region (3-location measurement)
-- 日本延迟 12-17s，报告者已证明非区域问题，属性能排查
-- 问题：从日本访问延迟高，报告者三地测量后认为瓶颈在客户端链路而非区域；正文被截断，结论与建议不完整。这不是明确缺陷，更像性能数据分享，优化点不明（可能涉及连接复用、超时配置等）。信息不足。
-- 方案：需基于报告者完整数据定位客户端/网络路径瓶颈，再决定是否做连接优化或文档化部署建议。（工作量级：天级）
-- 分析于 2026-09-27
-
-### #77 [困难|🟢机会] Create main.ym.
-- 请求创建 main.yml workflow，正文不完整，信息不足
-- 问题：要求创建 GitHub Actions workflow 文件，但正文极不完整：无文件名后缀（"main.ym."）、无具体 job 内容、触发场景不明（"Windows Cloud Pc amydesk" 含义不明）。信息不足。
-- 方案：需与提交人澄清意图后才可判断；若只是加 workflow_dispatch 的空壳 yml 则极简单，但当前无法确认。（工作量级：无法评估）
-- 分析于 2026-09-27
-
-### #67 [困难|🟢机会] Jev ultra fast Can't complete simple task
-- 简单公交查询任务多处失败，根因不明，需排查定位
-- 问题：多步任务（地名转地址、公交路线查询）在多个环节出错，报告者自己也未定位单一根因；截图与描述信息有限，可能涉及模型能力、上下文构造、页面交互等多方面。信息不足，无法定位具体模块。
-- 方案：需先复现并逐层定位（模型决策日志、页面快照、上下文构造），可能是 prompt/状态管理改进或能力边界问题。（工作量级：天级，且可能不可修）
-- 分析于 2026-09-27
-
-### #55 [简单|🟢机会] Model-call budget (MAX_STEPS * 2) is undocumented and untested
-- 模型调用预算（MAX_STEPS*2=120）未文档化未测试，值得补文档与边界测试
-- 问题：agent.py 中预算为动作预算的 2 倍（120 次），README 未说明，错误信息含糊，tests/test_agent.py 缺边界测试。改动集中在文档与测试。
-- 方案：README 补充说明 + 错误信息写明具体数字 + 添加预算边界测试；范围明确，纯文档/测试级修改。（工作量级：小时级）
-- 分析于 2026-09-27
-
-### #54 [简单|🟢机会] HIGH — README clone URL points to the wrong repository File: ```README.md``` (line 32)
-- README 克隆 URL 指向错误仓库，文档级修正
-- 问题：README "Try it" 的 git clone 地址与实际仓库不符，误导用户。
-- 方案：改为正确 clone URL（未核实真实正确地址，需确认）。一行文档修改。（工作量级：小时级）
 - 分析于 2026-09-27
 
 ## 全量总表
@@ -186,11 +191,11 @@
 | #67 | 困难 | 🟡困难 | 简单公交查询任务多处失败，根因不明，需排查定位 |
 | #77 | 困难 | 🟡困难 | 请求创建 main.yml workflow，正文不完整，信息不足 |
 | #85 | 困难 | 🟡困难 | 日本延迟 12-17s，报告者已证明非区域问题，属性能排查 |
-| #87 | 简单 | 🔒PR占 | HTTP 200 非 JSON 响应泄漏解码错误，应包装为清晰 RuntimeError |
-| #93 | 简单 | 🔒PR占 | 演示目标日期硬编码为过去日期导致 demo 必然失败，需更新或参数化 |
+| #87 | 简单 | 🟢机会 | HTTP 200 非 JSON 响应泄漏解码错误，应包装为清晰 RuntimeError |
+| #93 | 简单 | 🟢机会 | 演示目标日期硬编码为过去日期导致 demo 必然失败，需更新或参数化 |
 | #94 | 中等 | 🔒PR占 | 观察失败时 page_changed=None 使停滞检测失效，run 持续烧调用 |
 | #100 | 困难 | 🟡困难 | 正文为空的"qr-menu"，无任何信息，无法分析 |
-| #115 | 简单 | 🟢机会 | 落地页增加主题切换按钮，范围明确的前端小功能 |
+| #115 | 简单 | 🔒PR占 | 落地页增加主题切换按钮，范围明确的前端小功能 |
 | #120 | 中等 | 🔒PR占 | 为普通浏览器动作暴露置信度门槛，涉及决策执行核心逻辑 |
 | #125 | 困难 | 🔒PR占 | 支持本地决策后端与 MCP 集成，跨模块架构级功能 |
 | #129 | 困难 | 🔒PR占 | MDN 用例路径断言失败，正文只有数据缺问题描述 |
@@ -201,5 +206,10 @@
 | #149 | 中等 | 🟢机会 | 建议保留页面快照语义结构，单模块改进，值得做 |
 | #152 | 简单 | 🟢机会 | 外部社区项目分享经验帖，非开发任务，仅需评估其反馈是否值得回溯参考 |
 | #156 | 简单 | 🟢机会 | 示例和演示默认日期硬编码已过期导致日历死锁，值得快速修复 |
+| #157 | 中等 | 🔒PR占 | 单次调用无重试导致瞬态错误中断整个运行，值得修复 |
+| #158 | 简单 | 🔒PR占 | HTTP 200 + error body 被当作成功响应，应加体级校验 |
+| #159 | 困难 | 🟡困难 | 新用户体验失败状态不可见，跨 UI/CDP/引导多层问题 |
+| #177 | 简单 | 🟢机会 | 第三方 AI 分析报告通告，信息性 issue，无需开发 |
+| #187 | 困难 | 🟡困难 | 多阶段 agent 架构提案，概念性、需架构决策、信息不足 |
 
 </details>
