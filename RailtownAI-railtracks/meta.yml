@@ -1,8 +1,9 @@
 repo: RailtownAI/railtracks
-last_synced: e8b0590adf2b48accf02c2c51bcd1aace0464496
+last_synced: 9b894a34d5ef1aa05c380401c98361d0dc6486cd
 last_mode: incremental
-summary: 雷达：机会 23（新 0）· 未入榜 50 · 被占 24
-updated_at: '2026-09-27T02:27:51+08:00'
-last_release_tag: v1.5.4
-last_issue_number: 1599
-last_pr_number: 1595
+summary: 本次增量上线 context 事件流可观测性（context.* 事件+RAILTRACKS_CONTEXT_EVENTS，默认全量记值）与 PEP
+  563 工具 schema 修复（含 Literal 参数），另增 Conductr 托管评估文档与 AGENTS.md 技能确认机制。
+updated_at: '2026-10-01T21:04:48+08:00'
+last_release_tag: v1.5.5
+last_issue_number: 1605
+last_pr_number: 1608

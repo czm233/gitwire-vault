@@ -23,11 +23,11 @@ owner-repo/
 
 <!-- board:start -->
 
-- 最近一轮同步：2026-09-28；5 个监控目标，8 个已发布
+- 最近一轮同步：2026-10-01；5 个监控目标，8 个已发布
 
 | 项目 | 本轮 | 状态 | 同步到 | 摘要 |
 | --- | --- | --- | --- | --- |
-| [RailtownAI-railtracks](./RailtownAI-railtracks) | 增量 | 已发布 | e8b0590 | 雷达：机会 23（新 0）· 未入榜 50 · 被占 24 |
+| [RailtownAI-railtracks](./RailtownAI-railtracks) | 增量 | 已发布 | 9b894a3 | 本次增量上线 context 事件流可观测性（context.* 事件+RAILTRACKS_CONTEXT_EVENTS，默认全量记值）与 PEP 563 工具 schema 修复（含 Literal 参数），另增 Conductr 托管评估文档与 AGENTS.md 技能确认机制。 |
 | [browser-use-jev-ultrafast](./browser-use-jev-ultrafast) | 增量 | 已发布 | 1231850 | 雷达：机会 0（新 0）· 未入榜 25 · 被占 9 |
 | [czm233-CC-Balancer](./czm233-CC-Balancer) | — | 已发布 | dfecb1f | — |
 | [czm233-DanceBattler](./czm233-DanceBattler) | 增量 | 已发布 | 019bec5 | 雷达：机会 0（新 0）· 未入榜 0 · 被占 0 |

@@ -7,13 +7,14 @@
 ```mermaid
 flowchart TD
     A[开发者定义普通函数] --> B[rt.function_node 装饰/包装]
-    B --> C[rt.agent_node 组装: tools + llm + system_message]
+    B --> B2[解析注解: PEP 563 resolve_type_hints + Literal handler]
+    B2 --> C[rt.agent_node 组装: tools + llm + system_message]
     C --> D[rt.Flow 构建 entry_point]
     D --> E[flow.invoke 输入]
     E --> F[返回 result.text 或 result.structured]
 ```
 
-docstring 即工具描述；`output_schema`（pydantic）时返回 `result.structured`（README.md、docs/scripts/first_agent.py）。
+docstring 即工具描述；`output_schema`（pydantic）时返回 `result.structured`（README.md、docs/scripts/first_agent.py）。9b894a3 起，函数若用 `from __future__ import annotations`，参数注解会经 `typing.get_type_hints` 解析后再匹配 handler，`Literal[...]` 参数生成带 `enum` 的 schema（packages/railtracks/src/railtracks/llm/tools/tool.py、typing_utils.py）。
 
 ## 2. Agent 工具调用循环（多步协作）
 
@@ -65,16 +66,19 @@ sequenceDiagram
     participant Flow as Flow
     participant Conn as FlowConnection
     participant Ctx as rt.context
+    participant E as context.* 事件
     Dev->>Flow: Flow(name, entry_point, context, timeout, save_state)
     Dev->>Flow: connect() 或 invoke()
     Flow->>Conn: 每次运行一个 Connection
     Conn->>Ctx: 注入共享/运行级上下文
-    Conn->>Conn: ainvoke（可多连接并发 gather）
+    Conn->>E: context.creation 快照（run 起点）
+    Conn->>Ctx: get/put/update/delete 记录为 context.* 事件
+    Conn->>E: context.completion 快照（run 终点）
     Conn-->>Dev: 结束后仍可读 context 与 message_histories
     Note over Conn: 失败时 context 仍可读<br/>save_state=True 落盘 .railtracks/*.json
 ```
 
-`.update_context()` 派生不同上下文的运行；`end_on_error` 控制异常语义（docs/scripts/flows_sessions.py、session.py）。
+`.update_context()` 派生不同上下文的运行；`end_on_error` 控制异常语义（docs/scripts/flows_sessions.py、session.py）。9b894a3（334456e）起 context 调用全量入事件流：默认 level 2 记 keys+values（调用时刻快照），`RAILTRACKS_CONTEXT_EVENTS=1` 只记 keys、`=0` 关闭；失败的 get/delete（KeyError）不记录，`keys()` 从不记录；框架自身读写（ConversationMemory、ContextInjection 背后）不记录。
 
 ## 5. MCP 双向集成
 
@@ -92,9 +96,25 @@ flowchart LR
 
 ingestion（chunk + embed + 写入）→ query（embed + scope + top_k + 过滤）→ 结果带 rank/score；后端可换 InMemory（可 snapshot）/Pgvector/Chroma/ChromaCloud，语义或词法搜索可插拔到记忆工具集（docs/retrieval/、docs/scripts/retrieval/store.py、key_value_memory.py）。
 
+## 7. 评估（含 Conductr 托管模式）
+
+```mermaid
+sequenceDiagram
+    participant C as Conductr
+    participant EP as 用户 /evals/run 端点
+    participant EV as rt.evaluations
+    participant R as railtownai
+    C->>EP: POST {"agent_run_id": "..."}
+    EP->>R: get_agent_runs([agent_run_id])
+    EP->>EV: evaluate(data, evaluators, agent_selection=False)
+    EV->>R: payload_callback 内 upload_agent_evaluation
+    EP-->>C: HostedEvaluationResponse(name, data_points, upload)
+```
+
+本地评估：`rt.evaluations.evaluate` 用 judge/llm_inference/tool_use evaluator + metric 打分并可视化。9b894a3（689c3fe）新增托管模式：用户自持 FastAPI 端点，Conductr 推送 `agent_run_id` 触发拉取-评估-回传；需 `railtownai>=2.1.2`；文档提醒传 `agent_selection=False` 且路由用普通 `def`（evaluate/get_agent_runs 阻塞）（docs/evaluations/conductr_hosted.md）。
+
 ## 非核心流程（文字带过）
 
-- **评估**：`rt.evaluations.evaluate` 用 judge/llm_inference/tool_use evaluator + metric 打分并可视化（docs/evaluations/）。
 - **错误处理**：LLMError 族细分（Timeout/RateLimit/Auth），推荐指数退避重试可瞬时错误、跨 provider fallback、`err.format_verbose()` 带完整 message_history（docs/scripts/error_handling.py）。
-- **观测**：`enable_logging` + broadcast_callback + `railtracks viz` 回放。
+- **观测**：`enable_logging` + broadcast_callback + `railtracks viz` 回放；context 事件级别见流程 4。
 - **CLI skillkit**：向 Claude/Codex/Copilot/Cursor 安装代码风格技能。

@@ -7,3 +7,8 @@
 5. **文档基础设施脆弱点**：pdoc 生成物位于被 watch 的 `docs/` 下，mtime 判断不慎会引发 `mkdocs serve` 无限重载（scripts/mkdocs_hooks.py 注释）。AGENTS.md 现明确验证口径为 `mkdocs build --strict`、`mkdocs serve` 只是阻塞式预览（4726cf2）。`scripts/docs_validation.sh` 已确认存在，且 2f1626e 起以 `--warn-unused-ignores` 校验 docs/scripts——docs 示例里的 `# type: ignore` 若失效会直接挂 CI。
 6. **模型版本命名超前**：示例中大量使用 `gpt-5.4-mini`、`claude-sonnet-5`、`gemini-3.7-flash` 等模型名，疑为文档未来化写法或笔误，实际可用性未核实；若为文档错误可向下游反馈。
 7. **技能文档是产品面的一部分**：bundled skills（agent-builder/middleware/rag-pipeline）随包分发并有注册表单测锁定 description（tests/unit_tests/cli/skillkit/test_registry.py）——改技能文案必须同步测试；rag-pipeline 已确认 embedder 混用会抛 `EmbeddingModelMismatchError`，检索相关集成需注意建库与查询模型一致性。
+8. **context 事件默认全量记值（隐私/体积风险）**：9b894a3（334456e）起默认 level 2，context 值以调用时刻快照全量写入事件文件；含 PII/大对象的场景需显式 `RAILTRACKS_CONTEXT_EVENTS=1/0`。另注意盲区：原地编辑（`get(...).append(...)`）不产生 put 事件，level 1 下完全不可见、level 2 仅在 completion 快照显形——审计 context 变更时不能只信 put/update 事件。
+9. **`rt.context` 实现已拆模块**：用户 API 位于 `context/operations.py`，`context/central.py` 仅留 runner 会话/配置（334456e）；公开导入 `railtracks.context.*` 路径不变，但 monkeypatch `central.get/put` 的测试代码会失效（上游已同步迁移其自身测试）。盯后续是否有进一步内部重组。
+10. **框架内部直连 `external_context`**：ConversationMemory、prompt 注入等已改为 `safe_get_runner_context().external_context` 绕过 operations 层（334456e）——若未来在 operations 层加校验/钩子，框架内部路径不会经过，属已知的语义不对称。
+11. **PEP 563 解析失败的静默退化**：`resolve_type_hints` 失败时告警一次并把参数回退 `object` schema；提供 `ToolManifest` 可跳过告警但也不再有签名校验兜底（9b894a3，typing_utils.py、validation.py `_check_type_compatibility` 对非 dict 的 OBJECT 推断「信任 manifest」）——生态库以字符串注解引用延迟导入类型时，schema 可能悄悄变宽，值得盯用户反馈。
+12. **Hosted Evaluations 端点权限面**：`/evals/run` 同时具备「从 Conductr 拉取 run」与「回传评估」两种凭据能力（docs/evaluations/conductr_hosted.md 末段），部署即暴露可触发的评估入口；认证/限流文档未提及（未核实），安全相关后续变更需关注。
