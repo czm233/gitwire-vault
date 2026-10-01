@@ -1,4 +1,4 @@
-last_sweep: '2026-10-01T21:10:18+08:00'
+last_sweep: '2026-10-02T01:18:43+08:00'
 issues:
   '1':
     difficulty: 困难
@@ -142,6 +142,13 @@ issues:
     status_changed_at: '2026-09-27T02:17:51+08:00'
     labels_seen: []
     comments_seen: 1
+    pr_evidence:
+    - number: 147
+      url: https://github.com/browser-use/jev-ultrafast/pull/147
+      title: 'fix: validate TEXT_MODEL_API_KEY at startup and align default base URL
+        (#36)'
+      author: viwe-monai
+      created_at: '2026-09-26T03:50:46Z'
   '46':
     difficulty: 困难
     summary: 内容为继电器电路 ASCII 图，与本仓库无关，疑似误投
@@ -275,9 +282,6 @@ issues:
     analyzed_at: '2026-09-27'
     title: Model responses with invalid JSON leak decoder errors
     created_at: '2026-09-21T01:51:29Z'
-    pr_claims:
-    - 103
-    - 88
     excluded: 仓库从未合并外部 PR
     last_status: open
     status_changed_at: '2026-10-01T21:10:18+08:00'
@@ -294,8 +298,6 @@ issues:
     title: 'The bundled Google Flights demo can no longer succeed: its goal date (2026-09-20)
       is in the past and past days are not indexed'
     created_at: '2026-09-21T07:27:41Z'
-    pr_claims:
-    - 109
     excluded: 仓库从未合并外部 PR
     last_status: open
     status_changed_at: '2026-10-01T21:10:18+08:00'
@@ -318,6 +320,12 @@ issues:
     status_changed_at: '2026-09-27T02:17:51+08:00'
     labels_seen: []
     comments_seen: 2
+    pr_evidence:
+    - number: 131
+      url: https://github.com/browser-use/jev-ultrafast/pull/131
+      title: 'fix: no-progress guard treats unobserved outcomes as non-progress (#94)'
+      author: DevCop95
+      created_at: '2026-09-23T16:24:39Z'
   '100':
     difficulty: 困难
     summary: 正文为空的"qr-menu"，无任何信息，无法分析
@@ -346,6 +354,12 @@ issues:
     comments_seen: 1
     pr_claims:
     - 184
+    pr_evidence:
+    - number: 184
+      url: https://github.com/browser-use/jev-ultrafast/pull/184
+      title: 'feat(demo): add theme toggle'
+      author: suryakiransuresh
+      created_at: '2026-09-30T20:10:52Z'
   '120':
     difficulty: 中等
     summary: 为普通浏览器动作暴露置信度门槛，涉及决策执行核心逻辑
@@ -363,6 +377,12 @@ issues:
     status_changed_at: '2026-09-27T02:17:51+08:00'
     labels_seen: []
     comments_seen: 4
+    pr_evidence:
+    - number: 127
+      url: https://github.com/browser-use/jev-ultrafast/pull/127
+      title: Add stale-target uncertainty guard for ordinary actions
+      author: Cross2pro
+      created_at: '2026-09-23T08:02:53Z'
   '125':
     difficulty: 困难
     summary: 支持本地决策后端与 MCP 集成，跨模块架构级功能
@@ -380,6 +400,13 @@ issues:
     status_changed_at: '2026-09-27T02:17:51+08:00'
     labels_seen: []
     comments_seen: 4
+    pr_evidence:
+    - number: 126
+      url: https://github.com/browser-use/jev-ultrafast/pull/126
+      title: 'feat: support local SemIf decision backend and stdio MCP server for
+        agent integration'
+      author: ikeikeikeda66
+      created_at: '2026-09-23T05:58:08Z'
   '129':
     difficulty: 困难
     summary: MDN 用例路径断言失败，正文只有数据缺问题描述
@@ -396,6 +423,12 @@ issues:
     status_changed_at: '2026-09-27T02:17:51+08:00'
     labels_seen: []
     comments_seen: 0
+    pr_evidence:
+    - number: 151
+      url: https://github.com/browser-use/jev-ultrafast/pull/151
+      title: 'feat(examples): add the MDN topic-path demo task from #129'
+      author: rkfshakti
+      created_at: '2026-09-26T17:01:37Z'
   '132':
     difficulty: 中等
     summary: 快照 id 按位置分配，陈旧 id 可静默命中错误控件，属正确性缺陷
@@ -413,6 +446,12 @@ issues:
     status_changed_at: '2026-09-27T02:17:51+08:00'
     labels_seen: []
     comments_seen: 0
+    pr_evidence:
+    - number: 148
+      url: https://github.com/browser-use/jev-ultrafast/pull/148
+      title: 'fix: detect stale action ids that resolve to a different control (#132)'
+      author: viwe-monai
+      created_at: '2026-09-26T06:49:04Z'
   '133':
     difficulty: 中等
     summary: choose() 三处裸索引响应信封，HTTP 200 异常体抛原始 KeyError
@@ -431,6 +470,12 @@ issues:
     status_changed_at: '2026-09-27T02:17:51+08:00'
     labels_seen: []
     comments_seen: 2
+    pr_evidence:
+    - number: 135
+      url: https://github.com/browser-use/jev-ultrafast/pull/135
+      title: Reject incomplete TypeSafe HTTP responses
+      author: EF-Code
+      created_at: '2026-09-23T17:34:41Z'
   '140':
     difficulty: 困难
     summary: 正文为空的"ioio"，无任何信息，无法分析
@@ -521,6 +566,12 @@ issues:
     status_changed_at: '2026-10-01T21:10:18+08:00'
     labels_seen: []
     comments_seen: 0
+    pr_evidence:
+    - number: 180
+      url: https://github.com/browser-use/jev-ultrafast/pull/180
+      title: 'fix: retry transient text-model failures in field_text (#157)'
+      author: dhruv1220
+      created_at: '2026-09-30T10:02:54Z'
   '158':
     difficulty: 简单
     summary: HTTP 200 + error body 被当作成功响应，应加体级校验
@@ -537,6 +588,12 @@ issues:
     status_changed_at: '2026-10-01T21:10:18+08:00'
     labels_seen: []
     comments_seen: 0
+    pr_evidence:
+    - number: 179
+      url: https://github.com/browser-use/jev-ultrafast/pull/179
+      title: 'fix: treat HTTP 200 with error body as provider error (#158)'
+      author: dhruv1220
+      created_at: '2026-09-30T10:00:56Z'
   '159':
     difficulty: 困难
     summary: 新用户体验失败状态不可见，跨 UI/CDP/引导多层问题

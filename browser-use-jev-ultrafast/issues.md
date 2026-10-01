@@ -1,6 +1,6 @@
 # Issue 雷达 · browser-use/jev-ultrafast
 
-> 全景扫描：2026-10-01 · 开放 issue 39 个 · 机会 0 · 未入榜 29 · 被占 10
+> 全景扫描：2026-10-02 · 开放 issue 39 个 · 机会 0 · 未入榜 29 · 被占 10
 
 ## 未入榜（29）
 - #187 Idea: Multi-Stage Agent Architecture for Improved Decision A —— 难度困难
@@ -34,16 +34,16 @@
 - #1 Library API: first observation can return an empty action sp —— 难度困难
 
 ## 已被占（不必再看）
-- #158 post_json treats HTTP 200 with an error body as a successful response —— 被 PR#179 占
-- #157 One transient text-model failure aborts the whole run — no retry in field_text —— 被 PR#180 占
-- #133 choose() can return raw KeyError for an off-envelope HTTP-200 response —— 被 PR#135 占
-- #132 Stale action ids can select a different live control without an error —— 被 PR#148 占
-- #129 MDN wrong-waypoint actions —— 被 PR#151 占
-- #125 Feature Request: Support local resident decision backend (SemIf) and Model Context Protocol (MCP) —— 被 PR#126 占
-- #120 Expose a confidence gate for ordinary browser actions —— 被 PR#127 占
-- #115 Add a theme switch button —— 被 PR#184 占
-- #94 A failed post-action observation (page_changed: null) disables the three-repeat no-progress check, so a stalled run keeps spending model calls —— 被 PR#131 占
-- #36 Missing TEXT_MODEL_API_KEY crashes mid-run; code default base URL differs from .env.example —— 被 PR#147 占
+- #158 post_json treats HTTP 200 with an error body as a successful response —— 被 PR#179（dhruv1220） 占
+- #157 One transient text-model failure aborts the whole run — no retry in field_text —— 被 PR#180（dhruv1220） 占
+- #133 choose() can return raw KeyError for an off-envelope HTTP-200 response —— 被 PR#135（EF-Code） 占
+- #132 Stale action ids can select a different live control without an error —— 被 PR#148（viwe-monai） 占
+- #129 MDN wrong-waypoint actions —— 被 PR#151（rkfshakti） 占
+- #125 Feature Request: Support local resident decision backend (SemIf) and Model Context Protocol (MCP) —— 被 PR#126（ikeikeikeda66） 占
+- #120 Expose a confidence gate for ordinary browser actions —— 被 PR#127（Cross2pro） 占
+- #115 Add a theme switch button —— 被 PR#184（suryakiransuresh） 占
+- #94 A failed post-action observation (page_changed: null) disables the three-repeat no-progress check, so a stalled run keeps spending model calls —— 被 PR#131（DevCop95） 占
+- #36 Missing TEXT_MODEL_API_KEY crashes mid-run; code default base URL differs from .env.example —— 被 PR#147（viwe-monai） 占
 
 ## 分析详情（最新分析在前）
 ### #187 [困难|🟢机会] Idea: Multi-Stage Agent Architecture for Improved Decision Accuracy
