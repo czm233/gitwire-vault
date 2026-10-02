@@ -27,7 +27,7 @@ owner-repo/
 
 | 项目 | 本轮 | 状态 | 同步到 | 摘要 |
 | --- | --- | --- | --- | --- |
-| [RailtownAI-railtracks](./RailtownAI-railtracks) | 增量 | 已发布 | 926f4b6 | 纯技能文档修复提交：rag-pipeline 更名 rag（破坏性），agent-builder/middleware/rag 三技能教学全面校正 API 签名与 .content 口径，无核心库改动。<<<END>>> |
+| [RailtownAI-railtracks](./RailtownAI-railtracks) | 增量 | 已发布 | 5b385d2 | 上游接入 mkdocs-llmstxt，文档站新增 llms.txt/llms-full.txt 及逐页 Markdown 供 AI 助手消费，文档口径的对外传播面进一步放大。 |
 | [browser-use-jev-ultrafast](./browser-use-jev-ultrafast) | 增量 | 已发布 | 1231850 | 雷达：机会 0（新 0）· 未入榜 30 · 被占 10 |
 | [czm233-CC-Balancer](./czm233-CC-Balancer) | — | 已发布 | dfecb1f | — |
 | [czm233-DanceBattler](./czm233-DanceBattler) | 增量 | 已发布 | 019bec5 | 雷达：机会 0（新 0）· 未入榜 0 · 被占 0 |

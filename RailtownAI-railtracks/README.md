@@ -16,10 +16,11 @@
 - [changelog/2026-10-01-9b894a3.md](changelog/2026-10-01-9b894a3.md) —— 增量：context 事件流可观测性（`context.*` 事件 + `RAILTRACKS_CONTEXT_EVENTS`）（#1601）；PEP 563 工具 schema 修复 + Literal 参数处理器（#1580）；Conductr 托管评估文档（#1606）；AGENTS.md 技能确认机制（#1595）
 - [changelog/2026-10-02-8ff5a4c.md](changelog/2026-10-02-8ff5a4c.md) —— 增量：docstring 解析支持 Google/NumPy/reST 三风格（#1452）；CLI `add --force` 位置修复（#1610）；文档口径统一 `.content` + 示例模型名/命名规范刷新（#1611）
 - [changelog/2026-10-03-926f4b6.md](changelog/2026-10-03-926f4b6.md) —— 增量：bundled skill 重命名 `rag-pipeline` → `rag`（#1612，破坏性）；agent-builder skill 补齐 `.content`/streaming/异步调用/可视化指引；middleware skill 新增 guarded agent 运行示例；rag skill 文档 API 签名全面校正
+- [changelog/2026-10-03-5b385d2.md](changelog/2026-10-03-5b385d2.md) —— 增量：mkdocs-llmstxt 生成 llms.txt / llms-full.txt / 逐页 Markdown，AI 助手文档入口（#1614）
 - [tripwires.md](tripwires.md) —— 持续盯防事项
 
 ## 同步信息
 
 - 模式：incremental（本次）
-- 本次同步游标：`8ff5a4c` → `926f4b6`（2026-10-03）
-- 数据来源：仓库 diff（1 个提交，7 个文件变更）
+- 本次同步游标：`926f4b6` → `5b385d2`（2026-10-03）
+- 数据来源：仓库 diff（1 个提交，4 个文件变更）

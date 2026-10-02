@@ -1,9 +1,8 @@
 repo: RailtownAI/railtracks
-last_synced: 926f4b68e881e737b95c11ceac980bee31a9922a
+last_synced: 5b385d205fce4c965d878b33dc2af2d6d7ca3538
 last_mode: incremental
-summary: 纯技能文档修复提交：rag-pipeline 更名 rag（破坏性），agent-builder/middleware/rag 三技能教学全面校正
-  API 签名与 .content 口径，无核心库改动。<<<END>>>
-updated_at: '2026-10-03T02:19:22+08:00'
+summary: 上游接入 mkdocs-llmstxt，文档站新增 llms.txt/llms-full.txt 及逐页 Markdown 供 AI 助手消费，文档口径的对外传播面进一步放大。
+updated_at: '2026-10-03T03:01:36+08:00'
 last_release_tag: v1.5.5
 last_issue_number: 1609
 last_pr_number: 1613
