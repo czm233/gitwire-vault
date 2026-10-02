@@ -1,4 +1,4 @@
-last_sweep: '2026-10-01T21:04:33+08:00'
+last_sweep: '2026-10-02T17:25:55+08:00'
 issues:
   '486':
     difficulty: 困难
@@ -12,6 +12,7 @@ issues:
     comments_seen: 0
     created_at: '2025-08-08T18:59:55Z'
     excluded: ''
+    assignee: Aryan-Railtown
   '853':
     difficulty: 困难
     summary: MCP 协议补全缺失能力，量大且涉及协议设计
@@ -40,14 +41,14 @@ issues:
     - help wanted
     comments_seen: 1
     created_at: '2025-12-10T00:37:31Z'
-    excluded: 建于 295 天前且近 16 天无动静
+    excluded: 建于 296 天前且近 17 天无动静
   '881':
     difficulty: 中等
     summary: docstring 多格式解析，范围明确需改解析逻辑
     problem: function_node 目前仅支持 Google 格式 docstring 自动解析，需支持 reST/NumPy 等。涉及解析模块逻辑，单模块内。
     plan: 引入 docstring 解析库（如 docstring_parser）或自写多格式解析器，替换现有硬编码。天级。风险：解析歧义、需补全测试覆盖。
     analyzed_at: '2026-09-25'
-    last_status: taken-pr
+    last_status: closed
     title: '[Feature] Add Support for non-google docstring formats'
     pr_claims:
     - 1452
@@ -57,6 +58,9 @@ issues:
     comments_seen: 0
     created_at: '2026-01-05T17:30:55Z'
     excluded: ''
+    closed_at: '2026-10-01T20:53:14Z'
+    resolved_by: 已关闭（来源未识别）
+    status_changed_at: '2026-10-02T17:25:55+08:00'
   '940':
     difficulty: 简单
     summary: BYFA/RYFA 教程叙事重构，纯文档改写
@@ -71,7 +75,7 @@ issues:
     - help wanted
     comments_seen: 1
     created_at: '2026-02-05T21:24:08Z'
-    excluded: 建于 237 天前且近 16 天无动静
+    excluded: 建于 238 天前且近 17 天无动静
   '947':
     difficulty: 中等
     summary: LLM 子模块独立 logger 配置，单模块日志改造
@@ -87,6 +91,7 @@ issues:
     comments_seen: 1
     created_at: '2026-02-05T23:58:49Z'
     excluded: ''
+    assignee: Aryan-Railtown
   '1004':
     difficulty: 困难
     summary: 多种 Agent 架构文档父票，范围未定信息不足
@@ -116,7 +121,7 @@ issues:
     - help wanted
     comments_seen: 1
     created_at: '2026-03-17T16:52:56Z'
-    excluded: 建于 197 天前且近 22 天无动静
+    excluded: 建于 198 天前且近 23 天无动静
   '1053':
     difficulty: 简单
     summary: 长度护栏 Guardrail，接口已定范围明确
@@ -129,7 +134,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-04-02T21:46:04Z'
-    excluded: 建于 181 天前且近 86 天无动静
+    excluded: 建于 182 天前且近 87 天无动静
   '1065':
     difficulty: 中等
     summary: 被拦截护栏的重试机制，需设计决策
@@ -142,7 +147,7 @@ issues:
     - area:add-on
     comments_seen: 0
     created_at: '2026-04-14T01:41:33Z'
-    excluded: 建于 170 天前且近 28 天无动静
+    excluded: 建于 171 天前且近 29 天无动静
   '1114':
     difficulty: 简单
     summary: 文档语法内容修缺父票，长期跟踪，零散小改
@@ -158,6 +163,7 @@ issues:
     comments_seen: 13
     created_at: '2026-05-21T21:16:36Z'
     excluded: ''
+    assignee: CoronRing
   '1131':
     difficulty: 困难
     summary: RetrievalRuntime 替换 RAGConfig，架构级重设计
@@ -201,6 +207,7 @@ issues:
     comments_seen: 1
     created_at: '2026-06-01T23:14:12Z'
     excluded: ''
+    assignee: soulFood5632
   '1150':
     difficulty: 简单
     summary: 存储层批量写入 EmbeddedChunk，接口扩展明确
@@ -214,7 +221,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-06-01T23:32:31Z'
-    excluded: 建于 121 天前且近 27 天无动静
+    excluded: 建于 122 天前且近 28 天无动静
   '1156':
     difficulty: 困难
     summary: 用 system message 自动生成 agent manifest，自动化程度需设计决策
@@ -230,6 +237,7 @@ issues:
     comments_seen: 4
     created_at: '2026-06-02T17:45:38Z'
     excluded: ''
+    assignee: CoronRing
   '1160':
     difficulty: 中等
     summary: 把 pdoc API 参考嵌入主文档站，提升一致性
@@ -242,7 +250,7 @@ issues:
     - area:docs
     comments_seen: 0
     created_at: '2026-06-02T20:28:49Z'
-    excluded: 建于 120 天前且近 27 天无动静
+    excluded: 建于 121 天前且近 28 天无动静
   '1167':
     difficulty: 简单
     summary: HF 数据集所有行 id 相同，破坏 upsert 语义
@@ -257,7 +265,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-06-04T19:11:01Z'
-    excluded: 建于 118 天前且近 27 天无动静
+    excluded: 建于 119 天前且近 28 天无动静
   '1172':
     difficulty: 中等
     summary: 将 _Session 等内部类标记为 internal，防误用
@@ -270,7 +278,7 @@ issues:
     - area:core
     comments_seen: 1
     created_at: '2026-06-05T23:49:17Z'
-    excluded: 建于 117 天前且近 27 天无动静
+    excluded: 建于 118 天前且近 28 天无动静
   '1173':
     difficulty: 中等
     summary: 新增 Turbovec 向量后端集成
@@ -286,7 +294,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-06-08T16:34:15Z'
-    excluded: 建于 114 天前且近 27 天无动静
+    excluded: 建于 115 天前且近 28 天无动静
   '1179':
     difficulty: 简单
     summary: 为文档核心术语定义 glossary 并互链
@@ -304,6 +312,12 @@ issues:
     comments_seen: 0
     created_at: '2026-06-09T17:56:43Z'
     excluded: ''
+    pr_evidence:
+    - number: 1566
+      url: https://github.com/RailtownAI/railtracks/pull/1566
+      title: 'docs: define and cross-link Railtracks keywords (#1179)'
+      author: CoronRing
+      created_at: '2026-09-11T02:01:29Z'
   '1184':
     difficulty: 中等
     summary: ingest 逐 chunk 单次写库，需增加批量写接口
@@ -318,7 +332,7 @@ issues:
     - tech debt
     comments_seen: 0
     created_at: '2026-06-09T23:53:19Z'
-    excluded: 建于 113 天前且近 113 天无动静
+    excluded: 建于 114 天前且近 114 天无动静
   '1185':
     difficulty: 中等
     summary: 用户 metadata 可覆盖保留 payload 键导致数据损坏
@@ -347,7 +361,7 @@ issues:
     - tech debt
     comments_seen: 0
     created_at: '2026-06-09T23:53:51Z'
-    excluded: 建于 113 天前且近 113 天无动静
+    excluded: 建于 114 天前且近 114 天无动静
   '1187':
     difficulty: 困难
     summary: 部分失败的重新 ingest 会删掉旧好版本
@@ -418,7 +432,7 @@ issues:
     - tech debt
     comments_seen: 0
     created_at: '2026-06-18T21:26:55Z'
-    excluded: 建于 104 天前且近 104 天无动静
+    excluded: 建于 105 天前且近 105 天无动静
   '1216':
     difficulty: 困难
     summary: 键值存储后端支持（tracking issue，无具体范围）
@@ -479,6 +493,7 @@ issues:
     comments_seen: 2
     created_at: '2026-07-05T07:43:18Z'
     excluded: ''
+    assignee: CoronRing
   '1233':
     difficulty: 困难
     summary: 预构建工具集（内存/文件/TODO/搜索），tracking 票范围大
@@ -492,6 +507,7 @@ issues:
     comments_seen: 4
     created_at: '2026-07-09T18:16:19Z'
     excluded: ''
+    assignee: Pooria90
   '1239':
     difficulty: 困难
     summary: 可观测性重构为事件流，架构级替换现有状态导出
@@ -505,6 +521,7 @@ issues:
     comments_seen: 0
     created_at: '2026-07-10T18:15:57Z'
     excluded: ''
+    assignee: Amir-R25
   '1248':
     difficulty: 中等
     summary: 引入 ModelRequest 类型统一模型调用入参
@@ -519,7 +536,7 @@ issues:
     - area:llm
     comments_seen: 2
     created_at: '2026-07-13T19:39:09Z'
-    excluded: 建于 79 天前且近 20 天无动静
+    excluded: 建于 80 天前且近 21 天无动静
   '1251':
     difficulty: 中等
     summary: viz 命令 --dir 标志形式化并修复子目录感知 bug
@@ -533,7 +550,7 @@ issues:
     - area:visualizer
     comments_seen: 2
     created_at: '2026-07-14T17:30:42Z'
-    excluded: 建于 78 天前且近 34 天无动静
+    excluded: 建于 79 天前且近 35 天无动静
   '1265':
     difficulty: 困难
     summary: HIL 人机协同作为节点中间件，父票含设计决策
@@ -541,7 +558,7 @@ issues:
       HIL 模块的拆分细节不足。
     plan: 先实现通用 verifier 中间件，再派生 HIL 特化模块（周级）；风险在异常/反馈语义（接受/拒绝+评论）设计。
     analyzed_at: '2026-09-25'
-    last_status: taken-assignee
+    last_status: closed
     title: Implement Naive Human in the loop
     labels_seen:
     - area:add-on
@@ -549,19 +566,25 @@ issues:
     comments_seen: 0
     created_at: '2026-07-17T18:26:42Z'
     excluded: ''
+    closed_at: '2026-10-01T18:51:34Z'
+    resolved_by: 已关闭（来源未识别）
+    status_changed_at: '2026-10-02T17:25:55+08:00'
   '1266':
     difficulty: 中等
     summary: 通用验证器中间件：callable 校验节点输入并抛异常
     problem: '#1265 子票，实现接收 Callable[P, bool] 的 verifier 中间件，false 时抛特殊异常；可选支持四态返回，语义尚待细化。'
     plan: 在现有中间件体系注册 verifier 类型，定义异常类型（天级）；风险为四态返回（接受/拒绝±评论）会扩大异常契约，建议先做 bool 版。
     analyzed_at: '2026-09-25'
-    last_status: taken-assignee
+    last_status: closed
     title: General Verifier
     labels_seen:
     - kind:tracking
     comments_seen: 0
     created_at: '2026-07-17T18:31:59Z'
     excluded: ''
+    closed_at: '2026-10-01T18:51:58Z'
+    resolved_by: 已关闭（来源未识别）
+    status_changed_at: '2026-10-02T17:25:55+08:00'
   '1306':
     difficulty: 中等
     summary: ScopeGuard 护栏拦截超出范围的提问
@@ -576,7 +599,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-07-28T19:07:51Z'
-    excluded: 建于 64 天前且近 44 天无动静
+    excluded: 建于 65 天前且近 45 天无动静
   '1316':
     difficulty: 简单
     summary: 改进自定义函数作为工具的文档说明
@@ -589,7 +612,7 @@ issues:
     - area:docs
     comments_seen: 0
     created_at: '2026-07-30T19:50:57Z'
-    excluded: 建于 62 天前且近 21 天无动静
+    excluded: 建于 63 天前且近 22 天无动静
   '1320':
     difficulty: 中等
     summary: 附件在消息中的位置交错，媒体块位置信息丢失
@@ -631,6 +654,7 @@ issues:
     comments_seen: 2
     created_at: '2026-08-05T18:39:15Z'
     excluded: ''
+    assignee: Pooria90
   '1347':
     difficulty: 困难
     summary: 富媒体支持 Epic，多方向大范围架构工作
@@ -645,6 +669,7 @@ issues:
     comments_seen: 0
     created_at: '2026-08-05T21:21:49Z'
     excluded: ''
+    assignee: CoronRing
   '1348':
     difficulty: 困难
     summary: 让工具原生返回富内容，需重构类型与调用链，架构级改动
@@ -687,7 +712,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-05T21:51:42Z'
-    excluded: 建于 56 天前且近 56 天无动静
+    excluded: 建于 57 天前且近 57 天无动静
   '1354':
     difficulty: 中等
     summary: 通用 token 估算器，范围清晰但需选型设计
@@ -700,7 +725,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-05T21:57:15Z'
-    excluded: 建于 56 天前且近 56 天无动静
+    excluded: 建于 57 天前且近 57 天无动静
   '1355':
     difficulty: 困难
     summary: 清除 539 个 Pyright 错误，量大且需逐一定位
@@ -726,7 +751,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-05T22:08:58Z'
-    excluded: 建于 56 天前且近 56 天无动静
+    excluded: 建于 57 天前且近 57 天无动静
   '1357':
     difficulty: 中等
     summary: 让 Agent 响应暴露工具调用信息，需接口设计决策
@@ -741,6 +766,7 @@ issues:
     comments_seen: 1
     created_at: '2026-08-05T22:21:25Z'
     excluded: ''
+    assignee: CoronRing
   '1362':
     difficulty: 困难
     summary: 重实现结构化工具调用 LLM，此前被移除、信息不足
@@ -767,7 +793,7 @@ issues:
     - area:docs
     comments_seen: 1
     created_at: '2026-08-11T19:08:06Z'
-    excluded: 建于 50 天前且近 50 天无动静
+    excluded: 建于 51 天前且近 51 天无动静
   '1381':
     difficulty: 简单
     summary: 添加 llms.txt / llms-full.txt，范围明确的文档任务
@@ -797,6 +823,7 @@ issues:
     comments_seen: 2
     created_at: '2026-08-13T17:51:42Z'
     excluded: ''
+    assignee: CoronRing
   '1395':
     difficulty: 中等
     summary: 为 agent-as-tool 类场景增加 Custom Tools 抽象
@@ -809,7 +836,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-13T18:38:17Z'
-    excluded: 建于 48 天前且近 48 天无动静
+    excluded: 建于 49 天前且近 49 天无动静
   '1398':
     difficulty: 中等
     summary: post-init 赋值守卫，涉及大量字段迁移、规范类任务
@@ -822,7 +849,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-13T21:01:02Z'
-    excluded: 建于 48 天前且近 48 天无动静
+    excluded: 建于 49 天前且近 49 天无动静
   '1409':
     difficulty: 中等
     summary: 成本限额中间件，设计已有雏形的功能
@@ -848,7 +875,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-17T22:42:32Z'
-    excluded: 建于 44 天前且近 44 天无动静
+    excluded: 建于 45 天前且近 45 天无动静
   '1414':
     difficulty: 困难
     summary: 节点创建事件需补充工具模型信息，设计导向、范围未定
@@ -876,7 +903,7 @@ issues:
     - area:core
     comments_seen: 1
     created_at: '2026-08-17T23:05:58Z'
-    excluded: 建于 44 天前且近 20 天无动静
+    excluded: 建于 45 天前且近 21 天无动静
   '1425':
     difficulty: 中等
     summary: 把 verifier 决策结构化为可观测性事件而非日志
@@ -885,7 +912,7 @@ issues:
     plan: 参照现有 guardrails 的结构化 trace 记录方式，扩展事件模型覆盖 accept/decline/timeout 四种决策（工作量级：天级）。风险：事件
       schema 设计需兼容现有消费方，建模选型需维护者认可。
     analyzed_at: '2026-09-25'
-    last_status: taken-assignee
+    last_status: closed
     title: Emit verifier decisions as observability events
     labels_seen:
     - area:add-on
@@ -893,6 +920,9 @@ issues:
     comments_seen: 1
     created_at: '2026-08-18T18:18:31Z'
     excluded: ''
+    closed_at: '2026-10-01T18:50:57Z'
+    resolved_by: 已关闭（来源未识别）
+    status_changed_at: '2026-10-02T17:25:55+08:00'
   '1430':
     difficulty: 中等
     summary: LLM finish_reason 被丢弃，max token 截断时返回空串
@@ -908,6 +938,7 @@ issues:
     comments_seen: 1
     created_at: '2026-08-18T20:32:04Z'
     excluded: ''
+    assignee: CoronRing
   '1431':
     difficulty: 中等
     summary: 在 LLM 响应/历史对象中透出 thinking tokens
@@ -943,6 +974,12 @@ issues:
     comments_seen: 1
     created_at: '2026-08-18T20:46:21Z'
     excluded: ''
+    pr_evidence:
+    - number: 1519
+      url: https://github.com/RailtownAI/railtracks/pull/1519
+      title: 'test: verify cache-aware LLM request costs'
+      author: YaoSong808
+      created_at: '2026-08-31T10:28:37Z'
   '1435':
     difficulty: 中等
     summary: railtracks 导入时全局修改 litellm 参数，应局部化
@@ -957,7 +994,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-18T21:05:40Z'
-    excluded: 建于 43 天前且近 43 天无动静
+    excluded: 建于 44 天前且近 44 天无动静
   '1446':
     difficulty: 中等
     summary: 新增 context 创建/读写/完成四类可观测事件
@@ -989,6 +1026,7 @@ issues:
     comments_seen: 0
     created_at: '2026-08-20T02:01:11Z'
     excluded: ''
+    assignee: Pooria90
   '1454':
     difficulty: 困难
     summary: 节点创建时发布静态边检测事件，作为可视化结构图
@@ -1029,6 +1067,7 @@ issues:
     comments_seen: 0
     created_at: '2026-08-20T18:09:32Z'
     excluded: ''
+    assignee: CoronRing
   '1462':
     difficulty: 简单
     summary: publisher 关闭后任务仍发布导致 RuntimeError，需条件保护
@@ -1042,7 +1081,7 @@ issues:
     - area:core
     comments_seen: 2
     created_at: '2026-08-20T18:49:53Z'
-    excluded: 建于 41 天前且近 22 天无动静
+    excluded: 建于 42 天前且近 23 天无动静
   '1463':
     difficulty: 中等
     summary: 重构超长文件 _litellm_wrapper.py 及测试，抽公共逻辑
@@ -1056,7 +1095,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-20T18:54:12Z'
-    excluded: 建于 41 天前且近 41 天无动静
+    excluded: 建于 42 天前且近 42 天无动静
   '1468':
     difficulty: 中等
     summary: MessageHistory/消息对象支持 JSON 序列化与反序列化加载
@@ -1071,7 +1110,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-20T19:52:06Z'
-    excluded: 建于 41 天前且近 41 天无动静
+    excluded: 建于 42 天前且近 42 天无动静
   '1471':
     difficulty: 困难
     summary: 优化框架导入时间，需重构大量动态导入，收益明确但工程量大
@@ -1103,6 +1142,7 @@ issues:
     comments_seen: 0
     created_at: '2026-08-20T23:29:50Z'
     excluded: ''
+    assignee: CoronRing
   '1488':
     difficulty: 困难
     summary: 提供开箱即用的终端 Assistant 模块，是较大新功能设计
@@ -1133,7 +1173,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-26T00:34:03Z'
-    excluded: 建于 36 天前且近 36 天无动静
+    excluded: 建于 37 天前且近 37 天无动静
   '1503':
     difficulty: 中等
     summary: visualizer 增加 AI 输入/输出的 markdown raw/preview 切换，范围明确的前端增强
@@ -1148,7 +1188,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 1
     created_at: '2026-08-27T18:33:17Z'
-    excluded: 建于 34 天前且近 16 天无动静
+    excluded: 建于 35 天前且近 17 天无动静
   '1509':
     difficulty: 中等
     summary: 统一错误类的 reason/message 术语并上提 notes+reason 到 RTError，需设计决策
@@ -1163,7 +1203,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-27T21:38:18Z'
-    excluded: 建于 34 天前且近 34 天无动静
+    excluded: 建于 35 天前且近 35 天无动静
   '1534':
     difficulty: 简单
     summary: 删除 legacy 安装检测代码，前置条件已满足，范围清晰的清理任务
@@ -1236,6 +1276,7 @@ issues:
     comments_seen: 2
     created_at: '2026-09-10T22:21:37Z'
     excluded: ''
+    assignee: rajathpatel23
   '1572':
     difficulty: 困难
     summary: 通过环境上下文暴露当前节点/flow 元数据，需架构设计的新能力
@@ -1260,7 +1301,7 @@ issues:
       `railtracks add --force <tool>:<skill>` 顺序实际报错退出。位置：`packages/railtracks/src/railtracks/cli/__init__.py`。'
     plan: 把 `force = "--force" in args` 提前到 usage 检查前，或改为先过滤 flag 再校验剩余参数；顺带补一条顺序无关的测试（作者指出测试缺失）。工作量级：小时级。风险：极低。
     analyzed_at: '2026-09-25'
-    last_status: open
+    last_status: closed
     title: railtracks add --force before <tool>:<skill> fails, despite usage text
       showing that order
     labels_seen:
@@ -1268,6 +1309,9 @@ issues:
     comments_seen: 0
     created_at: '2026-09-15T23:43:30Z'
     excluded: ''
+    closed_at: '2026-10-01T22:24:36Z'
+    resolved_by: PR#1610
+    status_changed_at: '2026-10-02T17:25:55+08:00'
   '1574':
     difficulty: 中等
     summary: 内部调用路径的 Session 触发 flow_name 警告，误扰正常用户
@@ -1525,6 +1569,7 @@ issues:
     labels_seen:
     - area:docs
     comments_seen: 1
+    assignee: Amir-R25
   '1604':
     difficulty: 简单
     summary: 解析器补边缘用例：序支持与下划线跳过，范围明确值得做
@@ -1556,4 +1601,22 @@ issues:
     last_status: open
     status_changed_at: '2026-10-01T21:04:33+08:00'
     labels_seen: []
+    comments_seen: 0
+  '1609':
+    difficulty: 困难
+    summary: 上游 litellm 计费 bug，修复依赖上游合并，本地只能缓解
+    problem: service_tier 降级/升级时 total_cost 按请求 tier 而非实际服务 tier 计价，根源在 litellm 上游（#31837
+      未关闭）。railtracks 侧大概率在响应封装/total_cost 计算处（area:llm，未核实具体文件），信息不足以完全定位本地逻辑。
+    plan: 短期可在本地响应解析处优先读取响应中的实际 service_tier 字段再定价或打标记；根本修复依赖上游 PR（litellm#31849/#31961）合并。工作量级：小时级（本地缓解）+
+      跟踪上游；风险：与上游修复冲突、不同 provider tier 字段不一致，且上游未定时本地补丁可能重复计价。
+    analyzed_at: '2026-10-02'
+    title: '[Bug] total_cost priced at the requested service_tier instead of the served
+      tier (upstream litellm #31837)'
+    created_at: '2026-10-01T18:43:32Z'
+    excluded: ''
+    last_status: open
+    status_changed_at: '2026-10-02T17:25:55+08:00'
+    labels_seen:
+    - area:llm
+    - bug
     comments_seen: 0

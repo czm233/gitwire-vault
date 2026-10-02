@@ -14,10 +14,11 @@
 - [changelog/2026-09-25-1c3ab8c.md](changelog/2026-09-25-1c3ab8c.md) —— 增量：verifier 事件透出 + viz 分类（#1425/#1569）
 - [changelog/2026-09-26-e8b0590.md](changelog/2026-09-26-e8b0590.md) —— 增量：litellm 升级至 <=1.102.1 支持 gpt-6 reasoning_effort（#1596）；anyio 4.15.1
 - [changelog/2026-10-01-9b894a3.md](changelog/2026-10-01-9b894a3.md) —— 增量：context 事件流可观测性（`context.*` 事件 + `RAILTRACKS_CONTEXT_EVENTS`）（#1601）；PEP 563 工具 schema 修复 + Literal 参数处理器（#1580）；Conductr 托管评估文档（#1606）；AGENTS.md 技能确认机制（#1595）
+- [changelog/2026-10-02-8ff5a4c.md](changelog/2026-10-02-8ff5a4c.md) —— 增量：docstring 解析支持 Google/NumPy/reST 三风格（#1452）；CLI `add --force` 位置修复（#1610）；文档口径统一 `.content` + 示例模型名/命名规范刷新（#1611）
 - [tripwires.md](tripwires.md) —— 持续盯防事项
 
 ## 同步信息
 
 - 模式：incremental（本次）
-- 本次同步游标：`e8b0590` → `9b894a3`（2026-10-01）
-- 数据来源：仓库 diff（4 个提交，38 个文件变更）
+- 本次同步游标：`9b894a3` → `8ff5a4c`（2026-10-02）
+- 数据来源：仓库 diff（3 个提交，53 个文件变更）

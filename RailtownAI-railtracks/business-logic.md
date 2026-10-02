@@ -7,14 +7,16 @@
 ```mermaid
 flowchart TD
     A[开发者定义普通函数] --> B[rt.function_node 装饰/包装]
+    B --> B1[docstring 解析: Google / NumPy / reST 三风格]
     B --> B2[解析注解: PEP 563 resolve_type_hints + Literal handler]
-    B2 --> C[rt.agent_node 组装: tools + llm + system_message]
+    B1 --> C[rt.agent_node 组装: tools + llm + system_message]
+    B2 --> C
     C --> D[rt.Flow 构建 entry_point]
     D --> E[flow.invoke 输入]
-    E --> F[返回 result.text 或 result.structured]
+    E --> F[返回 result.content]
 ```
 
-docstring 即工具描述；`output_schema`（pydantic）时返回 `result.structured`（README.md、docs/scripts/first_agent.py）。9b894a3 起，函数若用 `from __future__ import annotations`，参数注解会经 `typing.get_type_hints` 解析后再匹配 handler，`Literal[...]` 参数生成带 `enum` 的 schema（packages/railtracks/src/railtracks/llm/tools/tool.py、typing_utils.py）。
+docstring 即工具描述：8ff5a4c（fb34b0f）起参数描述可用 Google / NumPy / reST 任一风格书写（混用时告警并只读 Google → NumPy → reST 之一），typehints 仍须写在函数签名上（docs/documentation/agent_design/tools/function_tools.md）。`output_schema`（pydantic）时返回 `result.content`，其值即 schema 实例；文档口径已从 `result.text`/`result.structured` 全面统一为 `result.content`（README.md、docs/tutorials/walkthroughs/ryfa.md、docs/scripts/first_agent.py）。文档示例规范：agent 类名用 PascalCase（`WeatherAgent = rt.agent_node(...)`）。
 
 ## 2. Agent 工具调用循环（多步协作）
 
@@ -36,7 +38,7 @@ sequenceDiagram
         T-->>A: 结果
     end
     A-->>F: 最终 Response
-    F-->>U: result.text / result.structured
+    F-->>U: result.content
 ```
 
 顺序、分支、循环直接用 Python 控制流表达；并行用 `asyncio.gather(*rt.call(...))`（docs/scripts/flows.py、async_await.py）。
@@ -117,4 +119,4 @@ sequenceDiagram
 
 - **错误处理**：LLMError 族细分（Timeout/RateLimit/Auth），推荐指数退避重试可瞬时错误、跨 provider fallback、`err.format_verbose()` 带完整 message_history（docs/scripts/error_handling.py）。
 - **观测**：`enable_logging` + broadcast_callback + `railtracks viz` 回放；context 事件级别见流程 4。
-- **CLI skillkit**：向 Claude/Codex/Copilot/Cursor 安装代码风格技能。
+- **CLI skillkit**：向 Claude/Codex/Copilot/Cursor 安装代码风格技能；`railtracks add --force` 现可在 skill 名之前（8bfca9e）。
