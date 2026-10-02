@@ -1,8 +1,9 @@
 # Issue 雷达 · browser-use/jev-ultrafast
 
-> 全景扫描：2026-10-02 · 开放 issue 39 个 · 机会 0 · 未入榜 29 · 被占 10
+> 全景扫描：2026-10-02 · 开放 issue 40 个 · 机会 0 · 未入榜 30 · 被占 10
 
-## 未入榜（29）
+## 未入榜（30）
+- #191 TYPE_TEXT cache key has no element identity: a stale fill's  —— 仓库从未合并外部 PR
 - #187 Idea: Multi-Stage Agent Architecture for Improved Decision A —— 难度困难
 - #177 Third-party AI-assisted analysis report on jev-ultrafast —— 仓库从未合并外部 PR
 - #159 Demo UX: a first-time user cannot tell why nothing works — s —— 难度困难
@@ -46,6 +47,12 @@
 - #36 Missing TEXT_MODEL_API_KEY crashes mid-run; code default base URL differs from .env.example —— 被 PR#147（viwe-monai） 占
 
 ## 分析详情（最新分析在前）
+### #191 [中等|🟢机会] TYPE_TEXT cache key has no element identity: a stale fill's cached text can be typed into a different same-labeled field
+- TYPE_TEXT 缓存键缺元素标识，同标签字段可能错填，值得修
+- 问题：stale-retry 缓存仅以 field_context 的 helper 输入（label/role/value/页面上下文）为键，无 element index 或 node id，同页同标签字段键相同，会导致缓存值被填入错误字段，违反文档不变式（涉及 jev_ultrafast/model.py:151 与 agent.py:110-114，未核实具体实现）。
+- 方案：在 field_context 中加入元素身份（element index / node id），纳入缓存键；或 stale 重试时校验目标元素一致性。改动集中在缓存键构建与 stale 分支，工作量小时级；风险点是元素标识在 DOM 变化后的稳定性，可能引入新的未命中导致缓存退化，需兼顾“stale 后元素可能失效”的既有重试语义。
+- 分析于 2026-10-02
+
 ### #187 [困难|🟢机会] Idea: Multi-Stage Agent Architecture for Improved Decision Accuracy
 - 多阶段 agent 架构提案，概念性、需架构决策、信息不足
 - 问题：提议 2-3 阶段多 agent 流水线提升决策准确率，正文不完整（被截断），无具体任务基准与评测数据，"70% 准确率"来源未核实。属架构级提案，需维护者设计决策。
@@ -160,12 +167,6 @@
 - 方案：短期更新日期为未来；长期将日期参数化/相对化（如"下周日"）。跨 5+ 文件但均为配置/文案级改动；注意 examples/flights.py 中 verify() 断言需同步。（工作量级：小时级）
 - 分析于 2026-09-27
 
-### #87 [简单|🟢机会] Model responses with invalid JSON leak decoder errors
-- HTTP 200 非 JSON 响应泄漏解码错误，应包装为清晰 RuntimeError
-- 问题：post_json() 在 HTTP 成功后直接调 response.json()，非 JSON 体导致 ValueError/JSONDecodeError 直接逃逸，与既有错误路径（"no action executed"）风格不一致。
-- 方案：在 post_json() 中捕获 JSON 解码异常，包装为 RuntimeError("Model provider returned invalid JSON; no action executed.")，并补单测。范围明确，单函数修改。（工作量级：小时级）
-- 分析于 2026-09-27
-
 ## 全量总表
 
 <details><summary>展开全部开放 issue</summary>
@@ -211,5 +212,6 @@
 | #159 | 困难 | 🟡困难 | 新用户体验失败状态不可见，跨 UI/CDP/引导多层问题 |
 | #177 | 简单 | 🟢机会 | 第三方 AI 分析报告通告，信息性 issue，无需开发 |
 | #187 | 困难 | 🟡困难 | 多阶段 agent 架构提案，概念性、需架构决策、信息不足 |
+| #191 | 中等 | 🟢机会 | TYPE_TEXT 缓存键缺元素标识，同标签字段可能错填，值得修 |
 
 </details>

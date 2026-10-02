@@ -1,4 +1,4 @@
-last_sweep: '2026-10-02T17:28:44+08:00'
+last_sweep: '2026-10-02T19:02:10+08:00'
 issues:
   '1':
     difficulty: 困难
@@ -633,5 +633,22 @@ issues:
     excluded: ''
     last_status: open
     status_changed_at: '2026-10-01T21:10:18+08:00'
+    labels_seen: []
+    comments_seen: 0
+  '191':
+    difficulty: 中等
+    summary: TYPE_TEXT 缓存键缺元素标识，同标签字段可能错填，值得修
+    problem: stale-retry 缓存仅以 field_context 的 helper 输入（label/role/value/页面上下文）为键，无
+      element index 或 node id，同页同标签字段键相同，会导致缓存值被填入错误字段，违反文档不变式（涉及 jev_ultrafast/model.py:151
+      与 agent.py:110-114，未核实具体实现）。
+    plan: 在 field_context 中加入元素身份（element index / node id），纳入缓存键；或 stale 重试时校验目标元素一致性。改动集中在缓存键构建与
+      stale 分支，工作量小时级；风险点是元素标识在 DOM 变化后的稳定性，可能引入新的未命中导致缓存退化，需兼顾“stale 后元素可能失效”的既有重试语义。
+    analyzed_at: '2026-10-02'
+    title: 'TYPE_TEXT cache key has no element identity: a stale fill''s cached text
+      can be typed into a different same-labeled field'
+    created_at: '2026-10-02T10:06:07Z'
+    excluded: 仓库从未合并外部 PR
+    last_status: open
+    status_changed_at: '2026-10-02T19:02:10+08:00'
     labels_seen: []
     comments_seen: 0
