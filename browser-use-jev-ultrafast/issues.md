@@ -1,8 +1,8 @@
 # Issue 雷达 · browser-use/jev-ultrafast
 
-> 全景扫描：2026-10-03 · 开放 issue 40 个 · 机会 0 · 未入榜 30 · 被占 10
+> 全景扫描：2026-10-03 · 开放 issue 40 个 · 机会 0 · 未入榜 31 · 被占 9
 
-## 未入榜（30）
+## 未入榜（31）
 - #191 TYPE_TEXT cache key has no element identity: a stale fill's  —— 仓库从未合并外部 PR
 - #187 Idea: Multi-Stage Agent Architecture for Improved Decision A —— 难度困难
 - #177 Third-party AI-assisted analysis report on jev-ultrafast —— 仓库从未合并外部 PR
@@ -12,6 +12,7 @@
 - #149 Could the visible page state preserve more semantic structur —— 仓库从未合并外部 PR
 - #145 Community project built on this: jev-browse (agent-callable  —— 难度困难
 - #140 ioio —— 难度困难
+- #125 Feature Request: Support local resident decision backend (Se —— 难度困难
 - #100 qr-menu —— 难度困难
 - #93 The bundled Google Flights demo can no longer succeed: its g —— 仓库从未合并外部 PR
 - #87 Model responses with invalid JSON leak decoder errors —— 仓库从未合并外部 PR
@@ -40,7 +41,6 @@
 - #133 choose() can return raw KeyError for an off-envelope HTTP-200 response —— 被 PR#135（EF-Code） 占
 - #132 Stale action ids can select a different live control without an error —— 被 PR#148（viwe-monai） 占
 - #129 MDN wrong-waypoint actions —— 被 PR#151（rkfshakti） 占
-- #125 Feature Request: Support local resident decision backend (SemIf) and Model Context Protocol (MCP) —— 被 PR#126（ikeikeikeda66） 占
 - #120 Expose a confidence gate for ordinary browser actions —— 被 PR#127（Cross2pro） 占
 - #115 Add a theme switch button —— 被 PR#184（suryakiransuresh） 占
 - #94 A failed post-action observation (page_changed: null) disables the three-repeat no-progress check, so a stalled run keeps spending model calls —— 被 PR#131（DevCop95） 占
@@ -131,7 +131,7 @@
 - 方案：需先复现该 scenario，判断是 id 漂移（可能与 #132 相关）、页面结构变化还是模型决策问题，才能定位修复。（工作量级：天级，且可能无法复现）
 - 分析于 2026-09-27
 
-### #125 [困难|🔒PR占] Feature Request: Support local resident decision backend (SemIf) and Model Context Protocol (MCP)
+### #125 [困难|🟢机会] Feature Request: Support local resident decision backend (SemIf) and Model Context Protocol (MCP)
 - 支持本地决策后端与 MCP 集成，跨模块架构级功能
 - 问题：当前仅支持云端 TypeSafe API，请求支持本地 SemIf 后端（SEMIF_BASE_URL）及 stdio MCP server。涉及模型后端抽象层、配置体系、新增 MCP 服务器模块，需架构设计与接口决策。
 - 方案：抽象决策后端接口 → 实现 SemIf 适配器（两阶段层级决策循环）→ 独立 stdio MCP server 包；工作量大，需维护双后端兼容与协议设计。（工作量级：周级）
@@ -198,7 +198,7 @@
 | #100 | 困难 | 🟡困难 | 正文为空的"qr-menu"，无任何信息，无法分析 |
 | #115 | 简单 | 🔒PR占 | 落地页增加主题切换按钮，范围明确的前端小功能 |
 | #120 | 中等 | 🔒PR占 | 为普通浏览器动作暴露置信度门槛，涉及决策执行核心逻辑 |
-| #125 | 困难 | 🔒PR占 | 支持本地决策后端与 MCP 集成，跨模块架构级功能 |
+| #125 | 困难 | 🟡困难 | 支持本地决策后端与 MCP 集成，跨模块架构级功能 |
 | #129 | 困难 | 🔒PR占 | MDN 用例路径断言失败，正文只有数据缺问题描述 |
 | #132 | 中等 | 🔒PR占 | 快照 id 按位置分配，陈旧 id 可静默命中错误控件，属正确性缺陷 |
 | #133 | 中等 | 🔒PR占 | choose() 三处裸索引响应信封，HTTP 200 异常体抛原始 KeyError |
