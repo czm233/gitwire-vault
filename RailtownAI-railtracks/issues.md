@@ -1,6 +1,6 @@
 # Issue 雷达 · RailtownAI/railtracks
 
-> 全景扫描：2026-10-02 · 开放 issue 94 个 · 机会 19 · 未入榜 55 · 被占 20
+> 全景扫描：2026-10-03 · 开放 issue 93 个 · 机会 14 · 未入榜 59 · 被占 20
 
 ## 机会榜（按值得做排序，top 10）
 
@@ -8,78 +8,78 @@
 | --- | --- | --- | --- |
 | [#1577](https://github.com/RailtownAI/railtracks/issues/1577) | 简单 | 较新·good first issue+help wanted·收外部PR | docs: web search tool page doesn't document installing the ` —— websearch 文档页缺 optional extra 安装说明，纯文档补全 |
 | [#1547](https://github.com/RailtownAI/railtracks/issues/1547) | 简单 | good first issue+help wanted·收外部PR | Remove/soften model specific instruction in docs —— 文档去模型特定表述（Claude Code、OpenAI 示例），纯文档编辑 |
-| [#1594](https://github.com/RailtownAI/railtracks/issues/1594) | 简单 | 新鲜·收外部PR | CI: test every supported Python version and gate releases on —— CI 增加多 Python 版本矩阵并让发布跑测试，明确且价值高 |
 | [#1604](https://github.com/RailtownAI/railtracks/issues/1604) | 简单 | 新鲜·收外部PR | docstring_parser: numpydoc `Other Parameters` after `Returns —— 解析器补边缘用例：序支持与下划线跳过，范围明确值得做 |
-| [#1381](https://github.com/RailtownAI/railtracks/issues/1381) | 简单 | good first issue+help wanted·收外部PR | Add llms.txt / llms-full.txt —— 添加 llms.txt / llms-full.txt，范围明确的文档任务 |
+| [#1594](https://github.com/RailtownAI/railtracks/issues/1594) | 简单 | 较新·收外部PR | CI: test every supported Python version and gate releases on —— CI 增加多 Python 版本矩阵并让发布跑测试，明确且价值高 |
 | [#1534](https://github.com/RailtownAI/railtracks/issues/1534) | 简单 | 收外部PR | Delete legacy install detection —— 删除 legacy 安装检测代码，前置条件已满足，范围清晰的清理任务 |
-| [#1223](https://github.com/RailtownAI/railtracks/issues/1223) | 简单 | 收外部PR | [Feature] Prebuilt Tool Tags —— 给预构建工具打标签以便可视化器区分展示 |
-| [#1588](https://github.com/RailtownAI/railtracks/issues/1588) | 中等 | 新鲜·收外部PR | viz: match middleware failures by exception id, not message —— 将 viz 中间件失败匹配从异常消息改为异常 id，避免误匹配 |
-| [#1593](https://github.com/RailtownAI/railtracks/issues/1593) | 中等 | 新鲜·收外部PR | Python 3.13+ compatibility: rt.function_node accepts builtin —— 3.13+ 下 builtin 检测失效及 iscoroutinefunction 兼容性 bug，修复路径清晰 |
-| [#1598](https://github.com/RailtownAI/railtracks/issues/1598) | 中等 | 新鲜·收外部PR | Improve Skills Visibility for Users and Developers —— 把 Skills 目录迁到根路径并在文档/README 增加入口指引，适合作为贡献起点 |
+| [#1581](https://github.com/RailtownAI/railtracks/issues/1581) | 中等 | 较新·收外部PR | Optional[X] with no default is reported as not required —— Union处理错误放宽required，修复明确且影响函数调用正确性 |
+| [#1582](https://github.com/RailtownAI/railtracks/issues/1582) | 中等 | 较新·收外部PR | Heterogeneous tuples do not constrain element position —— 异构元组需改用prefixItems按位约束，修法明确但涉及schema版本兼容 |
+| [#1584](https://github.com/RailtownAI/railtracks/issues/1584) | 中等 | 较新·收外部PR | Aggregate cost SUMs (sessions/nodes) silently drop unresolve —— 聚合SUM掩盖未定价调用的null成本，与已修的单行端点行为不一致，站点明确 |
+| [#1588](https://github.com/RailtownAI/railtracks/issues/1588) | 中等 | 较新·收外部PR | viz: match middleware failures by exception id, not message —— 将 viz 中间件失败匹配从异常消息改为异常 id，避免误匹配 |
+| [#1593](https://github.com/RailtownAI/railtracks/issues/1593) | 中等 | 较新·收外部PR | Python 3.13+ compatibility: rt.function_node accepts builtin —— 3.13+ 下 builtin 检测失效及 iscoroutinefunction 兼容性 bug，修复路径清晰 |
 
-## 未入榜（55）
+## 未入榜（59）
 - #1609 [Bug] total_cost priced at the requested service_tier instea —— 难度困难
 - #1605 Concurrent top-level flows share one Observer, and the first —— 难度困难
 - #1592 Agent.md and agent use of railtracks for building or develop —— 难度困难
 - #1589 Should `rt.context` hand out shared references or copies? —— 难度困难
 - #1576 Follow-up on OpenAI Responses-API `reasoning_items` —— 难度困难
 - #1572 Feature Request: Expose current node and flow metadata via a —— 难度困难
-- #1509 Args used to throw a new error is not clear. —— 建于 35 天前且近 35 天无动静
-- #1503 Optional markdown render on visualizer —— 建于 35 天前且近 17 天无动静
-- #1496 Let input guards fire once per agent call instead of per mod —— 建于 37 天前且近 37 天无动静
+- #1509 Args used to throw a new error is not clear. —— 建于 36 天前且近 36 天无动静
+- #1503 Optional markdown render on visualizer —— 建于 36 天前且近 18 天无动静
+- #1496 Let input guards fire once per agent call instead of per mod —— 建于 38 天前且近 38 天无动静
 - #1488 Command Line Assistant Module —— 难度困难
 - #1471 Optimize framework import time —— 难度困难
-- #1468 MessageHistory serializable and loadable —— 建于 42 天前且近 42 天无动静
-- #1463 Long file cleanup: _litellm_wrapper.py —— 建于 42 天前且近 42 天无动静
-- #1462 Logger: RuntimeError on  unretrieved-task —— 建于 42 天前且近 23 天无动静
+- #1468 MessageHistory serializable and loadable —— 建于 43 天前且近 43 天无动静
+- #1463 Long file cleanup: _litellm_wrapper.py —— 建于 43 天前且近 43 天无动静
+- #1462 Logger: RuntimeError on  unretrieved-task —— 建于 43 天前且近 24 天无动静
 - #1456 LLM swap and config adjustment on retry —— 难度困难
 - #1454 Static Node Events —— 难度困难
-- #1435 Railtrack should not modify litellm behaviour globally —— 建于 44 天前且近 44 天无动静
-- #1415 Event emission after forced exit —— 建于 45 天前且近 21 天无动静
+- #1435 Railtrack should not modify litellm behaviour globally —— 建于 45 天前且近 45 天无动静
+- #1415 Event emission after forced exit —— 建于 46 天前且近 22 天无动静
 - #1414 Add Additional Properties to the Node Creation Events —— 难度困难
-- #1413 Migrate Current Colourful Logging to use Events Approach —— 建于 45 天前且近 45 天无动静
-- #1398 post-init assignment guard/docmentation —— 建于 49 天前且近 49 天无动静
-- #1395 Provide even further tool abstraction —— 建于 49 天前且近 49 天无动静
-- #1375 [Documentation] Doc page content and naming duplications —— 建于 51 天前且近 51 天无动静
+- #1413 Migrate Current Colourful Logging to use Events Approach —— 建于 46 天前且近 46 天无动静
+- #1398 post-init assignment guard/docmentation —— 建于 50 天前且近 50 天无动静
+- #1395 Provide even further tool abstraction —— 建于 50 天前且近 50 天无动静
+- #1375 [Documentation] Doc page content and naming duplications —— 建于 52 天前且近 52 天无动静
 - #1362 Reimplement Structured Tool Calling LLM —— 难度困难
-- #1356 Non-Uniform Provider Initialization & Model String Mapping —— 建于 57 天前且近 57 天无动静
+- #1356 Non-Uniform Provider Initialization & Model String Mapping —— 建于 58 天前且近 58 天无动静
 - #1355 High Pyright formatting Error numbers —— 难度困难
-- #1354 Token estimator —— 建于 57 天前且近 57 天无动静
-- #1353 Serializable transcript / history export/input from popular  —— 建于 57 天前且近 57 天无动静
+- #1354 Token estimator —— 建于 58 天前且近 58 天无动静
+- #1353 Serializable transcript / history export/input from popular  —— 建于 58 天前且近 58 天无动静
+- #1349 Non-image attachments on UserMessage (audio, video, file) —— 建于 58 天前且近 15 天无动静
 - #1348 Let tools return rich content (ie: images) natively —— 难度困难
 - #1321 Attachment through file API —— 难度困难
-- #1316 Improve instruction for using custom function as tool —— 建于 63 天前且近 22 天无动静
-- #1306 Build a Guardrail for Work Scope —— 建于 65 天前且近 45 天无动静
-- #1251 viz command: formalize --dir flag and add subdirectory aware —— 建于 79 天前且近 35 天无动静
-- #1248 Create a ModelRequest type —— 建于 80 天前且近 21 天无动静
+- #1316 Improve instruction for using custom function as tool —— 建于 64 天前且近 23 天无动静
+- #1306 Build a Guardrail for Work Scope —— 建于 66 天前且近 46 天无动静
+- #1251 viz command: formalize --dir flag and add subdirectory aware —— 建于 80 天前且近 36 天无动静
+- #1248 Create a ModelRequest type —— 建于 81 天前且近 22 天无动静
+- #1223 [Feature] Prebuilt Tool Tags —— 建于 98 天前且近 15 天无动静
 - #1216 [Feature] Store Backends for Key-Value Stores —— 难度困难
-- #1209 [Tech Debt] Current Pgvector Backend throws all metadata to  —— 建于 105 天前且近 105 天无动静
+- #1209 [Tech Debt] Current Pgvector Backend throws all metadata to  —— 建于 106 天前且近 106 天无动静
 - #1204 [Feature] File System Tool —— 难度困难
+- #1203 [Feature] Thoughts Tool —— 建于 108 天前且近 15 天无动静
 - #1193 [Bug] Context variable dict is not concurrency safe —— 难度困难
 - #1187 [Bug] [Retrieval] Partially-failed re-ingest deletes the pri —— 难度困难
-- #1186 [Perf] [Retrieval] Chroma backend stores chunk content twice —— 建于 114 天前且近 114 天无动静
-- #1184 [Perf] [Retrieval] Ingest issues one store round-trip per ch —— 建于 114 天前且近 114 天无动静
-- #1173 [Feature] [Retrieval] Add `Turbovec` to our stores Integrati —— 建于 115 天前且近 28 天无动静
-- #1172 [Feature]  Define certain class as internal —— 建于 118 天前且近 28 天无动静
-- #1167 [Bug] [Retrieval] same `id` for all rows in `HuggingFaceData —— 建于 119 天前且近 28 天无动静
-- #1160 [Docs] Prefer if api_reference lives under main doc site —— 建于 121 天前且近 28 天无动静
-- #1150 [Feature] [Retrieval] Batch write for stores —— 建于 122 天前且近 28 天无动静
+- #1186 [Perf] [Retrieval] Chroma backend stores chunk content twice —— 建于 115 天前且近 115 天无动静
+- #1185 [Bug] [Retrieval] User chunk metadata can overwrite reserved —— 建于 115 天前且近 15 天无动静
+- #1184 [Perf] [Retrieval] Ingest issues one store round-trip per ch —— 建于 115 天前且近 115 天无动静
+- #1173 [Feature] [Retrieval] Add `Turbovec` to our stores Integrati —— 建于 116 天前且近 29 天无动静
+- #1172 [Feature]  Define certain class as internal —— 建于 119 天前且近 29 天无动静
+- #1167 [Bug] [Retrieval] same `id` for all rows in `HuggingFaceData —— 建于 120 天前且近 29 天无动静
+- #1160 [Docs] Prefer if api_reference lives under main doc site —— 建于 122 天前且近 29 天无动静
+- #1150 [Feature] [Retrieval] Batch write for stores —— 建于 123 天前且近 29 天无动静
 - #1142 [Feature] Implement cached memory compression at the LLM lev —— 难度困难
 - #1131 [Feature] [Retrieval] Integration of `RetrievalRuntime` insi —— 难度困难
-- #1065 [Feature] `retry` mechanism for blocked guardrail decisions —— 建于 171 天前且近 29 天无动静
-- #1053 [Feature] Add Length Requirement Guardrail —— 建于 182 天前且近 87 天无动静
-- #1014 [Feature] Evaluation Shots/Examples/Rubric —— 建于 198 天前且近 23 天无动静
+- #1065 [Feature] `retry` mechanism for blocked guardrail decisions —— 建于 172 天前且近 30 天无动静
+- #1053 [Feature] Add Length Requirement Guardrail —— 建于 183 天前且近 88 天无动静
+- #1014 [Feature] Evaluation Shots/Examples/Rubric —— 建于 199 天前且近 24 天无动静
 - #1004 [Docs] Implement Various Agent Architectures —— 难度困难
-- #940 [Docs] Update BYFA/RYFA to be a bit better in terms of narra —— 建于 238 天前且近 17 天无动静
-- #873 [Docs] Unclear Usage of Context —— 建于 296 天前且近 17 天无动静
+- #940 [Docs] Update BYFA/RYFA to be a bit better in terms of narra —— 建于 239 天前且近 18 天无动静
+- #873 [Docs] Unclear Usage of Context —— 建于 297 天前且近 18 天无动静
 - #853 [Feature] Support for all of MCP features —— 难度困难
 
 ## 池内动态
-- #881 已关闭（已关闭（来源未识别））
-- #1265 已关闭（已关闭（来源未识别））
-- #1266 已关闭（已关闭（来源未识别））
-- #1425 已关闭（已关闭（来源未识别））
-- #1573 已关闭（PR#1610）
+- #1381 已关闭（已关闭（来源未识别））
 
 ## 已被占（不必再看）
 - #1599 Claude Marketplace / Plugin for RT Skills —— 被 assignee Amir-R25 占
@@ -104,6 +104,7 @@
 - #486 [Feature] Documentation App —— 被 assignee Aryan-Railtown 占
 
 ## 近期关闭
+- #1381 Add llms.txt / llms-full.txt —— 已关闭（来源未识别）（2026-10-02）
 - #1573 railtracks add --force before <tool>:<skill> fails, despite usage text showing that order —— PR#1610（2026-10-01）
 - #881 [Feature] Add Support for non-google docstring formats —— 已关闭（来源未识别）（2026-10-01）
 - #1266 General Verifier —— 已关闭（来源未识别）（2026-10-01）
@@ -113,7 +114,6 @@
 - #1596 OpenAILLM rejects reasoning_effort for gpt-6-luna (litellm pinned <= 1.89.0) —— PR#1600（2026-09-25）
 - #1217 [Feature] [Middleware] Thinking model support — streaming, storage, and round-tripping of reasoning blocks —— 已关闭（来源未识别）（2026-09-24）
 - #1431 Surface thinking token in LLM response. —— PR#1563（2026-09-24）
-- #1590 import railtracks fails on Python 3.11+ after #1558 (Middleware TypeVar default leaks into BaseGuardrail) —— PR#1591（2026-09-24）
 
 ## 分析详情（最新分析在前）
 ### #1609 [困难|🟢机会] [Bug] total_cost priced at the requested service_tier instead of the served tier (upstream litellm #31837)
@@ -292,7 +292,6 @@
 | #1357 | 中等 | 🔒认领 | 让 Agent 响应暴露工具调用信息，需接口设计决策 |
 | #1362 | 困难 | 🟡困难 | 重实现结构化工具调用 LLM，此前被移除、信息不足 |
 | #1375 | 中等 | 🟢机会 | 清理文档页重复与命名冲突，量大但机械 |
-| #1381 | 简单 | 🟢机会 | 添加 llms.txt / llms-full.txt，范围明确的文档任务 |
 | #1393 | 简单 | 🔒认领 | 坏 schema 报错不友好，已在手的明确小修 |
 | #1395 | 中等 | 🟢机会 | 为 agent-as-tool 类场景增加 Custom Tools 抽象 |
 | #1398 | 中等 | 🟢机会 | post-init 赋值守卫，涉及大量字段迁移、规范类任务 |

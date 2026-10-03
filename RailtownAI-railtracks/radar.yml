@@ -1,4 +1,4 @@
-last_sweep: '2026-10-02T17:25:55+08:00'
+last_sweep: '2026-10-03T14:03:48+08:00'
 issues:
   '486':
     difficulty: 困难
@@ -41,7 +41,7 @@ issues:
     - help wanted
     comments_seen: 1
     created_at: '2025-12-10T00:37:31Z'
-    excluded: 建于 296 天前且近 17 天无动静
+    excluded: 建于 297 天前且近 18 天无动静
   '881':
     difficulty: 中等
     summary: docstring 多格式解析，范围明确需改解析逻辑
@@ -75,7 +75,7 @@ issues:
     - help wanted
     comments_seen: 1
     created_at: '2026-02-05T21:24:08Z'
-    excluded: 建于 238 天前且近 17 天无动静
+    excluded: 建于 239 天前且近 18 天无动静
   '947':
     difficulty: 中等
     summary: LLM 子模块独立 logger 配置，单模块日志改造
@@ -121,7 +121,7 @@ issues:
     - help wanted
     comments_seen: 1
     created_at: '2026-03-17T16:52:56Z'
-    excluded: 建于 198 天前且近 23 天无动静
+    excluded: 建于 199 天前且近 24 天无动静
   '1053':
     difficulty: 简单
     summary: 长度护栏 Guardrail，接口已定范围明确
@@ -134,7 +134,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-04-02T21:46:04Z'
-    excluded: 建于 182 天前且近 87 天无动静
+    excluded: 建于 183 天前且近 88 天无动静
   '1065':
     difficulty: 中等
     summary: 被拦截护栏的重试机制，需设计决策
@@ -147,7 +147,7 @@ issues:
     - area:add-on
     comments_seen: 0
     created_at: '2026-04-14T01:41:33Z'
-    excluded: 建于 171 天前且近 29 天无动静
+    excluded: 建于 172 天前且近 30 天无动静
   '1114':
     difficulty: 简单
     summary: 文档语法内容修缺父票，长期跟踪，零散小改
@@ -221,7 +221,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-06-01T23:32:31Z'
-    excluded: 建于 122 天前且近 28 天无动静
+    excluded: 建于 123 天前且近 29 天无动静
   '1156':
     difficulty: 困难
     summary: 用 system message 自动生成 agent manifest，自动化程度需设计决策
@@ -250,7 +250,7 @@ issues:
     - area:docs
     comments_seen: 0
     created_at: '2026-06-02T20:28:49Z'
-    excluded: 建于 121 天前且近 28 天无动静
+    excluded: 建于 122 天前且近 29 天无动静
   '1167':
     difficulty: 简单
     summary: HF 数据集所有行 id 相同，破坏 upsert 语义
@@ -265,7 +265,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-06-04T19:11:01Z'
-    excluded: 建于 119 天前且近 28 天无动静
+    excluded: 建于 120 天前且近 29 天无动静
   '1172':
     difficulty: 中等
     summary: 将 _Session 等内部类标记为 internal，防误用
@@ -278,7 +278,7 @@ issues:
     - area:core
     comments_seen: 1
     created_at: '2026-06-05T23:49:17Z'
-    excluded: 建于 118 天前且近 28 天无动静
+    excluded: 建于 119 天前且近 29 天无动静
   '1173':
     difficulty: 中等
     summary: 新增 Turbovec 向量后端集成
@@ -294,7 +294,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-06-08T16:34:15Z'
-    excluded: 建于 115 天前且近 28 天无动静
+    excluded: 建于 116 天前且近 29 天无动静
   '1179':
     difficulty: 简单
     summary: 为文档核心术语定义 glossary 并互链
@@ -332,7 +332,7 @@ issues:
     - tech debt
     comments_seen: 0
     created_at: '2026-06-09T23:53:19Z'
-    excluded: 建于 114 天前且近 114 天无动静
+    excluded: 建于 115 天前且近 115 天无动静
   '1185':
     difficulty: 中等
     summary: 用户 metadata 可覆盖保留 payload 键导致数据损坏
@@ -347,7 +347,7 @@ issues:
     - area:retrieval
     comments_seen: 0
     created_at: '2026-06-09T23:53:37Z'
-    excluded: ''
+    excluded: 建于 115 天前且近 15 天无动静
   '1186':
     difficulty: 中等
     summary: Chroma 后端 chunk 内容双份存储，浪费成本
@@ -361,7 +361,7 @@ issues:
     - tech debt
     comments_seen: 0
     created_at: '2026-06-09T23:53:51Z'
-    excluded: 建于 114 天前且近 114 天无动静
+    excluded: 建于 115 天前且近 115 天无动静
   '1187':
     difficulty: 困难
     summary: 部分失败的重新 ingest 会删掉旧好版本
@@ -404,7 +404,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-06-16T18:08:54Z'
-    excluded: ''
+    excluded: 建于 108 天前且近 15 天无动静
   '1204':
     difficulty: 困难
     summary: 文件系统工具：受控文件/shell 操作，设计问题未决
@@ -432,7 +432,7 @@ issues:
     - tech debt
     comments_seen: 0
     created_at: '2026-06-18T21:26:55Z'
-    excluded: 建于 105 天前且近 105 天无动静
+    excluded: 建于 106 天前且近 106 天无动静
   '1216':
     difficulty: 困难
     summary: 键值存储后端支持（tracking issue，无具体范围）
@@ -478,7 +478,7 @@ issues:
     - area:visualizer
     comments_seen: 1
     created_at: '2026-06-26T23:52:56Z'
-    excluded: ''
+    excluded: 建于 98 天前且近 15 天无动静
   '1228':
     difficulty: 简单
     summary: JSON 存储改 UTF-16 以下提升人类/代理可读性
@@ -536,7 +536,7 @@ issues:
     - area:llm
     comments_seen: 2
     created_at: '2026-07-13T19:39:09Z'
-    excluded: 建于 80 天前且近 21 天无动静
+    excluded: 建于 81 天前且近 22 天无动静
   '1251':
     difficulty: 中等
     summary: viz 命令 --dir 标志形式化并修复子目录感知 bug
@@ -550,7 +550,7 @@ issues:
     - area:visualizer
     comments_seen: 2
     created_at: '2026-07-14T17:30:42Z'
-    excluded: 建于 79 天前且近 35 天无动静
+    excluded: 建于 80 天前且近 36 天无动静
   '1265':
     difficulty: 困难
     summary: HIL 人机协同作为节点中间件，父票含设计决策
@@ -599,7 +599,7 @@ issues:
     - help wanted
     comments_seen: 0
     created_at: '2026-07-28T19:07:51Z'
-    excluded: 建于 65 天前且近 45 天无动静
+    excluded: 建于 66 天前且近 46 天无动静
   '1316':
     difficulty: 简单
     summary: 改进自定义函数作为工具的文档说明
@@ -612,7 +612,7 @@ issues:
     - area:docs
     comments_seen: 0
     created_at: '2026-07-30T19:50:57Z'
-    excluded: 建于 63 天前且近 22 天无动静
+    excluded: 建于 64 天前且近 23 天无动静
   '1320':
     difficulty: 中等
     summary: 附件在消息中的位置交错，媒体块位置信息丢失
@@ -698,7 +698,7 @@ issues:
     - area:llm
     comments_seen: 0
     created_at: '2026-08-05T21:26:16Z'
-    excluded: ''
+    excluded: 建于 58 天前且近 15 天无动静
   '1353':
     difficulty: 中等
     summary: OpenAI 格式无损导入导出 API，范围明确
@@ -712,7 +712,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-05T21:51:42Z'
-    excluded: 建于 57 天前且近 57 天无动静
+    excluded: 建于 58 天前且近 58 天无动静
   '1354':
     difficulty: 中等
     summary: 通用 token 估算器，范围清晰但需选型设计
@@ -725,7 +725,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-05T21:57:15Z'
-    excluded: 建于 57 天前且近 57 天无动静
+    excluded: 建于 58 天前且近 58 天无动静
   '1355':
     difficulty: 困难
     summary: 清除 539 个 Pyright 错误，量大且需逐一定位
@@ -751,7 +751,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-05T22:08:58Z'
-    excluded: 建于 57 天前且近 57 天无动静
+    excluded: 建于 58 天前且近 58 天无动静
   '1357':
     difficulty: 中等
     summary: 让 Agent 响应暴露工具调用信息，需接口设计决策
@@ -793,14 +793,14 @@ issues:
     - area:docs
     comments_seen: 1
     created_at: '2026-08-11T19:08:06Z'
-    excluded: 建于 51 天前且近 51 天无动静
+    excluded: 建于 52 天前且近 52 天无动静
   '1381':
     difficulty: 简单
     summary: 添加 llms.txt / llms-full.txt，范围明确的文档任务
     problem: 缺 llms.txt，影响 AI 工具对项目的发现与导航；标签含 good first issue。
     plan: 按 llms.txt 规范写概览、链接文档与资源；llms-full.txt 可脚本聚合。（工作量级：小时级）
     analyzed_at: '2026-09-25'
-    last_status: open
+    last_status: closed
     title: Add llms.txt / llms-full.txt
     labels_seen:
     - area:docs
@@ -809,6 +809,9 @@ issues:
     comments_seen: 0
     created_at: '2026-08-12T00:23:16Z'
     excluded: ''
+    closed_at: '2026-10-02T20:59:45Z'
+    resolved_by: 已关闭（来源未识别）
+    status_changed_at: '2026-10-03T14:03:48+08:00'
   '1393':
     difficulty: 简单
     summary: 坏 schema 报错不友好，已在手的明确小修
@@ -836,7 +839,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-13T18:38:17Z'
-    excluded: 建于 49 天前且近 49 天无动静
+    excluded: 建于 50 天前且近 50 天无动静
   '1398':
     difficulty: 中等
     summary: post-init 赋值守卫，涉及大量字段迁移、规范类任务
@@ -849,7 +852,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-13T21:01:02Z'
-    excluded: 建于 49 天前且近 49 天无动静
+    excluded: 建于 50 天前且近 50 天无动静
   '1409':
     difficulty: 中等
     summary: 成本限额中间件，设计已有雏形的功能
@@ -875,7 +878,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-17T22:42:32Z'
-    excluded: 建于 45 天前且近 45 天无动静
+    excluded: 建于 46 天前且近 46 天无动静
   '1414':
     difficulty: 困难
     summary: 节点创建事件需补充工具模型信息，设计导向、范围未定
@@ -903,7 +906,7 @@ issues:
     - area:core
     comments_seen: 1
     created_at: '2026-08-17T23:05:58Z'
-    excluded: 建于 45 天前且近 21 天无动静
+    excluded: 建于 46 天前且近 22 天无动静
   '1425':
     difficulty: 中等
     summary: 把 verifier 决策结构化为可观测性事件而非日志
@@ -994,7 +997,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-18T21:05:40Z'
-    excluded: 建于 44 天前且近 44 天无动静
+    excluded: 建于 45 天前且近 45 天无动静
   '1446':
     difficulty: 中等
     summary: 新增 context 创建/读写/完成四类可观测事件
@@ -1081,7 +1084,7 @@ issues:
     - area:core
     comments_seen: 2
     created_at: '2026-08-20T18:49:53Z'
-    excluded: 建于 42 天前且近 23 天无动静
+    excluded: 建于 43 天前且近 24 天无动静
   '1463':
     difficulty: 中等
     summary: 重构超长文件 _litellm_wrapper.py 及测试，抽公共逻辑
@@ -1095,7 +1098,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-20T18:54:12Z'
-    excluded: 建于 42 天前且近 42 天无动静
+    excluded: 建于 43 天前且近 43 天无动静
   '1468':
     difficulty: 中等
     summary: MessageHistory/消息对象支持 JSON 序列化与反序列化加载
@@ -1110,7 +1113,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-20T19:52:06Z'
-    excluded: 建于 42 天前且近 42 天无动静
+    excluded: 建于 43 天前且近 43 天无动静
   '1471':
     difficulty: 困难
     summary: 优化框架导入时间，需重构大量动态导入，收益明确但工程量大
@@ -1173,7 +1176,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-26T00:34:03Z'
-    excluded: 建于 37 天前且近 37 天无动静
+    excluded: 建于 38 天前且近 38 天无动静
   '1503':
     difficulty: 中等
     summary: visualizer 增加 AI 输入/输出的 markdown raw/preview 切换，范围明确的前端增强
@@ -1188,7 +1191,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 1
     created_at: '2026-08-27T18:33:17Z'
-    excluded: 建于 35 天前且近 17 天无动静
+    excluded: 建于 36 天前且近 18 天无动静
   '1509':
     difficulty: 中等
     summary: 统一错误类的 reason/message 术语并上提 notes+reason 到 RTError，需设计决策
@@ -1203,7 +1206,7 @@ issues:
     - '[Maintainer] task'
     comments_seen: 0
     created_at: '2026-08-27T21:38:18Z'
-    excluded: 建于 35 天前且近 35 天无动静
+    excluded: 建于 36 天前且近 36 天无动静
   '1534':
     difficulty: 简单
     summary: 删除 legacy 安装检测代码，前置条件已满足，范围清晰的清理任务
