@@ -1,9 +1,9 @@
 # Issue 雷达 · browser-use/jev-ultrafast
 
-> 全景扫描：2026-10-03 · 开放 issue 40 个 · 机会 0 · 未入榜 31 · 被占 9
+> 全景扫描：2026-10-04 · 开放 issue 41 个 · 机会 0 · 未入榜 33 · 被占 8
 
-## 未入榜（31）
-- #191 TYPE_TEXT cache key has no element identity: a stale fill's  —— 仓库从未合并外部 PR
+## 未入榜（33）
+- #198 TYPE_TEXT helper cannot distinguish same-labeled fields: fie —— 仓库从未合并外部 PR
 - #187 Idea: Multi-Stage Agent Architecture for Improved Decision A —— 难度困难
 - #177 Third-party AI-assisted analysis report on jev-ultrafast —— 仓库从未合并外部 PR
 - #159 Demo UX: a first-time user cannot tell why nothing works — s —— 难度困难
@@ -13,7 +13,9 @@
 - #145 Community project built on this: jev-browse (agent-callable  —— 难度困难
 - #140 ioio —— 难度困难
 - #125 Feature Request: Support local resident decision backend (Se —— 难度困难
+- #120 Expose a confidence gate for ordinary browser actions —— 仓库从未合并外部 PR
 - #100 qr-menu —— 难度困难
+- #94 A failed post-action observation (page_changed: null) disabl —— 仓库从未合并外部 PR
 - #93 The bundled Google Flights demo can no longer succeed: its g —— 仓库从未合并外部 PR
 - #87 Model responses with invalid JSON leak decoder errors —— 仓库从未合并外部 PR
 - #85 Latency from Japan: 12-17s per task - it's the client's link —— 难度困难
@@ -36,18 +38,23 @@
 - #1 Library API: first observation can return an empty action sp —— 难度困难
 
 ## 已被占（不必再看）
+- #191 TYPE_TEXT cache key has no element identity: a stale fill's cached text can be typed into a different same-labeled field —— 被 PR#197（dhruv1220） 占
 - #158 post_json treats HTTP 200 with an error body as a successful response —— 被 PR#179（dhruv1220） 占
 - #157 One transient text-model failure aborts the whole run — no retry in field_text —— 被 PR#180（dhruv1220） 占
 - #133 choose() can return raw KeyError for an off-envelope HTTP-200 response —— 被 PR#135（EF-Code） 占
 - #132 Stale action ids can select a different live control without an error —— 被 PR#148（viwe-monai） 占
 - #129 MDN wrong-waypoint actions —— 被 PR#151（rkfshakti） 占
-- #120 Expose a confidence gate for ordinary browser actions —— 被 PR#127（Cross2pro） 占
 - #115 Add a theme switch button —— 被 PR#184（suryakiransuresh） 占
-- #94 A failed post-action observation (page_changed: null) disables the three-repeat no-progress check, so a stalled run keeps spending model calls —— 被 PR#131（DevCop95） 占
 - #36 Missing TEXT_MODEL_API_KEY crashes mid-run; code default base URL differs from .env.example —— 被 PR#147（viwe-monai） 占
 
 ## 分析详情（最新分析在前）
-### #191 [中等|🟢机会] TYPE_TEXT cache key has no element identity: a stale fill's cached text can be typed into a different same-labeled field
+### #198 [中等|🟢机会] TYPE_TEXT helper cannot distinguish same-labeled fields: field_context carries no element identity or nearby form context
+- 给 field_context 补元素索引与表单上下文，修复同名字段混淆，值得做
+- 问题：LLM 文本辅助助手收到的 field_context 仅含 {label, role, value}（model.py:151），同名字段输入几乎相同导致误填。决策侧其实已有元素索引（model.py:48、decision["target"]），只是未传递，属单模块数据流补全，定位明确。
+- 方案：将已计算的元素索引（及可选的邻近表单字段/role 树片段）透传进 field_context，扩展 helper payload；注意保持与 #197 缓存键的兼容及向后兼容序列化。工作量级：小时级～天级；风险点：payload 变更可能影响下游 LLM 提示效果与缓存命中（未核实下游消费者范围）。
+- 分析于 2026-10-04
+
+### #191 [中等|🔒PR占] TYPE_TEXT cache key has no element identity: a stale fill's cached text can be typed into a different same-labeled field
 - TYPE_TEXT 缓存键缺元素标识，同标签字段可能错填，值得修
 - 问题：stale-retry 缓存仅以 field_context 的 helper 输入（label/role/value/页面上下文）为键，无 element index 或 node id，同页同标签字段键相同，会导致缓存值被填入错误字段，违反文档不变式（涉及 jev_ultrafast/model.py:151 与 agent.py:110-114，未核实具体实现）。
 - 方案：在 field_context 中加入元素身份（element index / node id），纳入缓存键；或 stale 重试时校验目标元素一致性。改动集中在缓存键构建与 stale 分支，工作量小时级；风险点是元素标识在 DOM 变化后的稳定性，可能引入新的未命中导致缓存退化，需兼顾“stale 后元素可能失效”的既有重试语义。
@@ -137,7 +144,7 @@
 - 方案：抽象决策后端接口 → 实现 SemIf 适配器（两阶段层级决策循环）→ 独立 stdio MCP server 包；工作量大，需维护双后端兼容与协议设计。（工作量级：周级）
 - 分析于 2026-09-27
 
-### #120 [中等|🔒PR占] Expose a confidence gate for ordinary browser actions
+### #120 [中等|🟢机会] Expose a confidence gate for ordinary browser actions
 - 为普通浏览器动作暴露置信度门槛，涉及决策执行核心逻辑
 - 问题：agent.py 已记录 confidence/target_confidence，但只有 DONE/BLOCKED 等终态决策有置信度门控（#99 相关），普通动作直接执行，低置信度误点无防护。涉及 agent 决策-执行主链路与配置面设计。
 - 方案：在 act 执行路径加可配置阈值（低于阈值时拒绝执行/降级为 blocked），需设计默认值、配置暴露方式（env/config）、与 #99 终态门控的一致性；报告者附有测量数据但正文截断。存在行为变更风险（阈值过严导致 run 频繁卡死）。（工作量级：天级）
@@ -155,16 +162,10 @@
 - 方案：需向提交人澄清需求（二维码菜单相关功能？bug？），澄清前无法评估。（工作量级：无法评估）
 - 分析于 2026-09-27
 
-### #94 [中等|🔒PR占] A failed post-action observation (page_changed: null) disables the three-repeat no-progress check, so a stalled run keeps spending model calls
+### #94 [中等|🟢机会] A failed post-action observation (page_changed: null) disables the three-repeat no-progress check, so a stalled run keeps spending model calls
 - 观察失败时 page_changed=None 使停滞检测失效，run 持续烧调用
 - 问题：agent.py 153-158 行的三次无进展检查要求 page_changed is False，但观察异常时该值为 None，False/None 交替使检查永不触发，停滞 run 持续消耗模型调用。核心是状态判定逻辑不健壮。
 - 方案：修改停滞检测条件，将 None（观察失败）视为无进展信号之一（如 `h["page_changed"] is not True`），或区分观察失败与成功不动；同时补对应测试。逻辑集中在一处但需考虑误判风险（暂时性观察超时不应立即算停滞）。（工作量级：小时级到天级）
-- 分析于 2026-09-27
-
-### #93 [简单|🟢机会] The bundled Google Flights demo can no longer succeed: its goal date (2026-09-20) is in the past and past days are not indexed
-- 演示目标日期硬编码为过去日期导致 demo 必然失败，需更新或参数化
-- 问题：flights demo 的目标日期 2026-09-20 已过期，Google Flights 不再索引过去日期，导致所有演示路径 blocked。涉及 static/app.js、index.html、examples/flights.py、README、docs 多处硬编码。
-- 方案：短期更新日期为未来；长期将日期参数化/相对化（如"下周日"）。跨 5+ 文件但均为配置/文案级改动；注意 examples/flights.py 中 verify() 断言需同步。（工作量级：小时级）
 - 分析于 2026-09-27
 
 ## 全量总表
@@ -194,10 +195,10 @@
 | #85 | 困难 | 🟡困难 | 日本延迟 12-17s，报告者已证明非区域问题，属性能排查 |
 | #87 | 简单 | 🟢机会 | HTTP 200 非 JSON 响应泄漏解码错误，应包装为清晰 RuntimeError |
 | #93 | 简单 | 🟢机会 | 演示目标日期硬编码为过去日期导致 demo 必然失败，需更新或参数化 |
-| #94 | 中等 | 🔒PR占 | 观察失败时 page_changed=None 使停滞检测失效，run 持续烧调用 |
+| #94 | 中等 | 🟢机会 | 观察失败时 page_changed=None 使停滞检测失效，run 持续烧调用 |
 | #100 | 困难 | 🟡困难 | 正文为空的"qr-menu"，无任何信息，无法分析 |
 | #115 | 简单 | 🔒PR占 | 落地页增加主题切换按钮，范围明确的前端小功能 |
-| #120 | 中等 | 🔒PR占 | 为普通浏览器动作暴露置信度门槛，涉及决策执行核心逻辑 |
+| #120 | 中等 | 🟢机会 | 为普通浏览器动作暴露置信度门槛，涉及决策执行核心逻辑 |
 | #125 | 困难 | 🟡困难 | 支持本地决策后端与 MCP 集成，跨模块架构级功能 |
 | #129 | 困难 | 🔒PR占 | MDN 用例路径断言失败，正文只有数据缺问题描述 |
 | #132 | 中等 | 🔒PR占 | 快照 id 按位置分配，陈旧 id 可静默命中错误控件，属正确性缺陷 |
@@ -212,6 +213,7 @@
 | #159 | 困难 | 🟡困难 | 新用户体验失败状态不可见，跨 UI/CDP/引导多层问题 |
 | #177 | 简单 | 🟢机会 | 第三方 AI 分析报告通告，信息性 issue，无需开发 |
 | #187 | 困难 | 🟡困难 | 多阶段 agent 架构提案，概念性、需架构决策、信息不足 |
-| #191 | 中等 | 🟢机会 | TYPE_TEXT 缓存键缺元素标识，同标签字段可能错填，值得修 |
+| #191 | 中等 | 🔒PR占 | TYPE_TEXT 缓存键缺元素标识，同标签字段可能错填，值得修 |
+| #198 | 中等 | 🟢机会 | 给 field_context 补元素索引与表单上下文，修复同名字段混淆，值得做 |
 
 </details>

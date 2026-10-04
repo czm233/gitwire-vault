@@ -1,4 +1,4 @@
-last_sweep: '2026-10-03T14:06:28+08:00'
+last_sweep: '2026-10-04T20:43:45+08:00'
 issues:
   '1':
     difficulty: 困难
@@ -313,19 +313,11 @@ issues:
     title: 'A failed post-action observation (page_changed: null) disables the three-repeat
       no-progress check, so a stalled run keeps spending model calls'
     created_at: '2026-09-21T07:28:17Z'
-    pr_claims:
-    - 131
-    excluded: ''
-    last_status: taken-pr
-    status_changed_at: '2026-09-27T02:17:51+08:00'
+    excluded: 仓库从未合并外部 PR
+    last_status: open
+    status_changed_at: '2026-10-04T20:43:45+08:00'
     labels_seen: []
     comments_seen: 2
-    pr_evidence:
-    - number: 131
-      url: https://github.com/browser-use/jev-ultrafast/pull/131
-      title: 'fix: no-progress guard treats unobserved outcomes as non-progress (#94)'
-      author: DevCop95
-      created_at: '2026-09-23T16:24:39Z'
   '100':
     difficulty: 困难
     summary: 正文为空的"qr-menu"，无任何信息，无法分析
@@ -370,19 +362,11 @@ issues:
     analyzed_at: '2026-09-27'
     title: Expose a confidence gate for ordinary browser actions
     created_at: '2026-09-22T10:57:27Z'
-    pr_claims:
-    - 127
-    excluded: ''
-    last_status: taken-pr
-    status_changed_at: '2026-09-27T02:17:51+08:00'
+    excluded: 仓库从未合并外部 PR
+    last_status: open
+    status_changed_at: '2026-10-04T20:43:45+08:00'
     labels_seen: []
     comments_seen: 4
-    pr_evidence:
-    - number: 127
-      url: https://github.com/browser-use/jev-ultrafast/pull/127
-      title: Add stale-target uncertainty guard for ordinary actions
-      author: Cross2pro
-      created_at: '2026-09-23T08:02:53Z'
   '125':
     difficulty: 困难
     summary: 支持本地决策后端与 MCP 集成，跨模块架构级功能
@@ -638,8 +622,31 @@ issues:
     title: 'TYPE_TEXT cache key has no element identity: a stale fill''s cached text
       can be typed into a different same-labeled field'
     created_at: '2026-10-02T10:06:07Z'
+    excluded: ''
+    last_status: taken-pr
+    status_changed_at: '2026-10-04T20:43:45+08:00'
+    labels_seen: []
+    comments_seen: 0
+    pr_claims:
+    - 197
+    pr_evidence:
+    - number: 197
+      url: https://github.com/browser-use/jev-ultrafast/pull/197
+      title: 'fix: key the stale TYPE_TEXT cache by element identity (#191)'
+      author: dhruv1220
+      created_at: '2026-10-03T10:01:24Z'
+  '198':
+    difficulty: 中等
+    summary: 给 field_context 补元素索引与表单上下文，修复同名字段混淆，值得做
+    problem: LLM 文本辅助助手收到的 field_context 仅含 {label, role, value}（model.py:151），同名字段输入几乎相同导致误填。决策侧其实已有元素索引（model.py:48、decision["target"]），只是未传递，属单模块数据流补全，定位明确。
+    plan: '将已计算的元素索引（及可选的邻近表单字段/role 树片段）透传进 field_context，扩展 helper payload；注意保持与
+      #197 缓存键的兼容及向后兼容序列化。工作量级：小时级～天级；风险点：payload 变更可能影响下游 LLM 提示效果与缓存命中（未核实下游消费者范围）。'
+    analyzed_at: '2026-10-04'
+    title: 'TYPE_TEXT helper cannot distinguish same-labeled fields: field_context
+      carries no element identity or nearby form context'
+    created_at: '2026-10-03T13:26:32Z'
     excluded: 仓库从未合并外部 PR
     last_status: open
-    status_changed_at: '2026-10-02T19:02:10+08:00'
+    status_changed_at: '2026-10-04T20:43:45+08:00'
     labels_seen: []
     comments_seen: 0
